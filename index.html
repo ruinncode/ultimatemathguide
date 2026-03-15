@@ -1479,6 +1479,68 @@
                 </div>
             </div>
 
+            <div class="formula-box">
+                <div class="box-title">Composite Factoring (Multi-Step)</div>
+                <div class="box-content">
+                    <p>Many factoring problems require <strong>more than one technique</strong>. Always start by pulling out the GCF, then apply a second method to what remains.</p>
+                    <p><strong>Pattern:</strong> GCF first, then check for difference of squares, trinomial, or decomposition.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Composite Factoring</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor completely: $6x^3 - 24x$</p>
+                    <div class="sol-strategy"><strong>Strategy:</strong> This has a GCF AND a difference of squares hiding inside. Two steps are needed.</div>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Pull out the GCF.</strong> Every term has $6x$ in common: $6x^3 - 24x = 6x(x^2 - 4)$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Factor what remains.</strong> $x^2 - 4$ is a difference of squares: $x^2 - 4 = (x - 2)(x + 2)$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Final answer:</strong> $6x(x - 2)(x + 2)$.</div></div>
+                    </div>
+                    <div class="sol-takeaway"><strong>Key takeaway:</strong> If you stop after the GCF, you miss the difference of squares. Always ask: "Can I factor further?" Keep going until every factor is prime (cannot be factored more).</div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: GCF + Trinomial</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor completely: $2x^2 + 10x + 12$</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>GCF:</strong> $2x^2 + 10x + 12 = 2(x^2 + 5x + 6)$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Factor the trinomial:</strong> Two numbers multiplying to $6$ and adding to $5$: $2$ and $3$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Final answer:</strong> $2(x + 2)(x + 3)$.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Special Factoring Patterns (Memorize These)</div>
+                <div class="box-content">
+                    <p><strong>Difference of Squares:</strong></p>
+                    <p>$$a^2 - b^2 = (a - b)(a + b)$$</p>
+                    <p style="color:var(--text-muted);font-size:0.88rem;">Example: $9x^2 - 16 = (3x - 4)(3x + 4)$</p>
+
+                    <p style="margin-top:0.75rem;"><strong>Perfect Square Trinomials:</strong></p>
+                    <p>$$a^2 + 2ab + b^2 = (a + b)^2 \qquad a^2 - 2ab + b^2 = (a - b)^2$$</p>
+                    <p style="color:var(--text-muted);font-size:0.88rem;">Example: $x^2 + 10x + 25 = (x + 5)^2$ &nbsp; (check: is the last term a perfect square? Is the middle term $2 \times \sqrt{\text{first}} \times \sqrt{\text{last}}$?)</p>
+
+                    <p style="margin-top:0.75rem;"><strong>Sum and Difference of Cubes:</strong></p>
+                    <p>$$a^3 + b^3 = (a + b)(a^2 - ab + b^2)$$</p>
+                    <p>$$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$$</p>
+                    <p style="color:var(--text-muted);font-size:0.88rem;">Mnemonic: <strong>SOAP</strong> — Same sign, Opposite sign, Always Positive. Example: $x^3 - 8 = (x - 2)(x^2 + 2x + 4)$.</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="box-title">Common Mistakes in Factoring</div>
+                <div class="box-content">
+                    <p><strong>$a^2 + b^2$ does NOT factor</strong> over the reals. There is NO "sum of squares" formula. Only $a^2 - b^2$ factors.</p>
+                    <p><strong>Stopping too early:</strong> $2x^2 - 8 = 2(x^2 - 4)$ is not fully factored. You must continue: $= 2(x-2)(x+2)$.</p>
+                    <p><strong>Forgetting the GCF:</strong> Always check for a GCF first. It makes everything that follows easier.</p>
+                    <p><strong>Sign errors in decomposition:</strong> Double-check by expanding your answer to verify it matches the original.</p>
+                </div>
+            </div>
+
             <div class="practice-section">
                 <div class="practice-header"><h4>Practice Problems</h4></div>
                 <div class="problem" data-difficulty="easy">
@@ -1510,6 +1572,45 @@
                     <div class="problem-solution">
                         <p>Difference of squares: $(2x)^2 - 5^2 = (2x - 5)(2x + 5)$.</p>
                         <p><strong>Answer:</strong> $(2x - 5)(2x + 5)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.2.4</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor completely: $3x^3 - 27x$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> This needs composite factoring: GCF first, then difference of squares.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">GCF: $3x^3 - 27x = 3x(x^2 - 9)$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$x^2 - 9$ is a difference of squares: $(x-3)(x+3)$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Final: $3x(x - 3)(x + 3)$.</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.2.5</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor completely: $5x^2 + 30x + 45$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">GCF: $5(x^2 + 6x + 9)$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Recognize the perfect square trinomial: $x^2 + 6x + 9 = (x+3)^2$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Final: $5(x + 3)^2$.</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="hard">
+                    <div class="problem-header"><span class="problem-number">D.2.6</span><span class="difficulty-badge difficulty-hard">Hard</span></div>
+                    <div class="problem-question"><p>Factor completely: $x^3 - 8$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> This is a difference of cubes: $a^3 - b^3 = (a-b)(a^2+ab+b^2)$.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$x^3 - 8 = x^3 - 2^3$. Here $a = x$, $b = 2$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Apply the formula: $(x - 2)(x^2 + 2x + 4)$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Check: can $x^2 + 2x + 4$ factor further? Discriminant $= 4 - 16 = -12 < 0$. No, it cannot.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(x - 2)(x^2 + 2x + 4)$</p>
                     </div>
                 </div>
             </div>
