@@ -287,7 +287,7 @@
     panel.id = 'progress-panel';
     panel.innerHTML = `
       <div class="progress-panel-header">
-        <h3>📊 Your Progress</h3>
+        <h3>Your Progress</h3>
         <button class="progress-close" aria-label="Close">&times;</button>
       </div>
       <div class="progress-auth" id="progress-auth"></div>
@@ -295,7 +295,7 @@
       <div class="progress-weak" id="progress-weak"></div>
       <div class="progress-recommend" id="progress-recommend"></div>
       <div class="progress-actions">
-        <button class="progress-btn progress-btn-practice" id="start-practice-btn">🎯 Start Personalized Practice</button>
+        <button class="progress-btn progress-btn-practice" id="start-practice-btn">Start Personalized Practice</button>
         <button class="progress-btn progress-btn-reset" id="reset-progress-btn">Reset Progress</button>
       </div>
     `;
@@ -304,7 +304,7 @@
     const toggleBtn = document.createElement('button');
     toggleBtn.className = 'progress-toggle';
     toggleBtn.id = 'progress-toggle';
-    toggleBtn.innerHTML = '📊';
+    toggleBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>';
     toggleBtn.title = 'Your Progress';
     document.body.appendChild(toggleBtn);
 
@@ -405,7 +405,7 @@
 
     const needsPractice = stats.weakTopics.filter(t => t.pct < 0.7).slice(0, 3);
     if (needsPractice.length > 0) {
-      let html = '<h4>🎯 Recommended Practice</h4><div class="recommend-list">';
+      let html = '<h4>Recommended Practice</h4><div class="recommend-list">';
       needsPractice.forEach(t => {
         html += `<div class="recommend-item">
           <span class="recommend-topic">${t.name}</span>
@@ -415,7 +415,7 @@
       html += '</div>';
       recDiv.innerHTML = html;
     } else if (stats.total >= 5) {
-      recDiv.innerHTML = '<div class="recommend-good">✨ Great job! Keep practicing to reinforce your skills.</div>';
+      recDiv.innerHTML = '<div class="recommend-good">Great job! Keep practicing to reinforce your skills.</div>';
     } else {
       recDiv.innerHTML = '';
     }
@@ -491,7 +491,7 @@
 
     let html = `<div class="practice-overlay-inner">
       <div class="practice-overlay-header">
-        <h3>🎯 Your Practice Session</h3>
+        <h3>Your Practice Session</h3>
         <span class="practice-overlay-count">${problems.length} questions · Easy → Hard</span>
         <button class="practice-overlay-close">&times;</button>
       </div>

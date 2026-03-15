@@ -1058,7 +1058,9 @@ body.light-mode #dark-mode-toggle::after {
 }
 
 .practice-header::before {
-  content: '✏️';
+  content: '§';
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .problem {
@@ -1339,7 +1341,7 @@ body.light-mode #dark-mode-toggle::after {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   color: #fff;
   border: none;
   font-size: 1.1rem;
@@ -1928,7 +1930,7 @@ body.light-mode #dark-mode-toggle::after {
   position: relative;
 }
 .analogy-box::before {
-  content: '💡 THINK OF IT THIS WAY';
+  content: 'THINK OF IT THIS WAY';
   display: block;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1951,7 +1953,7 @@ body.light-mode #dark-mode-toggle::after {
   text-align: center;
 }
 .key-takeaway::before {
-  content: '🎯 KEY TAKEAWAY';
+  content: 'KEY TAKEAWAY';
   display: block;
   font-size: 0.7rem;
   font-weight: 700;
@@ -3073,7 +3075,8 @@ body.light-mode .sol-vis-canvas {
 }
 
 .skill-tag-icon {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  color: var(--accent);
 }
 
 .skill-tag-label {

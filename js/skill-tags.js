@@ -244,7 +244,7 @@
     tag.className = 'skill-tag';
     tag.innerHTML =
       '<div class="skill-tag-header">' +
-        '<span class="skill-tag-icon">🎯</span>' +
+        '<span class="skill-tag-icon">&#x25C6;</span>' +
         '<span class="skill-tag-label">Skill Practiced</span>' +
       '</div>' +
       '<div class="skill-tag-name">' + data.skill + '</div>' +

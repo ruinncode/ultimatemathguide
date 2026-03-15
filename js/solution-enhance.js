@@ -55,13 +55,13 @@
 
       const strat = document.createElement('div');
       strat.className = 'sol-strategy';
-      strat.innerHTML = '💡 <strong>Strategy:</strong> ' + data.strat;
+      strat.innerHTML = '<strong>Strategy:</strong> ' + data.strat;
       sol.insertBefore(strat, sol.firstChild);
 
       if (!sol.querySelector('.sol-takeaway')) {
         const take = document.createElement('div');
         take.className = 'sol-takeaway';
-        take.innerHTML = '📌 <strong>Key takeaway:</strong> ' + data.takeaway;
+        take.innerHTML = '<strong>Key takeaway:</strong> ' + data.takeaway;
         sol.appendChild(take);
       }
     });

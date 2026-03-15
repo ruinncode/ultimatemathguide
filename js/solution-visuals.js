@@ -483,7 +483,7 @@
       wrapper.className = 'sol-vis-wrapper';
       const label = document.createElement('div');
       label.className = 'sol-vis-label';
-      label.textContent = '📊 Visual';
+      label.textContent = 'Visual';
       wrapper.appendChild(label);
 
       try { V[num](wrapper); } catch (e) { console.warn('Visual ' + num + ':', e); }

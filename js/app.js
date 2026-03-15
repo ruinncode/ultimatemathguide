@@ -3869,45 +3869,45 @@
 
     // Today in Math History
     const mathDays = {
-      '0101':['New Year — 1801: Carl Friedrich Gauss published <em>Disquisitiones Arithmeticae</em>, revolutionizing number theory at age 24.','🎆'],
-      '0112':['1907: Birthday of <strong>Sergei Novikov</strong>, Fields Medalist who connected topology with physics.','🎂'],
-      '0117':['1647: Birthday of <strong>Johann Bernoulli</strong>, who developed early calculus and taught Euler.','🎂'],
-      '0125':['1736: Birthday of <strong>Joseph-Louis Lagrange</strong>, creator of Lagrange multipliers and the Lagrangian.','🎂'],
-      '0202':['1905: Birthday of <strong>Atle Selberg</strong>, who proved the prime number theorem elementarily.','🎂'],
-      '0212':['1809: Birthday of <strong>Charles Darwin</strong> AND <strong>Abraham Lincoln</strong> — science and freedom share a birthday.','🎂'],
-      '0220':['1844: Birthday of <strong>Ludwig Boltzmann</strong>, who connected entropy to probability: S = k ln W.','🎂'],
-      '0223':['1855: Death of <strong>Carl Friedrich Gauss</strong>, the Prince of Mathematicians.','🌟'],
-      '0301':['1879: Birthday of <strong>R.H. Bing</strong>, topologist who proved wild theorems about 3-manifolds.','🎂'],
-      '0314':['🥧 <strong>Happy Pi Day!</strong> π = 3.14159265358979… Today also marks Einstein\'s birthday (1879). Pi is irrational, transcendental, and appears everywhere — from circles to quantum mechanics to probability. How many digits can you memorize?','🥧'],
-      '0320':['1768: Birthday of <strong>Joseph Fourier</strong>, who showed any function can be built from sine waves.','🎂'],
-      '0328':['1862: Birthday of <strong>Aristide Maillol</strong>. In math: 1949 — Claude Shannon published information theory.','📡'],
-      '0330':['1596: Birthday of <strong>René Descartes</strong>, who unified algebra and geometry with the coordinate plane.','🎂'],
-      '0415':['1707: Birthday of <strong>Leonhard Euler</strong>, the most prolific mathematician in history. He gave us e, i, f(x), Σ, and hundreds of theorems.','🎂'],
-      '0423':['1858: Birthday of <strong>Max Planck</strong>, who launched quantum theory with E = hf.','🎂'],
-      '0430':['1777: Birthday of <strong>Carl Friedrich Gauss</strong>, who proved the fundamental theorem of algebra at age 22.','🎂'],
-      '0512':['1820: Birthday of <strong>Florence Nightingale</strong>, pioneer of statistical graphics and data visualization.','🎂'],
-      '0522':['1907: Birthday of <strong>Haskell Curry</strong>, after whom the Curry-Howard correspondence (and Haskell language) are named.','🎂'],
-      '0528':['1676: Newton wrote to Leibniz revealing his binomial series — the start of the calculus priority dispute.','📜'],
-      '0613':['1928: Birthday of <strong>John Nash</strong>, whose Nash equilibrium revolutionized game theory. (A Beautiful Mind)','🎂'],
-      '0614':['1736: Birthday of <strong>Charles-Augustin de Coulomb</strong>, who quantified electric force with an inverse-square law.','🎂'],
-      '0622':['On this day in 1633, Galileo was forced to recant heliocentrism. "And yet it moves." Math reveals truth.','🔭'],
-      '0628':['<strong>τ Day!</strong> τ = 2π ≈ 6.28318… Some argue τ is more natural than π. The full turn is τ radians!','🥧'],
-      '0706':['1785: Birthday of <strong>William Rowan Hamilton</strong>. On Oct 16, 1843, he carved i² = j² = k² = ijk = −1 on a bridge, inventing quaternions.','🎂'],
-      '0802':['1815: Fields Medal namesake <strong>John Charles Fields</strong> was born. The "Nobel Prize of math."','🏅'],
-      '0810':['1912: Birthday of <strong>Jorge Luis Borges</strong>, whose stories explore infinity — The Library of Babel imagines all possible books.','📚'],
-      '0906':['1766: Birthday of <strong>John Dalton</strong>, who used math to develop atomic theory.','🎂'],
-      '0917':['1826: Birthday of <strong>Bernhard Riemann</strong>, who reimagined geometry and stated the most famous unsolved problem: the Riemann Hypothesis.','🎂'],
-      '1006':['1831: Birthday of <strong>Richard Dedekind</strong>, who made the real numbers rigorous with "Dedekind cuts."','🎂'],
-      '1015':['1608: Birthday of <strong>Evangelista Torricelli</strong>, Galileo\'s student who invented the barometer and discovered "Torricelli\'s trumpet" — infinite surface area, finite volume!','🎂'],
-      '1023':['4004 BC (traditionally): Archbishop Ussher\'s calculated date of creation. Math meets theology.','📅'],
-      '1031':['1815: Birthday of <strong>Karl Weierstrass</strong>, who made calculus rigorous and found a continuous but nowhere-differentiable function — breaking everyone\'s intuition.','🎂'],
-      '1107':['1867: Birthday of <strong>Marie Curie</strong>, who used math and physics to discover radioactivity (2 Nobel Prizes).','🎂'],
-      '1123':['1616: Birthday of <strong>John Wallis</strong>, who introduced the ∞ symbol and developed infinite products for π.','🎂'],
-      '1201':['1792: Birthday of <strong>Nikolai Lobachevsky</strong>, who dared to create non-Euclidean geometry — where parallel lines CAN meet.','🎂'],
-      '1205':['1901: Birthday of <strong>Werner Heisenberg</strong>. His uncertainty principle (Δx·Δp ≥ ℏ/2) is pure math constraining physical reality.','🎂'],
-      '1210':['1815: Birthday of <strong>Ada Lovelace</strong>, the world\'s first computer programmer, who saw that Babbage\'s engine could do more than arithmetic.','🎂'],
-      '1222':['1887: Birthday of <strong>Srinivasa Ramanujan</strong>, the self-taught genius from India whose intuition produced 3,900+ results. "An equation means nothing to me unless it expresses a thought of God."','🎂'],
-      '1225':['1642: Birthday of <strong>Isaac Newton</strong>, who invented calculus, described gravity, and transformed all of science. Not a bad Christmas present.','🎂'],
+      '0101':['New Year — 1801: Carl Friedrich Gauss published <em>Disquisitiones Arithmeticae</em>, revolutionizing number theory at age 24.'',''],
+      '0112':['1907: Birthday of <strong>Sergei Novikov</strong>, Fields Medalist who connected topology with physics.'',''],
+      '0117':['1647: Birthday of <strong>Johann Bernoulli</strong>, who developed early calculus and taught Euler.'',''],
+      '0125':['1736: Birthday of <strong>Joseph-Louis Lagrange</strong>, creator of Lagrange multipliers and the Lagrangian.'',''],
+      '0202':['1905: Birthday of <strong>Atle Selberg</strong>, who proved the prime number theorem elementarily.'',''],
+      '0212':['1809: Birthday of <strong>Charles Darwin</strong> AND <strong>Abraham Lincoln</strong> — science and freedom share a birthday.'',''],
+      '0220':['1844: Birthday of <strong>Ludwig Boltzmann</strong>, who connected entropy to probability: S = k ln W.'',''],
+      '0223':['1855: Death of <strong>Carl Friedrich Gauss</strong>, the Prince of Mathematicians.'',''],
+      '0301':['1879: Birthday of <strong>R.H. Bing</strong>, topologist who proved wild theorems about 3-manifolds.'',''],
+      '0314':['<strong>Happy Pi Day!</strong> π = 3.14159265358979… Today also marks Einstein\'s birthday (1879). Pi is irrational, transcendental, and appears everywhere — from circles to quantum mechanics to probability. How many digits can you memorize?'',''],
+      '0320':['1768: Birthday of <strong>Joseph Fourier</strong>, who showed any function can be built from sine waves.'',''],
+      '0328':['1862: Birthday of <strong>Aristide Maillol</strong>. In math: 1949 — Claude Shannon published information theory.'',''],
+      '0330':['1596: Birthday of <strong>René Descartes</strong>, who unified algebra and geometry with the coordinate plane.'',''],
+      '0415':['1707: Birthday of <strong>Leonhard Euler</strong>, the most prolific mathematician in history. He gave us e, i, f(x), Σ, and hundreds of theorems.'',''],
+      '0423':['1858: Birthday of <strong>Max Planck</strong>, who launched quantum theory with E = hf.'',''],
+      '0430':['1777: Birthday of <strong>Carl Friedrich Gauss</strong>, who proved the fundamental theorem of algebra at age 22.'',''],
+      '0512':['1820: Birthday of <strong>Florence Nightingale</strong>, pioneer of statistical graphics and data visualization.'',''],
+      '0522':['1907: Birthday of <strong>Haskell Curry</strong>, after whom the Curry-Howard correspondence (and Haskell language) are named.'',''],
+      '0528':['1676: Newton wrote to Leibniz revealing his binomial series — the start of the calculus priority dispute.'',''],
+      '0613':['1928: Birthday of <strong>John Nash</strong>, whose Nash equilibrium revolutionized game theory. (A Beautiful Mind)'',''],
+      '0614':['1736: Birthday of <strong>Charles-Augustin de Coulomb</strong>, who quantified electric force with an inverse-square law.'',''],
+      '0622':['On this day in 1633, Galileo was forced to recant heliocentrism. "And yet it moves." Math reveals truth.'',''],
+      '0628':['<strong>τ Day!</strong> τ = 2π ≈ 6.28318… Some argue τ is more natural than π. The full turn is τ radians!'',''],
+      '0706':['1785: Birthday of <strong>William Rowan Hamilton</strong>. On Oct 16, 1843, he carved i² = j² = k² = ijk = −1 on a bridge, inventing quaternions.'',''],
+      '0802':['1815: Fields Medal namesake <strong>John Charles Fields</strong> was born. The "Nobel Prize of math."'',''],
+      '0810':['1912: Birthday of <strong>Jorge Luis Borges</strong>, whose stories explore infinity — The Library of Babel imagines all possible books.'',''],
+      '0906':['1766: Birthday of <strong>John Dalton</strong>, who used math to develop atomic theory.'',''],
+      '0917':['1826: Birthday of <strong>Bernhard Riemann</strong>, who reimagined geometry and stated the most famous unsolved problem: the Riemann Hypothesis.'',''],
+      '1006':['1831: Birthday of <strong>Richard Dedekind</strong>, who made the real numbers rigorous with "Dedekind cuts."'',''],
+      '1015':['1608: Birthday of <strong>Evangelista Torricelli</strong>, Galileo\'s student who invented the barometer and discovered "Torricelli\'s trumpet" — infinite surface area, finite volume!'',''],
+      '1023':['4004 BC (traditionally): Archbishop Ussher\'s calculated date of creation. Math meets theology.',''],
+      '1031':['1815: Birthday of <strong>Karl Weierstrass</strong>, who made calculus rigorous and found a continuous but nowhere-differentiable function — breaking everyone\'s intuition.'',''],
+      '1107':['1867: Birthday of <strong>Marie Curie</strong>, who used math and physics to discover radioactivity (2 Nobel Prizes).'',''],
+      '1123':['1616: Birthday of <strong>John Wallis</strong>, who introduced the ∞ symbol and developed infinite products for π.'',''],
+      '1201':['1792: Birthday of <strong>Nikolai Lobachevsky</strong>, who dared to create non-Euclidean geometry — where parallel lines CAN meet.'',''],
+      '1205':['1901: Birthday of <strong>Werner Heisenberg</strong>. His uncertainty principle (Δx·Δp ≥ ℏ/2) is pure math constraining physical reality.'',''],
+      '1210':['1815: Birthday of <strong>Ada Lovelace</strong>, the world\'s first computer programmer, who saw that Babbage\'s engine could do more than arithmetic.'',''],
+      '1222':['1887: Birthday of <strong>Srinivasa Ramanujan</strong>, the self-taught genius from India whose intuition produced 3,900+ results. "An equation means nothing to me unless it expresses a thought of God."'',''],
+      '1225':['1642: Birthday of <strong>Isaac Newton</strong>, who invented calculus, described gravity, and transformed all of science. Not a bad Christmas present.'',''],
     };
     const el = document.getElementById('math-today');
     if (el) {
@@ -3915,7 +3915,7 @@
       const key = String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
       const entry = mathDays[key];
       if (entry) {
-        el.innerHTML = '<div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-secondary);margin-bottom:0.5rem;">📅 Today in Math History — ' + d.toLocaleDateString('en-US',{month:'long',day:'numeric'}) + '</div><div style="font-size:1.3rem;margin-bottom:0.5rem;">' + entry[1] + '</div><p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin:0;">' + entry[0] + '</p>';
+        el.innerHTML = '<div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-secondary);margin-bottom:0.5rem;">Today in Math History — ' + d.toLocaleDateString('en-US',{month:'long',day:'numeric'}) + '</div><div style="font-size:1.3rem;margin-bottom:0.5rem;">' + entry[1] + '</div><p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin:0;">' + entry[0] + '</p>';
       } else {
         const quotes = [
           ['"Mathematics is the queen of the sciences."','— Carl Friedrich Gauss'],
@@ -3929,7 +3929,7 @@
           ['"Mathematics, rightly viewed, possesses not only truth, but supreme beauty."','— Bertrand Russell'],
         ];
         const q = quotes[d.getDate() % quotes.length];
-        el.innerHTML = '<div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-secondary);margin-bottom:0.5rem;">✨ Daily Inspiration</div><p style="font-size:1rem;color:var(--text-primary);line-height:1.7;margin:0 0 0.3rem;font-style:italic;">' + q[0] + '</p><p style="font-size:0.8rem;color:var(--text-muted);margin:0;">' + q[1] + '</p>';
+        el.innerHTML = '<div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-secondary);margin-bottom:0.5rem;">Daily Inspiration</div><p style="font-size:1rem;color:var(--text-primary);line-height:1.7;margin:0 0 0.3rem;font-style:italic;">' + q[0] + '</p><p style="font-size:0.8rem;color:var(--text-muted);margin:0;">' + q[1] + '</p>';
       }
     }
 

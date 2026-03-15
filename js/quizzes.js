@@ -246,7 +246,7 @@
 
     let html = `<div class="mc-quiz" id="${qid}" data-chapter="${chapterId}">`;
     html += `<div class="mc-quiz-header">`;
-    html += `<h4>📝 Quick-Check: Multiple Choice</h4>`;
+    html += `<h4>Quick-Check: Multiple Choice</h4>`;
     html += `<span class="mc-score" id="${qid}-score"></span>`;
     html += `</div>`;
     html += `<p class="mc-instruction">Click your answer for instant feedback.</p>`;
@@ -265,7 +265,7 @@
     });
 
     html += `<div class="mc-quiz-footer">`;
-    html += `<button class="mc-retry-btn" style="display:none">🔄 Try New Questions</button>`;
+    html += `<button class="mc-retry-btn" style="display:none">Try New Questions</button>`;
     html += `</div>`;
     html += `</div>`;
     return html;
