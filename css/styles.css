@@ -451,9 +451,14 @@ body.light-mode .top-bar {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
 }
 
-#search-input {
+.search-wrap {
   flex: 1;
   max-width: 420px;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
   padding: 0.5rem 1rem 0.5rem 2.4rem;
   background: var(--bg-input);
   border: 1px solid var(--border-subtle);
@@ -483,7 +488,6 @@ body.light-mode .top-bar {
   top: 100%;
   left: 0;
   right: 0;
-  max-width: 420px;
   margin-top: 4px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);

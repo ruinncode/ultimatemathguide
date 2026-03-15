@@ -3423,8 +3423,9 @@
 
       this.dropdown = document.createElement('div');
       this.dropdown.className = 'search-dropdown';
-      input.parentNode.style.position = 'relative';
-      input.parentNode.appendChild(this.dropdown);
+      const wrap = input.closest('.search-wrap') || input.parentNode;
+      wrap.style.position = 'relative';
+      wrap.appendChild(this.dropdown);
 
       input.addEventListener('input', debounce(() => this.perform(input.value.trim()), 250));
       input.addEventListener('focus', () => { if (input.value.trim()) this.perform(input.value.trim()); });
