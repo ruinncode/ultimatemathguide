@@ -2157,32 +2157,103 @@ EXPLAINERS.push({title:'The Pythagorean Theorem Visually',lessonId:'scientific-p
     drawLabel(ctx,'a',ax-8,(cy2+ay)/2,{size:10,color:C.green});
     drawLabel(ctx,'b',(ax+bx)/2,ay+10,{size:10,color:C.secondary});
   }},
-  {text:'Now add the square on the hypotenuse. The two smaller squares TOGETHER have the same area as the big square: a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
+  {text:'Watch: the green a\u00b2 has area 9 and the blue b\u00b2 has area 16. Together 9 + 16 = 25, which is exactly the gold c\u00b2. The areas add up perfectly!',draw:function(ctx,w,h,t){
     refreshC();var et=easeInOut(t);
-    var ax=140,ay=170,bx=240,by=170,cx2=140,cy2=100;
-    var aH=ay-cy2,bW=bx-ax;
-    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
-    ctx.fillStyle=C.green+'25';ctx.fillRect(ax-aH,cy2,aH,aH);ctx.strokeStyle=C.green;ctx.lineWidth=1.5;ctx.strokeRect(ax-aH,cy2,aH,aH);
-    drawLabel(ctx,'a\u00b2',ax-aH/2,(cy2+ay)/2,{size:10,color:C.green,bold:true});
-    ctx.fillStyle=C.secondary+'25';ctx.fillRect(ax,ay,bW,Math.min(bW,h-ay-15));ctx.strokeStyle=C.secondary;ctx.strokeRect(ax,ay,bW,Math.min(bW,h-ay-15));
-    drawLabel(ctx,'b\u00b2',ax+bW/2,ay+Math.min(bW,h-ay-15)/2,{size:10,color:C.secondary,bold:true});
-    var hyp=Math.sqrt(aH*aH+bW*bW);var angle=Math.atan2(aH,bW);
-    ctx.save();ctx.translate(bx,by);ctx.rotate(-angle-PI/2);
-    ctx.fillStyle=C.gold+'20';ctx.fillRect(0,0,hyp*et,hyp*et);ctx.strokeStyle=C.gold;ctx.lineWidth=1.5;ctx.strokeRect(0,0,hyp*et,hyp*et);
-    if(et>0.5)drawLabel(ctx,'c\u00b2',hyp*et/2,hyp*et/2,{size:10,color:C.gold,bold:true});
-    ctx.restore();
-    drawLabel(ctx,'a\u00b2 + b\u00b2 = c\u00b2',w/2,20,{size:15,color:C.gold,bold:true});
-    if(et>0.8)drawLabel(ctx,'The two small areas EQUAL the big area!',w/2,h-8,{size:10,color:C.text});
+    var cx=w/2,s=35;
+    // Draw the area bars side by side
+    var barW=50,maxH=180,baseY=h-25;
+    // a² bar
+    var aH=maxH*(9/25)*Math.min(et*2,1);
+    ctx.fillStyle=C.green+'40';ctx.fillRect(cx-110,baseY-aH,barW,aH);
+    ctx.strokeStyle=C.green;ctx.lineWidth=1.5;ctx.strokeRect(cx-110,baseY-aH,barW,aH);
+    drawLabel(ctx,'a\u00b2 = 9',cx-85,baseY+15,{size:10,color:C.green,bold:true});
+
+    // b² bar
+    var bH=maxH*(16/25)*Math.min(et*2,1);
+    ctx.fillStyle=C.secondary+'40';ctx.fillRect(cx-40,baseY-bH,barW,bH);
+    ctx.strokeStyle=C.secondary;ctx.lineWidth=1.5;ctx.strokeRect(cx-40,baseY-bH,barW,bH);
+    drawLabel(ctx,'b\u00b2 = 16',cx-15,baseY+15,{size:10,color:C.secondary,bold:true});
+
+    // plus sign
+    drawLabel(ctx,'+',cx-55,baseY-Math.min(aH,bH)/2,{size:18,color:C.text,bold:true});
+
+    // equals sign
+    drawLabel(ctx,'=',cx+35,baseY-maxH*(20/25)/2,{size:18,color:C.text,bold:true});
+
+    // c² bar (animates in second half)
+    var cH=maxH*Math.max(0,Math.min((et-0.3)*1.5,1));
+    ctx.fillStyle=C.gold+'40';ctx.fillRect(cx+60,baseY-cH,barW,cH);
+    ctx.strokeStyle=C.gold;ctx.lineWidth=1.5;ctx.strokeRect(cx+60,baseY-cH,barW,cH);
+    drawLabel(ctx,'c\u00b2 = 25',cx+85,baseY+15,{size:10,color:C.gold,bold:true});
+
+    // Dashed line showing they match
+    if(et>0.7){
+      var totalH=maxH;
+      ctx.setLineDash([4,3]);ctx.strokeStyle=C.gold;ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(cx-115,baseY-totalH);ctx.lineTo(cx+115,baseY-totalH);ctx.stroke();
+      ctx.setLineDash([]);
+      drawLabel(ctx,'Same height = same area!',cx,baseY-totalH-10,{size:10,color:C.gold});
+    }
+    drawLabel(ctx,'9 + 16 = 25',w/2,18,{size:16,color:C.text,bold:true});
+  }},
+  {text:'The famous visual proof: a tilted square inside a larger square. The 4 right triangles + the inner square = the outer square. This proves a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
+    refreshC();var et=easeInOut(t);
+    var cx=w/2,cy=h/2+5,S=150; // outer square side = a+b
+    var a=55,b=95; // a < b, a+b = S
+    // Outer square
+    var x0=cx-S/2,y0=cy-S/2;
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1.5;ctx.strokeRect(x0,y0,S,S);
+
+    // 4 right triangles at corners, tilted
+    var corners=[
+      [x0+b, y0],       // top: b from left
+      [x0+S, y0+b],     // right: b from top
+      [x0+a, y0+S],     // bottom: a from left
+      [x0,   y0+a]      // left: a from top
+    ];
+    // Draw 4 triangles
+    var triColor=[C.green+'30',C.secondary+'30',C.green+'30',C.secondary+'30'];
+    var triStroke=[C.green,C.secondary,C.green,C.secondary];
+    for(var i=0;i<4;i++){
+      var j=(i+1)%4;
+      ctx.fillStyle=triColor[i];
+      ctx.strokeStyle=triStroke[i];ctx.lineWidth=1.5;
+      ctx.beginPath();
+      if(i===0){ctx.moveTo(x0,y0);ctx.lineTo(corners[0][0],corners[0][1]);ctx.lineTo(corners[3][0],corners[3][1]);ctx.closePath();}
+      else if(i===1){ctx.moveTo(x0+S,y0);ctx.lineTo(corners[1][0],corners[1][1]);ctx.lineTo(corners[0][0],corners[0][1]);ctx.closePath();}
+      else if(i===2){ctx.moveTo(x0+S,y0+S);ctx.lineTo(corners[2][0],corners[2][1]);ctx.lineTo(corners[1][0],corners[1][1]);ctx.closePath();}
+      else{ctx.moveTo(x0,y0+S);ctx.lineTo(corners[3][0],corners[3][1]);ctx.lineTo(corners[2][0],corners[2][1]);ctx.closePath();}
+      ctx.fill();ctx.stroke();
+    }
+    // Inner tilted square (c²)
+    ctx.fillStyle=C.gold+'18';ctx.strokeStyle=C.gold;ctx.lineWidth=2;
+    ctx.beginPath();
+    ctx.moveTo(corners[0][0],corners[0][1]);
+    ctx.lineTo(corners[1][0],corners[1][1]);
+    ctx.lineTo(corners[2][0],corners[2][1]);
+    ctx.lineTo(corners[3][0],corners[3][1]);
+    ctx.closePath();ctx.fill();ctx.stroke();
+
+    // Labels
+    drawLabel(ctx,'c\u00b2',cx,cy,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'a',x0+b/2-5,y0-8,{size:10,color:C.text});
+    drawLabel(ctx,'b',x0+b+(S-b)/2+5,y0-8,{size:10,color:C.text});
+
+    drawLabel(ctx,'Outer square area = (a+b)\u00b2',w/2,18,{size:11,color:C.textDim});
+    drawLabel(ctx,'= 4 triangles + inner square',w/2,33,{size:11,color:C.textDim});
+    drawLabel(ctx,'(a+b)\u00b2 = 4\u00b7(\u00bdab) + c\u00b2',w/2,h-25,{size:12,color:C.text,bold:true});
+    drawLabel(ctx,'a\u00b2+2ab+b\u00b2 = 2ab + c\u00b2  \u2192  a\u00b2+b\u00b2 = c\u00b2',w/2,h-8,{size:11,color:C.gold,bold:true});
   }},
   {text:'Example: a=3, b=4. Then c\u00b2 = 9+16 = 25, so c = 5. The famous 3-4-5 triangle.',draw:function(ctx,w,h,t){
     refreshC();var et=easeInOut(t);
-    var ax=120,ay=200,bx=260,by=200,cx2=120,cy2=95;
+    var ax=120,ay=190,bx=260,by=190,cx2=120,cy2=100;
     ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
     ctx.fillStyle=C.accent+'20';ctx.fill();
     drawLabel(ctx,'3',ax-18,(cy2+ay)/2,{size:14,color:C.green,bold:true});
     drawLabel(ctx,'4',(ax+bx)/2,ay+18,{size:14,color:C.secondary,bold:true});
     drawLabel(ctx,'5',(bx+cx2)/2+15,(by+cy2)/2,{size:14,color:C.gold,bold:true});
-    drawLabel(ctx,'3\u00b2 + 4\u00b2 = 9 + 16 = 25 = 5\u00b2',w/2,40,{size:13,color:C.text,bold:true});
+    drawLabel(ctx,'3\u00b2 + 4\u00b2 = 9 + 16 = 25 = 5\u00b2  \u2714',w/2,40,{size:14,color:C.text,bold:true});
+    drawLabel(ctx,'Other common triples: 5-12-13, 8-15-17, 7-24-25',w/2,h-10,{size:10,color:C.textDim});
   }}
 ]});
 
