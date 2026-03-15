@@ -620,7 +620,7 @@ body.light-mode #dark-mode-toggle {
 }
 body.light-mode #dark-mode-toggle::before {
   content: '∫';
-  transform: translateX(21px);
+  transform: translateX(19px);
   background: rgba(0, 0, 0, 0.08);
   font-family: 'Playfair Display', serif;
   font-style: italic;
