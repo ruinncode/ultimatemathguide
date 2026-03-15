@@ -2346,32 +2346,31 @@ body.light-mode .video-section {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
+  box-shadow: none !important;
   transition: all 0.2s ease;
 }
 .ref-sheet-toggle:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
   transform: scale(1.05);
 }
 body.light-mode .ref-sheet-toggle {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.5);
-  background: transparent;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
 }
 body.light-mode .ref-sheet-toggle:hover {
-  border-color: rgba(0, 0, 0, 0.4);
-  color: rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 .ref-sheet-panel {
   position: fixed;
@@ -3200,13 +3199,13 @@ body.light-mode .sol-vis-canvas {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 1.2rem;
   cursor: pointer;
   z-index: 999;
-  box-shadow: none;
+  box-shadow: none !important;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -3214,21 +3213,33 @@ body.light-mode .sol-vis-canvas {
 }
 
 .progress-toggle:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
   transform: scale(1.05);
 }
 
+.progress-toggle svg {
+  stroke: rgba(255, 255, 255, 0.8);
+}
+.progress-toggle:hover svg {
+  stroke: #fff;
+}
+
 body.light-mode .progress-toggle {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.5);
-  background: transparent;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
 }
 body.light-mode .progress-toggle:hover {
-  border-color: rgba(0, 0, 0, 0.4);
-  color: rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+body.light-mode .progress-toggle svg {
+  stroke: rgba(0, 0, 0, 0.5);
+}
+body.light-mode .progress-toggle:hover svg {
+  stroke: rgba(0, 0, 0, 0.7);
 }
 
 .progress-badge {
