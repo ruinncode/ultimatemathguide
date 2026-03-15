@@ -2129,6 +2129,390 @@ EXPLAINERS.push((function() {
   };
 })());
 
+/* ══════════════════════════════════════════════════════════════
+   FOUNDATION CHAPTERS — Visual Explainers
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Pythagorean Theorem ── */
+EXPLAINERS.push({title:'The Pythagorean Theorem Visually',lessonId:'scientific-pythagorean',frames:[
+  {text:'Consider a right triangle with legs a and b and hypotenuse c.',draw:function(ctx,w,h,t){
+    refreshC(); var et=easeInOut(t);
+    var ax=80,ay=h-50,bx=280,by=h-50,cx2=80,cy2=80;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2+et;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    ctx.fillStyle=C.accent+'30';ctx.fill();
+    drawLabel(ctx,'a',75,h/2,{size:14,color:C.green,bold:true});
+    drawLabel(ctx,'b',(ax+bx)/2,h-35,{size:14,color:C.secondary,bold:true});
+    drawLabel(ctx,'c',(bx+cx2)/2+15,(by+cy2)/2,{size:14,color:C.gold,bold:true});
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.strokeRect(ax,ay-15,15,15);
+  }},
+  {text:'Build a square on each side. The area of the square on side a is a\u00b2.',draw:function(ctx,w,h,t){
+    refreshC();var et=easeInOut(t);
+    var ax=120,ay=h-60,bx=280,by=h-60,cx2=120,cy2=100;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    var aLen=(ay-cy2)*et;ctx.fillStyle=C.green+'30';ctx.fillRect(ax-aLen,cy2,aLen,ay-cy2);ctx.strokeStyle=C.green;ctx.strokeRect(ax-aLen,cy2,aLen,ay-cy2);
+    drawLabel(ctx,'a\u00b2',ax-aLen/2,(cy2+ay)/2,{size:12,color:C.green,bold:true});
+    var bLen=(bx-ax)*et;ctx.fillStyle=C.secondary+'30';ctx.fillRect(ax,ay,bLen,bLen);ctx.strokeStyle=C.secondary;ctx.strokeRect(ax,ay,bLen,bLen);
+    drawLabel(ctx,'b\u00b2',ax+bLen/2,ay+bLen/2,{size:12,color:C.secondary,bold:true});
+  }},
+  {text:'The square on the hypotenuse c has area c\u00b2. The key insight: a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'a\u00b2 + b\u00b2 = c\u00b2',w/2,h/2-20,{size:22,color:C.gold,bold:true});
+    drawLabel(ctx,'The area of the two smaller squares',w/2,h/2+20,{size:12,color:C.text});
+    drawLabel(ctx,'ALWAYS equals the area of the big square.',w/2,h/2+40,{size:12,color:C.text});
+    drawLabel(ctx,'This works for EVERY right triangle.',w/2,h-30,{size:11,color:C.textDim});
+  }},
+  {text:'Example: a=3, b=4. Then c\u00b2 = 9+16 = 25, so c = 5. The famous 3-4-5 triangle.',draw:function(ctx,w,h,t){
+    refreshC();var et=easeInOut(t);
+    var ax=100,ay=h-50,bx=260,by=h-50,cx2=100,cy2=90;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    drawLabel(ctx,'3',85,(cy2+ay)/2,{size:14,color:C.green,bold:true});
+    drawLabel(ctx,'4',(ax+bx)/2,h-35,{size:14,color:C.secondary,bold:true});
+    drawLabel(ctx,'5',(bx+cx2)/2+15,(by+cy2)/2,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'3\u00b2 + 4\u00b2 = 9 + 16 = 25 = 5\u00b2',w/2,30,{size:13,color:C.text,bold:true});
+  }}
+]});
+
+/* ── Slope Visually ── */
+EXPLAINERS.push({title:'What IS Slope?',lessonId:'slope-rate',frames:[
+  {text:'Slope measures how steep a line is. It is the RISE (vertical change) divided by the RUN (horizontal change).',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var x1=80,y1=h-80,x2=300,y2=60;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(lerp(x1,x2,easeInOut(t)),lerp(y1,y2,easeInOut(t)));ctx.stroke();
+    drawLabel(ctx,'Slope = rise / run',w/2,25,{size:13,color:C.text,bold:true});
+  }},
+  {text:'Positive slope: line goes UP from left to right. The bigger the number, the steeper.',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var slopes=[0.5,1,2];var colors=[C.green,C.accent,C.gold];
+    slopes.forEach(function(m,i){
+      ctx.strokeStyle=colors[i];ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(40,h-50-m*(-40)+100);ctx.lineTo(w-20,h-50-m*(w-60)+100);ctx.stroke();
+    });
+    drawLabel(ctx,'m=0.5 (gentle)',w-60,h-70,{size:10,color:C.green});
+    drawLabel(ctx,'m=1 (45\u00b0)',w-60,h-110,{size:10,color:C.accent});
+    drawLabel(ctx,'m=2 (steep)',w-60,h-150,{size:10,color:C.gold});
+  }},
+  {text:'Negative slope: line goes DOWN from left to right. Zero slope: perfectly horizontal. Undefined: vertical.',draw:function(ctx,w,h,t){
+    refreshC();
+    ctx.strokeStyle=C.red;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(40,60);ctx.lineTo(170,h-40);ctx.stroke();
+    drawLabel(ctx,'negative',105,h/2-30,{size:10,color:C.red});
+    ctx.strokeStyle=C.green;ctx.beginPath();ctx.moveTo(190,h/2);ctx.lineTo(320,h/2);ctx.stroke();
+    drawLabel(ctx,'zero',255,h/2-12,{size:10,color:C.green});
+    ctx.strokeStyle=C.purple;ctx.beginPath();ctx.moveTo(350,40);ctx.lineTo(350,h-40);ctx.stroke();
+    drawLabel(ctx,'undefined',350,30,{size:10,color:C.purple});
+  }},
+  {text:'To find slope between two points: m = (y\u2082 - y\u2081) / (x\u2082 - x\u2081). Just count the rise and run!',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var x1=100,y1=h-80,x2=280,y2=80;
+    drawDot(ctx,x1,y1,5,C.accent);drawDot(ctx,x2,y2,5,C.accent);
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    ctx.setLineDash([4,4]);ctx.strokeStyle=C.green;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y1);ctx.stroke();
+    ctx.strokeStyle=C.gold;ctx.beginPath();ctx.moveTo(x2,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.setLineDash([]);
+    drawLabel(ctx,'run = x\u2082-x\u2081',(x1+x2)/2,y1+18,{size:10,color:C.green});
+    drawLabel(ctx,'rise = y\u2082-y\u2081',x2+25,(y1+y2)/2,{size:10,color:C.gold});
+  }}
+]});
+
+/* ── Systems of Equations ── */
+EXPLAINERS.push({title:'Solving Systems: Where Lines Cross',lessonId:'systems-linear',frames:[
+  {text:'A system of two linear equations represents two lines. The SOLUTION is where they intersect.',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var et=easeInOut(t);
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(40,h-60);ctx.lineTo(40+(w-60)*et,60);ctx.stroke();
+    ctx.strokeStyle=C.gold;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(40,80);ctx.lineTo(40+(w-60)*et,h-60);ctx.stroke();
+    drawDot(ctx,185,135,7*et,C.green);
+    drawLabel(ctx,'Solution: the intersection point',w/2,h-15,{size:11,color:C.text});
+  }},
+  {text:'Substitution: solve one equation for y, then plug into the other. You get one equation with one unknown.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Step 1: y = 2x + 1',w/2,50,{size:14,color:C.accent,bold:true});
+    drawLabel(ctx,'Step 2: plug into 3x + y = 16',w/2,85,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'3x + (2x+1) = 16',w/2,120,{size:14,color:C.text});
+    drawLabel(ctx,'5x + 1 = 16',w/2,150,{size:14,color:C.text});
+    drawLabel(ctx,'x = 3, then y = 7',w/2,185,{size:16,color:C.green,bold:true});
+    drawLabel(ctx,'Solution: (3, 7)',w/2,220,{size:13,color:C.textDim});
+  }},
+  {text:'Elimination: add or subtract equations to cancel one variable. Multiply first if needed.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'2x + 3y = 12',w/2,50,{size:14,color:C.accent,bold:true});
+    drawLabel(ctx,'4x - 3y = 6',w/2,80,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 ADD \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500',w/2,110,{size:11,color:C.textDim});
+    drawLabel(ctx,'6x = 18  \u2192  x = 3',w/2,145,{size:14,color:C.text});
+    drawLabel(ctx,'The +3y and -3y cancel!',w/2,175,{size:12,color:C.red,bold:true});
+    drawLabel(ctx,'Then: 2(3) + 3y = 12 \u2192 y = 2',w/2,210,{size:13,color:C.green});
+  }}
+]});
+
+/* ── Quadratic Transformations ── */
+EXPLAINERS.push({title:'How a, h, k Transform the Parabola',lessonId:'graphing-quadratics',frames:[
+  {text:'The parent function is y = x\u00b2. Every parabola is just this one, shifted and stretched.',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h,{ox:w/2,oy:h-40});
+    var ox=w/2,oy=h-40;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2.5;ctx.beginPath();
+    for(var px=-150;px<=150;px++){var x=px/50;var y=x*x;var sx=ox+px;var sy=oy-y*40;if(px===-150)ctx.moveTo(sx,sy);else ctx.lineTo(sx,sy);}ctx.stroke();
+    drawLabel(ctx,'y = x\u00b2',w/2,25,{size:16,color:C.accent,bold:true});
+    drawLabel(ctx,'The parent parabola. Vertex at (0,0). Opens up.',w/2,50,{size:11,color:C.text});
+  }},
+  {text:'"a" controls the WIDTH and DIRECTION. a>1 makes it narrower. 0<a<1 makes it wider. a<0 flips it upside down.',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h,{ox:w/2,oy:h/2});
+    var ox=w/2,oy=h/2;
+    var params=[{a:0.3,c:C.green,l:'a=0.3 (wide)'},{a:1,c:C.accent,l:'a=1 (normal)'},{a:3,c:C.gold,l:'a=3 (narrow)'},{a:-1,c:C.red,l:'a=-1 (flipped)'}];
+    params.forEach(function(p){
+      ctx.strokeStyle=p.c;ctx.lineWidth=1.8;ctx.beginPath();
+      for(var px=-120;px<=120;px++){var x=px/50;var y=p.a*x*x;var sx=ox+px;var sy=oy-y*30;if(sy<10||sy>h-10){if(px===-120)ctx.moveTo(sx,clamp(sy,10,h-10));continue;}if(px===-120)ctx.moveTo(sx,sy);else ctx.lineTo(sx,sy);}ctx.stroke();
+    });
+    drawLabel(ctx,'a=0.3',60,oy-35,{size:9,color:C.green});
+    drawLabel(ctx,'a=1',100,40,{size:9,color:C.accent});
+    drawLabel(ctx,'a=3',ox+15,40,{size:9,color:C.gold});
+    drawLabel(ctx,'a=-1 (flip!)',w-70,oy+50,{size:9,color:C.red});
+    drawLabel(ctx,'"a" = stretch + direction',w/2,h-12,{size:11,color:C.text,bold:true});
+  }},
+  {text:'"h" shifts the parabola LEFT or RIGHT. y = (x-h)\u00b2. Note: (x-3)\u00b2 shifts RIGHT 3 (opposite sign!).',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h,{ox:w/2,oy:h-40});
+    var ox=w/2,oy=h-40;
+    var shifts=[{h:0,c:C.textDim,l:'h=0'},{h:3,c:C.accent,l:'h=3 (right)'},{h:-2,c:C.gold,l:'h=-2 (left)'}];
+    shifts.forEach(function(p){
+      ctx.strokeStyle=p.c;ctx.lineWidth=p.h===0?1.5:2.5;ctx.beginPath();
+      for(var px=-150;px<=150;px++){var x=px/50;var y=(x-p.h)*(x-p.h);var sx=ox+px;var sy=oy-y*15;if(sy<10)continue;if(px===-150)ctx.moveTo(sx,sy);else ctx.lineTo(sx,sy);}ctx.stroke();
+      drawDot(ctx,ox+p.h*50,oy,4,p.c);
+    });
+    drawLabel(ctx,'"h" shifts horizontally (OPPOSITE sign)',w/2,25,{size:12,color:C.text,bold:true});
+    drawLabel(ctx,'(x-3)\u00b2 \u2192 right 3',w-80,oy-60,{size:10,color:C.accent});
+    drawLabel(ctx,'(x+2)\u00b2 \u2192 left 2',70,oy-40,{size:10,color:C.gold});
+  }},
+  {text:'"k" shifts the parabola UP or DOWN. y = x\u00b2 + k. Positive k = up. Negative k = down.',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h,{ox:w/2,oy:h/2});
+    var ox=w/2,oy=h/2;
+    var shifts=[{k:0,c:C.textDim,l:'k=0'},{k:3,c:C.green,l:'k=+3 (up)'},{k:-2,c:C.red,l:'k=-2 (down)'}];
+    shifts.forEach(function(p){
+      ctx.strokeStyle=p.c;ctx.lineWidth=p.k===0?1.5:2.5;ctx.beginPath();
+      for(var px=-100;px<=100;px++){var x=px/50;var y=x*x+p.k;var sx=ox+px;var sy=oy-y*25;if(sy<10||sy>h-10)continue;if(px===-100)ctx.moveTo(sx,sy);else ctx.lineTo(sx,sy);}ctx.stroke();
+      drawDot(ctx,ox,oy-p.k*25,4,p.c);
+    });
+    drawLabel(ctx,'"k" shifts vertically (same sign)',w/2,18,{size:12,color:C.text,bold:true});
+    drawLabel(ctx,'+3 = up',ox+20,oy-3*25-10,{size:10,color:C.green});
+    drawLabel(ctx,'-2 = down',ox+20,oy+2*25+14,{size:10,color:C.red});
+  }},
+  {text:'Putting it all together: y = a(x-h)\u00b2 + k. "a" stretches, "h" shifts horizontally, "k" shifts vertically. Vertex is at (h, k).',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h,{ox:w/2,oy:h/2});
+    var ox=w/2,oy=h/2,hv=2,kv=3,av=-1.5;
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.beginPath();
+    for(var px=-120;px<=120;px++){var x=px/50;var y=x*x;var sx=ox+px;var sy=oy-y*18;if(sy<10)continue;if(px===-120)ctx.moveTo(sx,sy);else ctx.lineTo(sx,sy);}ctx.stroke();
+    ctx.strokeStyle=C.gold;ctx.lineWidth=2.5;ctx.beginPath();
+    for(var px2=-120;px2<=120;px2++){var x2=px2/50;var y2=av*(x2-hv)*(x2-hv)+kv;var sx2=ox+px2;var sy2=oy-y2*18;if(sy2<10||sy2>h-10)continue;if(px2===-120)ctx.moveTo(sx2,sy2);else ctx.lineTo(sx2,sy2);}ctx.stroke();
+    drawDot(ctx,ox+hv*50,oy-kv*18,6,C.gold);
+    drawLabel(ctx,'y = -1.5(x-2)\u00b2 + 3',w/2,18,{size:13,color:C.gold,bold:true});
+    drawLabel(ctx,'vertex (2, 3)',ox+hv*50+10,oy-kv*18-12,{size:10,color:C.gold});
+    drawLabel(ctx,'parent y=x\u00b2',70,40,{size:9,color:C.textDim});
+    drawLabel(ctx,'a=-1.5: flipped + narrow | h=2: right 2 | k=3: up 3',w/2,h-12,{size:10,color:C.text});
+  }}
+]});
+
+/* ── SOH CAH TOA ── */
+EXPLAINERS.push({title:'SOH CAH TOA: Right Triangle Trig',lessonId:'soh-cah-toa',frames:[
+  {text:'In a right triangle, the three sides have names relative to an angle \u03b8: opposite, adjacent, and hypotenuse.',draw:function(ctx,w,h,t){
+    refreshC();
+    var ax=80,ay=h-50,bx=300,by=h-50,cx2=300,cy2=80;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.strokeRect(bx-15,by-15,15,15);
+    drawLabel(ctx,'\u03b8',ax+25,ay-15,{size:16,color:C.gold,bold:true});
+    drawLabel(ctx,'opposite',bx+15,(by+cy2)/2,{size:12,color:C.red,bold:true});
+    drawLabel(ctx,'adjacent',(ax+bx)/2,h-30,{size:12,color:C.green,bold:true});
+    drawLabel(ctx,'hypotenuse',(ax+cx2)/2-20,(ay+cy2)/2-15,{size:12,color:C.accent,bold:true});
+  }},
+  {text:'SOH: sin \u03b8 = Opposite / Hypotenuse. It tells you the ratio of the side across from \u03b8 to the longest side.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'S O H',w/2,50,{size:28,color:C.red,bold:true});
+    drawLabel(ctx,'sin \u03b8 = Opposite \u00f7 Hypotenuse',w/2,95,{size:15,color:C.text,bold:true});
+    drawLabel(ctx,'Example: opposite = 3, hypotenuse = 5',w/2,140,{size:12,color:C.textDim});
+    drawLabel(ctx,'sin \u03b8 = 3/5 = 0.6',w/2,170,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'\u03b8 = sin\u207b\u00b9(0.6) \u2248 36.87\u00b0',w/2,200,{size:13,color:C.green});
+  }},
+  {text:'CAH: cos \u03b8 = Adjacent / Hypotenuse. The side NEXT TO \u03b8 divided by the longest side.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'C A H',w/2,50,{size:28,color:C.green,bold:true});
+    drawLabel(ctx,'cos \u03b8 = Adjacent \u00f7 Hypotenuse',w/2,95,{size:15,color:C.text,bold:true});
+    drawLabel(ctx,'Example: adjacent = 4, hypotenuse = 5',w/2,140,{size:12,color:C.textDim});
+    drawLabel(ctx,'cos \u03b8 = 4/5 = 0.8',w/2,170,{size:14,color:C.gold,bold:true});
+  }},
+  {text:'TOA: tan \u03b8 = Opposite / Adjacent. How tall the opposite side is compared to the adjacent side.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'T O A',w/2,50,{size:28,color:C.secondary,bold:true});
+    drawLabel(ctx,'tan \u03b8 = Opposite \u00f7 Adjacent',w/2,95,{size:15,color:C.text,bold:true});
+    drawLabel(ctx,'Example: opposite = 3, adjacent = 4',w/2,140,{size:12,color:C.textDim});
+    drawLabel(ctx,'tan \u03b8 = 3/4 = 0.75',w/2,170,{size:14,color:C.gold,bold:true});
+  }},
+  {text:'To find a missing SIDE: pick the ratio that uses the side you want and the side you know. To find a missing ANGLE: use the inverse (sin\u207b\u00b9, cos\u207b\u00b9, tan\u207b\u00b9).',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Finding a side:',w/2,40,{size:13,color:C.text,bold:true});
+    drawLabel(ctx,'Know angle + one side \u2192 use SOH CAH TOA \u2192 solve for unknown side',w/2,65,{size:11,color:C.textDim});
+    drawLabel(ctx,'Finding an angle:',w/2,110,{size:13,color:C.text,bold:true});
+    drawLabel(ctx,'Know two sides \u2192 compute the ratio \u2192 use inverse trig',w/2,135,{size:11,color:C.textDim});
+    drawLabel(ctx,'\u03b8 = sin\u207b\u00b9(O/H)  or  \u03b8 = cos\u207b\u00b9(A/H)  or  \u03b8 = tan\u207b\u00b9(O/A)',w/2,175,{size:12,color:C.gold,bold:true});
+  }}
+]});
+
+/* ── Sine Law & Cosine Law ── */
+EXPLAINERS.push({title:'Sine Law & Cosine Law',lessonId:'sine-cosine-law',frames:[
+  {text:'SOH CAH TOA only works for RIGHT triangles. For ANY triangle, we need the sine law and cosine law.',draw:function(ctx,w,h,t){
+    refreshC();
+    var ax=60,ay=h-50,bx=320,by=h-50,cx2=200,cy2=40;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    drawLabel(ctx,'A',ax-12,ay+5,{size:13,color:C.gold,bold:true});
+    drawLabel(ctx,'B',bx+8,by+5,{size:13,color:C.gold,bold:true});
+    drawLabel(ctx,'C',cx2,cy2-10,{size:13,color:C.gold,bold:true});
+    drawLabel(ctx,'a',(bx+cx2)/2+10,(by+cy2)/2,{size:12,color:C.red});
+    drawLabel(ctx,'b',(ax+cx2)/2-15,(ay+cy2)/2,{size:12,color:C.green});
+    drawLabel(ctx,'c',(ax+bx)/2,h-35,{size:12,color:C.secondary});
+    drawLabel(ctx,'Not a right triangle \u2014 need new tools!',w/2,h-10,{size:11,color:C.text});
+  }},
+  {text:'Sine Law: a/sin A = b/sin B = c/sin C. Use when you know an angle and its opposite side (AAS or ASA).',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Sine Law',w/2,35,{size:18,color:C.accent,bold:true});
+    drawLabel(ctx,'a / sin A  =  b / sin B  =  c / sin C',w/2,75,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'Use when: you know a side and its OPPOSITE angle',w/2,115,{size:11,color:C.text});
+    drawLabel(ctx,'Example: A=40\u00b0, a=8, B=60\u00b0. Find b.',w/2,155,{size:12,color:C.textDim});
+    drawLabel(ctx,'8/sin40\u00b0 = b/sin60\u00b0',w/2,185,{size:13,color:C.text});
+    drawLabel(ctx,'b = 8\u00b7sin60\u00b0 / sin40\u00b0 \u2248 10.78',w/2,215,{size:14,color:C.green,bold:true});
+  }},
+  {text:'Cosine Law: c\u00b2 = a\u00b2 + b\u00b2 - 2ab\u00b7cos C. Use when you know two sides and the included angle (SAS) or all three sides (SSS).',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Cosine Law',w/2,35,{size:18,color:C.accent,bold:true});
+    drawLabel(ctx,'c\u00b2 = a\u00b2 + b\u00b2 - 2ab \u00b7 cos C',w/2,75,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'This is the Pythagorean theorem GENERALIZED!',w/2,110,{size:11,color:C.text});
+    drawLabel(ctx,'When C=90\u00b0: cos 90\u00b0=0, so c\u00b2=a\u00b2+b\u00b2',w/2,135,{size:10,color:C.textDim});
+    drawLabel(ctx,'Example: a=5, b=7, C=50\u00b0. Find c.',w/2,170,{size:12,color:C.textDim});
+    drawLabel(ctx,'c\u00b2 = 25 + 49 - 2(5)(7)cos50\u00b0 \u2248 28.99',w/2,200,{size:13,color:C.text});
+    drawLabel(ctx,'c \u2248 5.38',w/2,230,{size:14,color:C.green,bold:true});
+  }}
+]});
+
+/* ── Linear Equations ── */
+EXPLAINERS.push({title:'Solving Equations: Balance the Scale',lessonId:'linear-equations',frames:[
+  {text:'An equation is like a balance scale. Both sides must stay equal. Whatever you do to one side, do to the other.',draw:function(ctx,w,h,t){
+    refreshC();
+    var cx=w/2,base=h-50;
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx,base);ctx.lineTo(cx,base-30);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cx-120,base-30);ctx.lineTo(cx+120,base-30);ctx.stroke();
+    ctx.fillStyle=C.accent+'40';ctx.fillRect(cx-110,base-60,80,30);
+    ctx.fillStyle=C.gold+'40';ctx.fillRect(cx+30,base-60,80,30);
+    drawLabel(ctx,'3x + 5',cx-70,base-42,{size:12,color:C.accent,bold:true});
+    drawLabel(ctx,'20',cx+70,base-42,{size:12,color:C.gold,bold:true});
+    drawLabel(ctx,'Both sides must stay EQUAL',w/2,25,{size:12,color:C.text,bold:true});
+  }},
+  {text:'Step 1: Move constants to one side. Subtract 5 from BOTH sides: 3x = 15.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'3x + 5 = 20',w/2,50,{size:16,color:C.text});
+    drawLabel(ctx,'-5      -5',w/2,80,{size:14,color:C.red,bold:true});
+    drawLabel(ctx,'\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500',w/2,100,{size:12,color:C.textDim});
+    drawLabel(ctx,'3x = 15',w/2,130,{size:18,color:C.accent,bold:true});
+    drawLabel(ctx,'We subtracted 5 from BOTH sides to keep the balance.',w/2,170,{size:11,color:C.textDim});
+  }},
+  {text:'Step 2: Divide both sides by the coefficient. Divide by 3: x = 5.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'3x = 15',w/2,50,{size:16,color:C.text});
+    drawLabel(ctx,'\u00f73     \u00f73',w/2,80,{size:14,color:C.red,bold:true});
+    drawLabel(ctx,'\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500',w/2,100,{size:12,color:C.textDim});
+    drawLabel(ctx,'x = 5',w/2,135,{size:22,color:C.green,bold:true});
+    drawLabel(ctx,'Check: 3(5) + 5 = 15 + 5 = 20 \u2714',w/2,180,{size:12,color:C.gold});
+    drawLabel(ctx,'ALWAYS check by substituting back!',w/2,210,{size:11,color:C.textDim});
+  }}
+]});
+
+/* ── Factoring Quadratics ── */
+EXPLAINERS.push({title:'Factoring: Un-Multiplying',lessonId:'factoring-quadratics',frames:[
+  {text:'Factoring is the REVERSE of expanding. If (x+2)(x+3) = x\u00b2+5x+6, then factoring x\u00b2+5x+6 gives (x+2)(x+3).',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Expanding (FOIL):',w/2,40,{size:13,color:C.textDim});
+    drawLabel(ctx,'(x+2)(x+3)  \u2192  x\u00b2 + 5x + 6',w/2,70,{size:15,color:C.accent,bold:true});
+    drawLabel(ctx,'\u2b06 Factoring (reverse):',w/2,120,{size:13,color:C.textDim});
+    drawLabel(ctx,'x\u00b2 + 5x + 6  \u2192  (x+2)(x+3)',w/2,150,{size:15,color:C.gold,bold:true});
+    drawLabel(ctx,'Find two numbers that multiply to 6 and add to 5',w/2,200,{size:12,color:C.text});
+    drawLabel(ctx,'2 \u00d7 3 = 6  and  2 + 3 = 5  \u2714',w/2,225,{size:13,color:C.green,bold:true});
+  }},
+  {text:'The method: for x\u00b2 + bx + c, find two numbers p and q where p\u00d7q = c and p+q = b. Answer: (x+p)(x+q).',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'x\u00b2 + bx + c',w/2,35,{size:16,color:C.accent,bold:true});
+    drawLabel(ctx,'Find p and q where:',w/2,75,{size:12,color:C.text});
+    drawLabel(ctx,'p \u00d7 q = c  (the constant)',w/2,105,{size:14,color:C.gold,bold:true});
+    drawLabel(ctx,'p + q = b  (the middle coefficient)',w/2,135,{size:14,color:C.green,bold:true});
+    drawLabel(ctx,'Then: (x + p)(x + q)',w/2,175,{size:16,color:C.accent,bold:true});
+    drawLabel(ctx,'This is the core of factoring simple trinomials.',w/2,215,{size:11,color:C.textDim});
+  }},
+  {text:'Watch the signs! x\u00b2 - 7x + 12: need p\u00d7q = +12 and p+q = -7. Both negative: p=-3, q=-4.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'x\u00b2 - 7x + 12',w/2,40,{size:16,color:C.text});
+    drawLabel(ctx,'p \u00d7 q = +12  (positive)',w/2,80,{size:13,color:C.gold});
+    drawLabel(ctx,'p + q = -7   (negative)',w/2,110,{size:13,color:C.green});
+    drawLabel(ctx,'Both must be negative (neg \u00d7 neg = pos, neg + neg = neg)',w/2,145,{size:11,color:C.textDim});
+    drawLabel(ctx,'p = -3, q = -4',w/2,180,{size:14,color:C.red,bold:true});
+    drawLabel(ctx,'(-3)(-4) = 12 \u2714   (-3)+(-4) = -7 \u2714',w/2,210,{size:12,color:C.green});
+    drawLabel(ctx,'Answer: (x-3)(x-4)',w/2,240,{size:15,color:C.accent,bold:true});
+  }}
+]});
+
+/* ── Angle Relationships ── */
+EXPLAINERS.push({title:'Angles with Parallel Lines',lessonId:'angles-lines',frames:[
+  {text:'When a line (transversal) crosses two parallel lines, it creates 8 angles with special relationships.',draw:function(ctx,w,h,t){
+    refreshC();
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(40,80);ctx.lineTo(w-40,80);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(40,180);ctx.lineTo(w-40,180);ctx.stroke();
+    ctx.strokeStyle=C.gold;ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(120,30);ctx.lineTo(280,h-10);ctx.stroke();
+    drawLabel(ctx,'parallel',w-60,75,{size:10,color:C.accent});
+    drawLabel(ctx,'parallel',w-60,175,{size:10,color:C.accent});
+    drawLabel(ctx,'transversal',285,h-25,{size:10,color:C.gold});
+    drawLabel(ctx,'8 angles formed \u2014 but only 2 different sizes!',w/2,h-5,{size:11,color:C.text});
+  }},
+  {text:'Alternate interior angles are EQUAL. They are on opposite sides of the transversal, between the parallel lines.',draw:function(ctx,w,h,t){
+    refreshC();
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(40,80);ctx.lineTo(w-40,80);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(40,180);ctx.lineTo(w-40,180);ctx.stroke();
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(140,30);ctx.lineTo(260,h-10);ctx.stroke();
+    ctx.fillStyle=C.green+'40';ctx.beginPath();ctx.arc(185,80,20,0.4,PI/2);ctx.lineTo(185,80);ctx.fill();
+    ctx.fillStyle=C.green+'40';ctx.beginPath();ctx.arc(215,180,20,PI+0.4,PI*1.5);ctx.lineTo(215,180);ctx.fill();
+    drawLabel(ctx,'These two are EQUAL',w/2,135,{size:13,color:C.green,bold:true});
+    drawLabel(ctx,'(alternate interior angles)',w/2,155,{size:11,color:C.textDim});
+  }},
+  {text:'Corresponding angles are EQUAL (same position at each intersection). Co-interior angles add to 180\u00b0.',draw:function(ctx,w,h,t){
+    refreshC();
+    drawLabel(ctx,'Key angle relationships:',w/2,30,{size:13,color:C.text,bold:true});
+    drawLabel(ctx,'Alternate interior = EQUAL',w/2,65,{size:12,color:C.green});
+    drawLabel(ctx,'Corresponding = EQUAL',w/2,95,{size:12,color:C.accent});
+    drawLabel(ctx,'Co-interior = add to 180\u00b0',w/2,125,{size:12,color:C.gold});
+    drawLabel(ctx,'Vertically opposite = EQUAL',w/2,155,{size:12,color:C.purple});
+    drawLabel(ctx,'Supplementary = add to 180\u00b0',w/2,185,{size:12,color:C.red});
+    drawLabel(ctx,'With these rules, if you know ONE angle, you can find ALL of them.',w/2,225,{size:11,color:C.textDim});
+  }}
+]});
+
+/* ── Coordinate Geometry ── */
+EXPLAINERS.push({title:'Distance & Midpoint Formulas',lessonId:'coordinate-geometry',frames:[
+  {text:'The distance between two points is the Pythagorean theorem in disguise!',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var x1=100,y1=h-70,x2=300,y2=70;
+    drawDot(ctx,x1,y1,5,C.accent);drawDot(ctx,x2,y2,5,C.accent);
+    ctx.strokeStyle=C.gold;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    ctx.setLineDash([4,4]);ctx.strokeStyle=C.green;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y1);ctx.stroke();
+    ctx.strokeStyle=C.red;ctx.beginPath();ctx.moveTo(x2,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.setLineDash([]);
+    drawLabel(ctx,'\u0394x',(x1+x2)/2,y1+15,{size:11,color:C.green});
+    drawLabel(ctx,'\u0394y',x2+15,(y1+y2)/2,{size:11,color:C.red});
+    drawLabel(ctx,'d',( x1+x2)/2-20,(y1+y2)/2-10,{size:13,color:C.gold,bold:true});
+    drawLabel(ctx,'d = \u221a(\u0394x\u00b2 + \u0394y\u00b2)',w/2,25,{size:13,color:C.text,bold:true});
+  }},
+  {text:'The midpoint is just the AVERAGE of the coordinates: M = ((x\u2081+x\u2082)/2, (y\u2081+y\u2082)/2).',draw:function(ctx,w,h,t){
+    refreshC(); drawAxes(ctx,w,h);
+    var x1=80,y1=h-60,x2=320,y2=60;
+    drawDot(ctx,x1,y1,5,C.accent);drawDot(ctx,x2,y2,5,C.accent);
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    var mx=(x1+x2)/2,my=(y1+y2)/2;
+    drawDot(ctx,mx,my,6,C.gold);
+    drawLabel(ctx,'Midpoint M',mx+10,my-12,{size:12,color:C.gold,bold:true});
+    drawLabel(ctx,'Average the x-values, average the y-values',w/2,25,{size:12,color:C.text});
+  }}
+]});
+
 /* ── Init ── */
 function init() {
   EXPLAINERS.forEach(function(config) { createExplainer(config); });
