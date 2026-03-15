@@ -2137,22 +2137,25 @@ EXPLAINERS.push((function() {
 EXPLAINERS.push({title:'The Pythagorean Theorem Visually',lessonId:'scientific-pythagorean',frames:[
   {text:'Consider a right triangle with legs a and b and hypotenuse c.',draw:function(ctx,w,h,t){
     refreshC(); var et=easeInOut(t);
-    var ax=80,ay=h-50,bx=280,by=h-50,cx2=80,cy2=80;
+    var ax=110,ay=200,bx=270,by=200,cx2=110,cy2=80;
     ctx.strokeStyle=C.accent;ctx.lineWidth=2+et;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
     ctx.fillStyle=C.accent+'30';ctx.fill();
-    drawLabel(ctx,'a',75,h/2,{size:14,color:C.green,bold:true});
-    drawLabel(ctx,'b',(ax+bx)/2,h-35,{size:14,color:C.secondary,bold:true});
+    drawLabel(ctx,'a',ax-18,(cy2+ay)/2,{size:14,color:C.green,bold:true});
+    drawLabel(ctx,'b',(ax+bx)/2,ay+18,{size:14,color:C.secondary,bold:true});
     drawLabel(ctx,'c',(bx+cx2)/2+15,(by+cy2)/2,{size:14,color:C.gold,bold:true});
-    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.strokeRect(ax,ay-15,15,15);
+    ctx.strokeStyle=C.textDim;ctx.lineWidth=1;ctx.strokeRect(ax,ay-12,12,12);
   }},
-  {text:'Build a square on each side. The area of the square on side a is a\u00b2.',draw:function(ctx,w,h,t){
+  {text:'Build a square on each side. The area of the square on side a is a\u00b2, and b is b\u00b2.',draw:function(ctx,w,h,t){
     refreshC();var et=easeInOut(t);
-    var ax=120,ay=h-60,bx=280,by=h-60,cx2=120,cy2=100;
+    var ax=130,ay=180,bx=250,by=180,cx2=130,cy2=100;
+    var aH=ay-cy2, bW=bx-ax;
     ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
-    var aLen=(ay-cy2)*et;ctx.fillStyle=C.green+'30';ctx.fillRect(ax-aLen,cy2,aLen,ay-cy2);ctx.strokeStyle=C.green;ctx.strokeRect(ax-aLen,cy2,aLen,ay-cy2);
-    drawLabel(ctx,'a\u00b2',ax-aLen/2,(cy2+ay)/2,{size:12,color:C.green,bold:true});
-    var bLen=(bx-ax)*et;ctx.fillStyle=C.secondary+'30';ctx.fillRect(ax,ay,bLen,bLen);ctx.strokeStyle=C.secondary;ctx.strokeRect(ax,ay,bLen,bLen);
-    drawLabel(ctx,'b\u00b2',ax+bLen/2,ay+bLen/2,{size:12,color:C.secondary,bold:true});
+    var aLen=aH*et;ctx.fillStyle=C.green+'30';ctx.fillRect(ax-aLen,cy2,aLen,aH);ctx.strokeStyle=C.green;ctx.strokeRect(ax-aLen,cy2,aLen,aH);
+    drawLabel(ctx,'a\u00b2',ax-aLen/2,(cy2+ay)/2,{size:11,color:C.green,bold:true});
+    var bLen=bW*et;ctx.fillStyle=C.secondary+'30';ctx.fillRect(ax,ay,bLen,bLen>0?Math.min(bLen,h-ay-5):0);ctx.strokeStyle=C.secondary;ctx.strokeRect(ax,ay,bLen,Math.min(bLen,h-ay-5));
+    if(bLen>10)drawLabel(ctx,'b\u00b2',ax+bLen/2,ay+Math.min(bLen,h-ay-5)/2,{size:11,color:C.secondary,bold:true});
+    drawLabel(ctx,'a',ax-8,(cy2+ay)/2,{size:10,color:C.green});
+    drawLabel(ctx,'b',(ax+bx)/2,ay+10,{size:10,color:C.secondary});
   }},
   {text:'The square on the hypotenuse c has area c\u00b2. The key insight: a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
     refreshC();
@@ -2163,12 +2166,13 @@ EXPLAINERS.push({title:'The Pythagorean Theorem Visually',lessonId:'scientific-p
   }},
   {text:'Example: a=3, b=4. Then c\u00b2 = 9+16 = 25, so c = 5. The famous 3-4-5 triangle.',draw:function(ctx,w,h,t){
     refreshC();var et=easeInOut(t);
-    var ax=100,ay=h-50,bx=260,by=h-50,cx2=100,cy2=90;
+    var ax=120,ay=200,bx=260,by=200,cx2=120,cy2=95;
     ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
-    drawLabel(ctx,'3',85,(cy2+ay)/2,{size:14,color:C.green,bold:true});
-    drawLabel(ctx,'4',(ax+bx)/2,h-35,{size:14,color:C.secondary,bold:true});
+    ctx.fillStyle=C.accent+'20';ctx.fill();
+    drawLabel(ctx,'3',ax-18,(cy2+ay)/2,{size:14,color:C.green,bold:true});
+    drawLabel(ctx,'4',(ax+bx)/2,ay+18,{size:14,color:C.secondary,bold:true});
     drawLabel(ctx,'5',(bx+cx2)/2+15,(by+cy2)/2,{size:14,color:C.gold,bold:true});
-    drawLabel(ctx,'3\u00b2 + 4\u00b2 = 9 + 16 = 25 = 5\u00b2',w/2,30,{size:13,color:C.text,bold:true});
+    drawLabel(ctx,'3\u00b2 + 4\u00b2 = 9 + 16 = 25 = 5\u00b2',w/2,40,{size:13,color:C.text,bold:true});
   }}
 ]});
 
