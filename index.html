@@ -1339,6 +1339,89 @@
                 </div>
             </div>
 
+            <div class="note-box">
+                <div class="box-title">Algebraic Techniques for Evaluating Limits</div>
+                <div class="box-content">
+                    <p>When direct substitution gives $\frac{0}{0}$ (indeterminate form), use one of these algebraic techniques to simplify first, then substitute again.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 1: Factoring</div>
+                <div class="box-content">
+                    <p><strong>When to use:</strong> The numerator and denominator share a common factor that causes the $\frac{0}{0}$.</p>
+                    <p><strong>Method:</strong> Factor both, cancel the common factor, then substitute.</p>
+                    <p><strong>Example:</strong> $\displaystyle\lim_{x \to 3}\frac{x^2 - 9}{x - 3} = \lim_{x \to 3}\frac{(x-3)(x+3)}{x-3} = \lim_{x \to 3}(x+3) = 6$</p>
+                    <p>The $(x-3)$ factor was causing the $\frac{0}{0}$. Once canceled, direct substitution works.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 2: Conjugate Method (Rationalizing)</div>
+                <div class="box-content">
+                    <p><strong>When to use:</strong> The expression involves a square root, and you get $\frac{0}{0}$.</p>
+                    <p><strong>Method:</strong> Multiply numerator and denominator by the <em>conjugate</em> — the same expression with the opposite sign between terms.</p>
+                    <p><strong>Example:</strong> $\displaystyle\lim_{x \to 0}\frac{\sqrt{x+4} - 2}{x}$</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Direct substitution gives $\frac{\sqrt{4}-2}{0} = \frac{0}{0}$. The square root is the problem.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Multiply by the conjugate $\frac{\sqrt{x+4}+2}{\sqrt{x+4}+2}$: $$\frac{(\sqrt{x+4}-2)(\sqrt{x+4}+2)}{x(\sqrt{x+4}+2)} = \frac{(x+4) - 4}{x(\sqrt{x+4}+2)} = \frac{x}{x(\sqrt{x+4}+2)}$$</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">Cancel the $x$: $\frac{1}{\sqrt{x+4}+2}$. Now substitute $x=0$: $\frac{1}{\sqrt{4}+2} = \frac{1}{4}$.</div></div>
+                    </div>
+                    <p><strong>Why it works:</strong> Multiplying $(a-b)(a+b) = a^2 - b^2$ eliminates the square root in the numerator, revealing the hidden common factor.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 3: Common Denominator</div>
+                <div class="box-content">
+                    <p><strong>When to use:</strong> The expression is a difference of two fractions that gives $\frac{0}{0}$ or $\infty - \infty$.</p>
+                    <p><strong>Method:</strong> Combine into a single fraction using a common denominator, then simplify.</p>
+                    <p><strong>Example:</strong> $\displaystyle\lim_{x \to 0}\left(\frac{1}{x} - \frac{1}{\sin x}\right)$</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">As $x \to 0$, both terms $\to \infty$. This is $\infty - \infty$ (indeterminate).</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Combine: $\frac{1}{x} - \frac{1}{\sin x} = \frac{\sin x - x}{x \sin x}$. Now it's $\frac{0}{0}$ — progress!</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">This can be evaluated with Taylor series or L'Hopital's Rule (covered later): the answer is $0$.</div></div>
+                    </div>
+                    <p><strong>Key idea:</strong> Combining fractions turns $\infty - \infty$ into $\frac{0}{0}$, which we can then handle with other techniques.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 4: Limits at Infinity</div>
+                <div class="box-content">
+                    <p><strong>When to use:</strong> $x \to \pm\infty$ and you need to find the horizontal asymptote.</p>
+                    <p><strong>Method:</strong> Divide every term by the highest power of $x$ in the denominator.</p>
+                    <p><strong>Quick rules for $\lim_{x \to \infty}\frac{P(x)}{Q(x)}$ where $P$ and $Q$ are polynomials:</strong></p>
+                    <p>$\bullet$ <strong>Same degree</strong> (e.g. $\frac{3x^2+1}{7x^2-2}$): limit = ratio of leading coefficients = $\frac{3}{7}$</p>
+                    <p>$\bullet$ <strong>Numerator degree higher</strong> (e.g. $\frac{x^3}{x^2+1}$): limit = $\pm\infty$ (no horizontal asymptote)</p>
+                    <p>$\bullet$ <strong>Denominator degree higher</strong> (e.g. $\frac{x}{x^2+1}$): limit = $0$</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 5: Special Limits (Memorize These)</div>
+                <div class="box-content">
+                    <p>These limits appear constantly in calculus. Know them by heart:</p>
+                    <p>$$\lim_{x \to 0}\frac{\sin x}{x} = 1 \qquad \lim_{x \to 0}\frac{1 - \cos x}{x} = 0 \qquad \lim_{x \to 0}\frac{1 - \cos x}{x^2} = \frac{1}{2}$$</p>
+                    <p>$$\lim_{x \to 0}\frac{e^x - 1}{x} = 1 \qquad \lim_{x \to 0}\frac{\ln(1+x)}{x} = 1 \qquad \lim_{x \to 0}\frac{(1+x)^n - 1}{x} = n$$</p>
+                    <p>$$\lim_{x \to \infty}\left(1 + \frac{1}{x}\right)^x = e \qquad \lim_{x \to 0}\frac{\sin(ax)}{bx} = \frac{a}{b} \qquad \lim_{x \to 0}\frac{\tan x}{x} = 1$$</p>
+                    <p><strong>Tip:</strong> Most of these come from the Taylor series $e^x \approx 1+x$, $\sin x \approx x$, $\cos x \approx 1-\frac{x^2}{2}$, $\ln(1+x) \approx x$ near $x=0$.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Technique 6: Multiplying by a Strategic Form of 1</div>
+                <div class="box-content">
+                    <p><strong>When to use:</strong> You need to convert an expression into a recognizable special limit form.</p>
+                    <p><strong>Example:</strong> $\displaystyle\lim_{x \to 0}\frac{\sin(5x)}{\sin(3x)}$</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">This is $\frac{0}{0}$. Rewrite by multiplying by $\frac{5x}{5x} \cdot \frac{3x}{3x}$: $$\frac{\sin(5x)}{\sin(3x)} = \frac{\sin(5x)}{5x} \cdot \frac{3x}{\sin(3x)} \cdot \frac{5x}{3x}$$</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">As $x \to 0$: $\frac{\sin(5x)}{5x} \to 1$ and $\frac{3x}{\sin(3x)} \to 1$. So the limit is $1 \cdot 1 \cdot \frac{5}{3} = \frac{5}{3}$.</div></div>
+                    </div>
+                    <p><strong>General pattern:</strong> $\lim_{x \to 0}\frac{\sin(ax)}{\sin(bx)} = \frac{a}{b}$.</p>
+                </div>
+            </div>
+
             <div class="theorem-box">
                 <div class="box-title">Squeeze Theorem (Sandwich Theorem)</div>
                 <div class="box-content">
