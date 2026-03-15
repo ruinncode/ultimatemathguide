@@ -2157,12 +2157,22 @@ EXPLAINERS.push({title:'The Pythagorean Theorem Visually',lessonId:'scientific-p
     drawLabel(ctx,'a',ax-8,(cy2+ay)/2,{size:10,color:C.green});
     drawLabel(ctx,'b',(ax+bx)/2,ay+10,{size:10,color:C.secondary});
   }},
-  {text:'The square on the hypotenuse c has area c\u00b2. The key insight: a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
-    refreshC();
-    drawLabel(ctx,'a\u00b2 + b\u00b2 = c\u00b2',w/2,h/2-20,{size:22,color:C.gold,bold:true});
-    drawLabel(ctx,'The area of the two smaller squares',w/2,h/2+20,{size:12,color:C.text});
-    drawLabel(ctx,'ALWAYS equals the area of the big square.',w/2,h/2+40,{size:12,color:C.text});
-    drawLabel(ctx,'This works for EVERY right triangle.',w/2,h-30,{size:11,color:C.textDim});
+  {text:'Now add the square on the hypotenuse. The two smaller squares TOGETHER have the same area as the big square: a\u00b2 + b\u00b2 = c\u00b2.',draw:function(ctx,w,h,t){
+    refreshC();var et=easeInOut(t);
+    var ax=140,ay=170,bx=240,by=170,cx2=140,cy2=100;
+    var aH=ay-cy2,bW=bx-ax;
+    ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.lineTo(cx2,cy2);ctx.closePath();ctx.stroke();
+    ctx.fillStyle=C.green+'25';ctx.fillRect(ax-aH,cy2,aH,aH);ctx.strokeStyle=C.green;ctx.lineWidth=1.5;ctx.strokeRect(ax-aH,cy2,aH,aH);
+    drawLabel(ctx,'a\u00b2',ax-aH/2,(cy2+ay)/2,{size:10,color:C.green,bold:true});
+    ctx.fillStyle=C.secondary+'25';ctx.fillRect(ax,ay,bW,Math.min(bW,h-ay-15));ctx.strokeStyle=C.secondary;ctx.strokeRect(ax,ay,bW,Math.min(bW,h-ay-15));
+    drawLabel(ctx,'b\u00b2',ax+bW/2,ay+Math.min(bW,h-ay-15)/2,{size:10,color:C.secondary,bold:true});
+    var hyp=Math.sqrt(aH*aH+bW*bW);var angle=Math.atan2(aH,bW);
+    ctx.save();ctx.translate(bx,by);ctx.rotate(-angle-PI/2);
+    ctx.fillStyle=C.gold+'20';ctx.fillRect(0,0,hyp*et,hyp*et);ctx.strokeStyle=C.gold;ctx.lineWidth=1.5;ctx.strokeRect(0,0,hyp*et,hyp*et);
+    if(et>0.5)drawLabel(ctx,'c\u00b2',hyp*et/2,hyp*et/2,{size:10,color:C.gold,bold:true});
+    ctx.restore();
+    drawLabel(ctx,'a\u00b2 + b\u00b2 = c\u00b2',w/2,20,{size:15,color:C.gold,bold:true});
+    if(et>0.8)drawLabel(ctx,'The two small areas EQUAL the big area!',w/2,h-8,{size:10,color:C.text});
   }},
   {text:'Example: a=3, b=4. Then c\u00b2 = 9+16 = 25, so c = 5. The famous 3-4-5 triangle.',draw:function(ctx,w,h,t){
     refreshC();var et=easeInOut(t);
