@@ -13,7 +13,12 @@ _s.textContent = [
   '.ve-btn{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.25);color:#a78bfa;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:12px;transition:all .2s;font-family:inherit}',
   '.ve-btn:hover:not(:disabled){background:rgba(108,99,255,.22);color:#c4b5fd}',
   '.ve-btn:disabled{opacity:.3;cursor:default}',
-  '.ve-step-label{color:rgba(255,255,255,.45);font-size:12px;min-width:44px;text-align:center}'
+  '.ve-step-label{color:rgba(255,255,255,.45);font-size:12px;min-width:44px;text-align:center}',
+  'body.light-mode .ve-canvas-wrap{background:#f0f0f5}',
+  'body.light-mode .ve-text{color:rgba(0,0,0,.75)}',
+  'body.light-mode .ve-step-label{color:rgba(0,0,0,.4)}',
+  'body.light-mode .ve-btn{background:rgba(90,82,224,.08);border-color:rgba(90,82,224,.2);color:#5a52e0}',
+  'body.light-mode .ve-btn:hover:not(:disabled){background:rgba(90,82,224,.15)}'
 ].join('\n');
 document.head.appendChild(_s);
 
@@ -21,13 +26,24 @@ document.head.appendChild(_s);
 var DPR = window.devicePixelRatio || 1;
 var PI = Math.PI;
 var EXPLAINERS = [];
-var C = {
-  accent: '#6c63ff', secondary: '#00d2ff', gold: '#f0b832',
-  green: '#34d399', red: '#f87171', purple: '#a78bfa',
-  text: 'rgba(255,255,255,0.8)', textDim: 'rgba(255,255,255,0.4)',
-  grid: 'rgba(255,255,255,0.08)', axis: 'rgba(255,255,255,0.5)',
-  bg: '#0e0e18'
-};
+function isLight() { return document.body.classList.contains('light-mode'); }
+var C = {};
+function refreshC() {
+  var lt = isLight();
+  C.accent = lt ? '#5a52e0' : '#6c63ff';
+  C.secondary = lt ? '#0090b0' : '#00d2ff';
+  C.gold = lt ? '#c89000' : '#f0b832';
+  C.green = lt ? '#1a8a60' : '#34d399';
+  C.red = lt ? '#d04040' : '#f87171';
+  C.purple = lt ? '#7c5cbf' : '#a78bfa';
+  C.text = lt ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)';
+  C.textDim = lt ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.4)';
+  C.grid = lt ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)';
+  C.axis = lt ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)';
+  C.bg = lt ? '#f8f8fa' : '#0e0e18';
+  C.holeFill = lt ? '#f8f8fa' : '#0e0e18';
+}
+refreshC();
 
 /* ── Utility ── */
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -98,7 +114,7 @@ function rectsC(ctx, fn, a, b, n, c, color) {
     var px = c.x(x), pw = dx * c.sx, ph = Math.max(0, fv * c.sy);
     ctx.fillStyle = color || 'rgba(108,99,255,0.3)';
     ctx.fillRect(px, c.oy - ph, pw, ph);
-    ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.lineWidth = 0.5;
+    ctx.strokeStyle = C.grid; ctx.lineWidth = 0.5;
     ctx.strokeRect(px, c.oy - ph, pw, ph);
   }
 }
@@ -211,6 +227,7 @@ function createExplainer(config) {
   var currentStep = 0, animId = null;
 
   function render() {
+    refreshC();
     var frame = config.frames[currentStep];
     if (!frame) return;
     var start = performance.now(), duration = 600;
@@ -959,7 +976,7 @@ EXPLAINERS.push((function() {
       ctx.fillStyle = colors[i % colors.length];
       ctx.globalAlpha = i < nBlocks - 1 ? 1 : et;
       ctx.fillRect(baseX, oy - (total + bh * (i < nBlocks - 1 ? 1 : et)) * 1, barW, bh * (i < nBlocks - 1 ? 1 : et));
-      ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 0.5;
+      ctx.strokeStyle = C.axis; ctx.lineWidth = 0.5;
       ctx.strokeRect(baseX, oy - (total + bh * (i < nBlocks - 1 ? 1 : et)) * 1, barW, bh * (i < nBlocks - 1 ? 1 : et));
       total += vals[i] * (i < nBlocks - 1 ? 1 : et);
       ctx.globalAlpha = 1;
@@ -1420,7 +1437,7 @@ EXPLAINERS.push({
             var colH = (15 + 12 * Math.sin(ix * 0.8 + iy * 0.5)) * et;
             ctx.save(); ctx.fillStyle = 'rgba(108,99,255,' + (0.15 + iy * 0.05) + ')';
             ctx.fillRect(x0, y0 - colH - iy * 4, cw, colH);
-            ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.lineWidth = 0.3;
+            ctx.strokeStyle = C.grid; ctx.lineWidth = 0.3;
             ctx.strokeRect(x0, y0 - colH - iy * 4, cw, colH); ctx.restore();
           }
         }
@@ -1682,7 +1699,7 @@ EXPLAINERS.push((function() {
   function dydx(x, y) { return x - y; }
   function drawField(ctx, w, h) {
     var ox = 40, oy = h - 30, sx = 50, sy = 50;
-    ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1;
+    ctx.save(); ctx.strokeStyle = C.axis; ctx.lineWidth = 1;
     for (var xi = -0.5; xi <= 5.5; xi += 0.5) {
       for (var yi = -1; yi <= 4; yi += 0.5) {
         var s = dydx(xi, yi);
@@ -1898,7 +1915,7 @@ EXPLAINERS.push((function() {
   function drawSq(ctx, cx, cy, s, cornerMap) {
     var corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
     var pts = corners.map(function(c) { return { x: cx + c[0] * s / 2, y: cy + c[1] * s / 2 }; });
-    ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 2;
+    ctx.save(); ctx.strokeStyle = C.axis; ctx.lineWidth = 2;
     ctx.beginPath();
     for (var i = 0; i < 4; i++) { if (i === 0) ctx.moveTo(pts[i].x, pts[i].y); else ctx.lineTo(pts[i].x, pts[i].y); }
     ctx.closePath(); ctx.stroke(); ctx.restore();
@@ -1932,7 +1949,7 @@ EXPLAINERS.push((function() {
           var cx = w / 2, cy = h / 2, s = 120;
           var et = easeInOut(t), angle = et * PI / 2;
           var pts = rotatedCorners(angle);
-          ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 2; ctx.beginPath();
+          ctx.save(); ctx.strokeStyle = C.axis; ctx.lineWidth = 2; ctx.beginPath();
           for (var i = 0; i < 4; i++) {
             var px = cx + pts[i][0] * s / 2, py = cy + pts[i][1] * s / 2;
             if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
@@ -1951,7 +1968,7 @@ EXPLAINERS.push((function() {
           var et = easeInOut(t);
           var corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
           var flipped = corners.map(function(c) { return [lerp(c[0], -c[0], et), c[1]]; });
-          ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 2; ctx.beginPath();
+          ctx.save(); ctx.strokeStyle = C.axis; ctx.lineWidth = 2; ctx.beginPath();
           for (var i = 0; i < 4; i++) {
             var px = cx + flipped[i][0] * s / 2, py = cy + flipped[i][1] * s / 2;
             if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);

@@ -8,6 +8,8 @@
   // ============================================================
 
   const DPR = window.devicePixelRatio || 1;
+  function svIsLight() { return document.body.classList.contains('light-mode'); }
+  function holeFill() { return svIsLight() ? '#f5f5f7' : '#0a0a0f'; }
 
   function makeCanvas(w, h) {
     const c = document.createElement('canvas');
@@ -109,7 +111,7 @@
     plotFn(ctx, x => x === 3 ? NaN : (x * x - 9) / (x - 3), xMin, xMax, sx, sy, ox - xMin * sx, oy, '#6c63ff', 2);
     const hx = ox + (3 - xMin) * sx, hy = oy - 6 * sy;
     ctx.beginPath(); ctx.arc(hx, hy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill();
+    ctx.fillStyle = holeFill(); ctx.fill();
     ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
     ctx.setLineDash([3, 3]); ctx.strokeStyle = '#f0b832'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(ox, hy); ctx.lineTo(w - 15, hy); ctx.stroke();
@@ -127,7 +129,7 @@
     plotFn(ctx, x => x === 0 ? NaN : Math.sin(x) / x, xMin, xMax, sx, sy, ox - xMin * sx, oy, '#6c63ff', 2);
     const cx = ox + (0 - xMin) * sx, cy = oy - 1 * sy;
     ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill();
+    ctx.fillStyle = holeFill(); ctx.fill();
     ctx.strokeStyle = '#f0b832'; ctx.lineWidth = 2; ctx.stroke();
     ctx.setLineDash([3, 3]); ctx.strokeStyle = '#f0b832';
     ctx.beginPath(); ctx.moveTo(ox, cy); ctx.lineTo(w - 15, cy); ctx.stroke();
@@ -220,9 +222,9 @@
     plotFn(ctx, x => (x > 1) ? (x + 1) : NaN, 1.02, xMax, sx, sy, ox - xMin * sx, newOy, '#6c63ff', 2);
     const jx = ox + (1 - xMin) * sx;
     ctx.beginPath(); ctx.arc(jx, newOy - (-2) * sy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = holeFill(); ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.lineWidth = 2; ctx.stroke();
     ctx.beginPath(); ctx.arc(jx, newOy - 2 * sy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.stroke();
+    ctx.fillStyle = holeFill(); ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.stroke();
     ctx.setLineDash([3, 3]); ctx.strokeStyle = '#f87171';
     ctx.beginPath(); ctx.moveTo(jx, 15); ctx.lineTo(jx, h - 10); ctx.stroke();
     ctx.setLineDash([]);
@@ -423,7 +425,7 @@
       if (cfg.holes) cfg.holes.forEach(hole => {
         const px = ox + (hole.x - cfg.xMin) * sx, py = baseOy - hole.y * sy;
         ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2);
-        ctx.fillStyle = '#0a0a0f'; ctx.fill();
+        ctx.fillStyle = holeFill(); ctx.fill();
         ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
       });
 
@@ -442,9 +444,9 @@
         ctx.beginPath(); ctx.moveTo(jx, 15); ctx.lineTo(jx, oy); ctx.stroke();
         ctx.setLineDash([]);
         ctx.beginPath(); ctx.arc(jx, baseOy - cfg.jump.left * sy, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.fillStyle = holeFill(); ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.lineWidth = 2; ctx.stroke();
         ctx.beginPath(); ctx.arc(jx, baseOy - cfg.jump.right * sy, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.stroke();
+        ctx.fillStyle = holeFill(); ctx.fill(); ctx.strokeStyle = '#6c63ff'; ctx.stroke();
         ctx.fillStyle = '#f87171'; ctx.font = '9px Inter'; ctx.textAlign = 'center';
         ctx.fillText('jump', jx, oy + 15);
       }

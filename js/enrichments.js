@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  function _lt() { return document.body.classList.contains('light-mode'); }
+  function _hole() { return _lt() ? '#f5f5f7' : _hole(); }
+
   // ============================================================
   //  THEOREM / DEFINITION ENRICHMENT DATA
   //  Maps box-title text (cleaned) to enrichment objects.
@@ -503,7 +506,7 @@
       ctx.beginPath(); ctx.moveTo(x1, ex.y); ctx.lineTo(x2, ex.y); ctx.stroke();
       [{ x: x1, open: ex.leftOpen }, { x: x2, open: ex.rightOpen }].forEach(pt => {
         ctx.beginPath(); ctx.arc(pt.x, ex.y, 5, 0, Math.PI * 2);
-        ctx.fillStyle = pt.open ? '#0a0a0f' : '#6c63ff'; ctx.fill();
+        ctx.fillStyle = pt.open ? _hole() : '#6c63ff'; ctx.fill();
         ctx.strokeStyle = '#6c63ff'; ctx.lineWidth = 2; ctx.stroke();
       });
       ctx.fillStyle = '#a0a0b0'; ctx.font = '11px Inter, sans-serif';
@@ -696,7 +699,7 @@
     ctx.stroke();
     const holeX = 30 + 4 * 40, holeY = h - 30 - 8 * 15;
     ctx.beginPath(); ctx.arc(holeX, holeY, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = _hole(); ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
     ctx.setLineDash([3, 3]); ctx.strokeStyle = '#f0b832';
     ctx.beginPath(); ctx.moveTo(30, holeY); ctx.lineTo(w - 10, holeY); ctx.stroke();
     ctx.setLineDash([]);
@@ -767,7 +770,7 @@
       } else if (type === 'jump') {
         ctx.beginPath(); ctx.moveTo(ox, h - 55); ctx.lineTo(ox + 42, h - 55); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(ox + 48, h - 80); ctx.lineTo(ox + 90, h - 80); ctx.stroke();
-        ctx.beginPath(); ctx.arc(ox + 45, h - 55, 3, 0, Math.PI * 2); ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.stroke();
+        ctx.beginPath(); ctx.arc(ox + 45, h - 55, 3, 0, Math.PI * 2); ctx.fillStyle = _hole(); ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.stroke();
         ctx.beginPath(); ctx.arc(ox + 45, h - 80, 3, 0, Math.PI * 2); ctx.fillStyle = '#f87171'; ctx.fill();
       } else {
         ctx.beginPath();
@@ -1045,7 +1048,7 @@
     ctx.fillStyle = '#f0b832'; ctx.font = '12px JetBrains Mono'; ctx.textAlign = 'center';
     const gap = 170;
     ctx.beginPath(); ctx.arc(gap, y, 6, 0, Math.PI * 2);
-    ctx.fillStyle = '#0a0a0f'; ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = _hole(); ctx.fill(); ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2; ctx.stroke();
     ctx.fillStyle = '#f87171'; ctx.font = '11px Inter'; ctx.fillText('√2 ≈ 1.414...', gap, y - 15);
     ctx.fillStyle = '#a0a0b0'; ctx.font = '10px Inter';
     ctx.fillText('ℚ has gaps (√2 is missing)', w / 2, y + 30);
