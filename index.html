@@ -1541,12 +1541,30 @@
             </div>
 
             <div class="definition-box">
-                <div class="box-title">The Discriminant</div>
+                <div class="box-title">The Discriminant: Predicting Your Roots Before You Solve</div>
                 <div class="box-content">
-                    <p>The expression under the square root, $\Delta = b^2 - 4ac$, is called the <strong>discriminant</strong>. It tells you the nature of the roots:</p>
-                    <p>$\Delta > 0$: <strong>two distinct real roots</strong>.</p>
-                    <p>$\Delta = 0$: <strong>one repeated real root</strong> (the parabola touches the $x$-axis).</p>
-                    <p>$\Delta < 0$: <strong>no real roots</strong> (the parabola doesn't cross the $x$-axis).</p>
+                    <p>The expression under the square root, $\Delta = b^2 - 4ac$, is called the <strong>discriminant</strong>. It is the single most useful part of the quadratic formula because it tells you <em>how many solutions exist</em> before you do any work:</p>
+
+                    <p style="margin-top:0.75rem;"><strong>Case 1: $\Delta > 0$ (positive) — Two distinct real roots</strong></p>
+                    <p>The square root is a real number, and the $\pm$ gives two different answers. Graphically, the parabola crosses the $x$-axis at two points.</p>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Example: $x^2 - 5x + 6 = 0$ has $\Delta = 25 - 24 = 1 > 0$ → two roots: $x = 2$ and $x = 3$.</p>
+
+                    <p style="margin-top:0.75rem;"><strong>Case 2: $\Delta = 0$ (zero) — One repeated root (double root)</strong></p>
+                    <p>The square root is zero, so $\pm 0$ gives the same answer. Graphically, the parabola just <em>touches</em> the $x$-axis at its vertex — it bounces off without crossing.</p>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Example: $x^2 - 6x + 9 = 0$ has $\Delta = 36 - 36 = 0$ → one root: $x = 3$ (which is $(x-3)^2 = 0$).</p>
+
+                    <p style="margin-top:0.75rem;"><strong>Case 3: $\Delta < 0$ (negative) — No real roots</strong></p>
+                    <p>You cannot take the square root of a negative number (in real numbers), so there are no real solutions. Graphically, the parabola floats entirely above or below the $x$-axis — it never crosses.</p>
+                    <p style="color:var(--text-muted);font-size:0.9rem;">Example: $x^2 + x + 1 = 0$ has $\Delta = 1 - 4 = -3 < 0$ → no real roots. (In complex numbers: $x = \frac{-1 \pm i\sqrt{3}}{2}$.)</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">How to Use the Discriminant on Tests</div>
+                <div class="box-content">
+                    <p><strong>Quick check before solving:</strong> Compute $\Delta = b^2 - 4ac$ first. If the question asks "how many real solutions?" you are done — no need to actually solve the equation.</p>
+                    <p><strong>Perfect square discriminant?</strong> If $\Delta$ is a perfect square (like 0, 1, 4, 9, 16, 25...), the roots are rational and the quadratic can be factored over the integers. If $\Delta$ is positive but not a perfect square, the roots are irrational (involving $\sqrt{}$).</p>
+                    <p><strong>Common exam trick:</strong> "For what values of $k$ does $x^2 + kx + 9 = 0$ have no real roots?" Answer: need $\Delta < 0$, so $k^2 - 36 < 0$, giving $-6 < k < 6$.</p>
                 </div>
             </div>
 
