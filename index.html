@@ -383,6 +383,1734 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════
+     ARITHMETIC & NUMBER SENSE
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="chapter" id="arithmetic" data-chapter="0">
+    <div class="chapter-header">
+        <span class="chapter-number">Foundations</span>
+        <h2>Arithmetic &amp; Number Sense</h2>
+    </div>
+    <p class="chapter-intro">Arithmetic is the bedrock of all mathematics. This chapter reviews integers, fractions, decimals, ratios, exponents, and the Pythagorean Theorem — skills you will rely on in every topic that follows. Mastering these fundamentals now prevents careless errors later.</p>
+
+    <!-- Lesson A.1: Integers & Order of Operations -->
+    <div class="lesson" id="integers-operations" data-lesson="A.1">
+        <div class="lesson-header"><h3>A.1 Integers &amp; Order of Operations</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Integers &amp; Order of Operations (BEDMAS / PEMDAS)</div>
+                <div class="box-content">
+                    <p><strong>Integers</strong> are the set $\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$. They include all whole numbers and their negatives.</p>
+                    <p><strong>Order of Operations</strong> dictates the sequence in which we evaluate an expression:</p>
+                    <p><strong>B</strong>rackets (Parentheses) → <strong>E</strong>xponents → <strong>D</strong>ivision &amp; <strong>M</strong>ultiplication (left to right) → <strong>A</strong>ddition &amp; <strong>S</strong>ubtraction (left to right)</p>
+                    <p>Multiplication and division have <em>equal</em> precedence — evaluate left to right. The same applies to addition and subtraction.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Multi-Step Order of Operations</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Evaluate $3 + 2 \times (8 - 3)^2 \div 5 - 1$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Brackets first:</strong> $(8 - 3) = 5$, so the expression becomes $3 + 2 \times 5^2 \div 5 - 1$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Exponents:</strong> $5^2 = 25$, so we have $3 + 2 \times 25 \div 5 - 1$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Multiplication &amp; Division (left to right):</strong> $2 \times 25 = 50$, then $50 \div 5 = 10$. Now we have $3 + 10 - 1$.</div></div>
+                        <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Addition &amp; Subtraction (left to right):</strong> $3 + 10 = 13$, then $13 - 1 = 12$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $12$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.1.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Evaluate: $4 + 6 \times 3 - 8 \div 2$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Apply BEDMAS — multiplication and division before addition and subtraction.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$6 \times 3 = 18$ and $8 \div 2 = 4$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$4 + 18 - 4 = 18$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $18$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.1.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Evaluate: $-2^2 + (-2)^2 - 3 \times (4 - 7)$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Be careful — $-2^2$ means $-(2^2) = -4$, while $(-2)^2 = 4$.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$-2^2 = -(2^2) = -4$. The exponent applies only to $2$, not the negative sign.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$(-2)^2 = 4$. Here the parentheses make the base $-2$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$(4 - 7) = -3$, so $3 \times (-3) = -9$.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">$-4 + 4 - (-9) = -4 + 4 + 9 = 9$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $9$</p>
+                        <div class="sol-takeaway"><strong>Key takeaway:</strong> The placement of parentheses around a negative base completely changes the result. $-2^2 = -4$ but $(-2)^2 = +4$.</div>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.1.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Evaluate: $\dfrac{12 - 3 \times 2^3}{(10 - 4)^2 \div 9}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Numerator:</strong> $2^3 = 8$, then $3 \times 8 = 24$, then $12 - 24 = -12$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Denominator:</strong> $(10 - 4) = 6$, then $6^2 = 36$, then $36 \div 9 = 4$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$\dfrac{-12}{4} = -3$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $-3$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson A.2: Fractions, Decimals & Percents -->
+    <div class="lesson" id="fractions-decimals" data-lesson="A.2">
+        <div class="lesson-header"><h3>A.2 Fractions, Decimals &amp; Percents</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Converting Between Fractions, Decimals &amp; Percents</div>
+                <div class="box-content">
+                    <p><strong>Fraction → Decimal:</strong> Divide numerator by denominator. E.g. $\frac{3}{8} = 3 \div 8 = 0.375$.</p>
+                    <p><strong>Decimal → Percent:</strong> Multiply by 100. E.g. $0.375 = 37.5\%$.</p>
+                    <p><strong>Percent → Fraction:</strong> Write over 100 and simplify. E.g. $37.5\% = \frac{375}{1000} = \frac{3}{8}$.</p>
+                    <p><strong>Fraction → Percent:</strong> Convert to decimal first, then multiply by 100.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Fraction Operations</div>
+                <div class="box-content">
+                    <p><strong>Addition / Subtraction:</strong> Find the Lowest Common Denominator (LCD), then combine:</p>
+                    <p>$$\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd}$$</p>
+                    <p><strong>Multiplication:</strong> Multiply numerators and denominators directly:</p>
+                    <p>$$\frac{a}{b} \times \frac{c}{d} = \frac{ac}{bd}$$</p>
+                    <p><strong>Division:</strong> Multiply by the reciprocal:</p>
+                    <p>$$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c} = \frac{ad}{bc}$$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Percent Word Problem</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> A jacket originally costs $\$80$. It is on sale for $25\%$ off, and then an additional $10\%$ is taken off the sale price. What is the final price?</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">First discount: $25\%$ of $\$80$ is $0.25 \times 80 = \$20$. Sale price $= 80 - 20 = \$60$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Second discount: $10\%$ of $\$60$ is $0.10 \times 60 = \$6$. Final price $= 60 - 6 = \$54$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $\$54$. Note this is NOT the same as $35\%$ off — successive discounts compound!</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.2.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Compute: $\dfrac{2}{3} + \dfrac{3}{4} - \dfrac{1}{6}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">LCD of 3, 4, 6 is 12.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$\dfrac{2}{3} = \dfrac{8}{12}$, $\dfrac{3}{4} = \dfrac{9}{12}$, $\dfrac{1}{6} = \dfrac{2}{12}$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$\dfrac{8}{12} + \dfrac{9}{12} - \dfrac{2}{12} = \dfrac{15}{12} = \dfrac{5}{4}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\dfrac{5}{4}$ or $1.25$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.2.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Convert $0.0625$ to a fraction in lowest terms, then express it as a percent.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$0.0625 = \dfrac{625}{10000} = \dfrac{1}{16}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">As a percent: $0.0625 \times 100 = 6.25\%$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\dfrac{1}{16} = 6.25\%$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.2.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A population increases from 450 to 522. What is the percent increase?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Change $= 522 - 450 = 72$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Percent increase $= \dfrac{72}{450} \times 100 = 16\%$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $16\%$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson A.3: Ratios, Rates & Proportions -->
+    <div class="lesson" id="ratios-proportions" data-lesson="A.3">
+        <div class="lesson-header"><h3>A.3 Ratios, Rates &amp; Proportions</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Ratio, Rate &amp; Proportion</div>
+                <div class="box-content">
+                    <p><strong>Ratio:</strong> A comparison of two quantities with the same units, written as $a : b$ or $\frac{a}{b}$. Example: 3 boys to 5 girls is the ratio $3:5$.</p>
+                    <p><strong>Rate:</strong> A comparison of two quantities with <em>different</em> units. Example: $60 \text{ km/h}$ (kilometres per hour).</p>
+                    <p><strong>Proportion:</strong> An equation stating that two ratios are equal: $\dfrac{a}{b} = \dfrac{c}{d}$. We solve proportions by <strong>cross-multiplication</strong>: $a \cdot d = b \cdot c$.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Cross-Multiplication</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> If $\dfrac{3}{x} = \dfrac{7}{28}$, find $x$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Cross-multiply: $3 \times 28 = 7 \times x$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$84 = 7x$, so $x = 12$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x = 12$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.3.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>A recipe calls for flour and sugar in the ratio $5:2$. If you use 350 g of flour, how much sugar do you need?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Set up proportion: $\dfrac{5}{2} = \dfrac{350}{x}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Cross-multiply: $5x = 2 \times 350 = 700$, so $x = 140$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> 140 g of sugar.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.3.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A car travels 240 km in 3 hours. A second car travels 420 km. If both travel at the same speed, how long does the second car's trip take?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Speed $= \dfrac{240}{3} = 80$ km/h.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Time $= \dfrac{420}{80} = 5.25$ hours $= 5$ h $15$ min.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> 5 hours 15 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson A.4: Exponent Basics & Square Roots -->
+    <div class="lesson" id="exponent-basics" data-lesson="A.4">
+        <div class="lesson-header"><h3>A.4 Exponent Basics &amp; Square Roots</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Exponent Rules</div>
+                <div class="box-content">
+                    <p><strong>Product Rule:</strong> $a^m \cdot a^n = a^{m+n}$</p>
+                    <p><strong>Quotient Rule:</strong> $\dfrac{a^m}{a^n} = a^{m-n}$</p>
+                    <p><strong>Power Rule:</strong> $(a^m)^n = a^{mn}$</p>
+                    <p><strong>Power of a Product:</strong> $(ab)^n = a^n b^n$</p>
+                    <p><strong>Zero Exponent:</strong> $a^0 = 1$ (for $a \neq 0$)</p>
+                    <p><strong>Negative Exponent:</strong> $a^{-n} = \dfrac{1}{a^n}$</p>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="box-title">Square Roots &amp; Simplifying Radicals</div>
+                <div class="box-content">
+                    <p>The <strong>square root</strong> $\sqrt{a}$ is the non-negative number whose square is $a$.</p>
+                    <p><strong>Perfect squares:</strong> $1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, \ldots$</p>
+                    <p>To <strong>simplify a radical</strong>, factor out the largest perfect square: $\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}$.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Simplify $\sqrt{72}$</div>
+                <div class="box-content">
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Find the largest perfect square factor of 72: $72 = 36 \times 2$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$\sqrt{72} = \sqrt{36 \times 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2}$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $\sqrt{72} = 6\sqrt{2}$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.4.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Simplify: $\dfrac{x^5 \cdot x^3}{x^2}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Product rule in numerator: $x^5 \cdot x^3 = x^{8}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Quotient rule: $\dfrac{x^8}{x^2} = x^{6}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x^6$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.4.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Simplify: $(2a^3 b^{-2})^4$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Apply power of a product: $2^4 \cdot (a^3)^4 \cdot (b^{-2})^4$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$= 16 a^{12} b^{-8} = \dfrac{16a^{12}}{b^8}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\dfrac{16a^{12}}{b^8}$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.4.3</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Simplify: $\sqrt{200}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$200 = 100 \times 2$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$\sqrt{200} = \sqrt{100} \cdot \sqrt{2} = 10\sqrt{2}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $10\sqrt{2}$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson A.5: Scientific Notation & Pythagorean Theorem -->
+    <div class="lesson" id="scientific-pythagorean" data-lesson="A.5">
+        <div class="lesson-header"><h3>A.5 Scientific Notation &amp; Pythagorean Theorem</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Scientific Notation</div>
+                <div class="box-content">
+                    <p>A number in <strong>scientific notation</strong> is written as $a \times 10^n$ where $1 \leq |a| < 10$ and $n$ is an integer.</p>
+                    <p>Large numbers have positive $n$: $93{,}000{,}000 = 9.3 \times 10^7$.</p>
+                    <p>Small numbers have negative $n$: $0.00042 = 4.2 \times 10^{-4}$.</p>
+                </div>
+            </div>
+
+            <div class="theorem-box">
+                <div class="box-title">Pythagorean Theorem</div>
+                <div class="box-content">
+                    <p>In a <strong>right triangle</strong> with legs $a$ and $b$ and hypotenuse $c$:</p>
+                    <p>$$a^2 + b^2 = c^2$$</p>
+                    <p>The hypotenuse is always the longest side, opposite the right angle.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Find the Hypotenuse</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> A right triangle has legs $a = 5$ and $b = 12$. Find the hypotenuse $c$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Apply the Pythagorean Theorem: $c^2 = a^2 + b^2 = 5^2 + 12^2 = 25 + 144 = 169$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$c = \sqrt{169} = 13$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $c = 13$. (This is the famous 5-12-13 Pythagorean triple.)</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.5.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Express $0.000 000 72$ in scientific notation.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Move the decimal 7 places to the right: $0.000\,000\,72 = 7.2 \times 10^{-7}$.</p>
+                        <p><strong>Answer:</strong> $7.2 \times 10^{-7}$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">A.5.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Compute: $(3 \times 10^4) \times (2 \times 10^{-6})$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Multiply coefficients: $3 \times 2 = 6$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Add exponents: $10^4 \times 10^{-6} = 10^{-2}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $6 \times 10^{-2} = 0.06$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">A.5.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A ladder leans against a wall. The foot of the ladder is 6 m from the wall and the ladder reaches 8 m up the wall. How long is the ladder?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> The wall, ground, and ladder form a right triangle. The ladder is the hypotenuse.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$c^2 = 6^2 + 8^2 = 36 + 64 = 100$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$c = \sqrt{100} = 10$ m.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> The ladder is 10 m long (a 6-8-10 Pythagorean triple).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     INTRODUCTION TO ALGEBRA
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="chapter" id="intro-algebra" data-chapter="0">
+    <div class="chapter-header">
+        <span class="chapter-number">Foundations</span>
+        <h2>Introduction to Algebra</h2>
+    </div>
+    <p class="chapter-intro">Algebra is the language of mathematics — it lets us describe patterns, model relationships, and solve problems using variables instead of specific numbers. This chapter introduces the core algebraic skills that underpin every branch of math you will encounter.</p>
+
+    <!-- Lesson B.1: Variables & Expressions -->
+    <div class="lesson" id="variables-expressions" data-lesson="B.1">
+        <div class="lesson-header"><h3>B.1 Variables &amp; Expressions</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Algebraic Vocabulary</div>
+                <div class="box-content">
+                    <p><strong>Variable:</strong> A letter (e.g. $x$, $y$, $n$) representing an unknown or changing quantity.</p>
+                    <p><strong>Coefficient:</strong> The numerical factor multiplying a variable. In $7x$, the coefficient is 7.</p>
+                    <p><strong>Constant:</strong> A fixed value with no variable. In $3x + 5$, the constant is 5.</p>
+                    <p><strong>Term:</strong> A single piece of an expression separated by $+$ or $-$. In $4x^2 - 3x + 1$, the terms are $4x^2$, $-3x$, and $1$.</p>
+                    <p><strong>Expression:</strong> A combination of terms, e.g. $2x + 3y - 7$. An expression has no equals sign.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Translating Words to Algebra</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Write "three more than twice a number" as an algebraic expression.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Let the unknown number be $n$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">"Twice a number" means $2n$. "Three more than" means $+ 3$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $2n + 3$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.1.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Translate into an algebraic expression: "Five less than the product of four and a number."</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Let the number be $n$. "Product of four and a number" is $4n$. "Five less than" means $-5$.</p>
+                        <p><strong>Answer:</strong> $4n - 5$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.1.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Identify the coefficient, variable(s), and constant in: $-3ab + 7$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>The term $-3ab$ has coefficient $-3$ and variables $a$ and $b$. The constant is $7$.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson B.2: Solving Linear Equations -->
+    <div class="lesson" id="linear-equations" data-lesson="B.2">
+        <div class="lesson-header"><h3>B.2 Solving Linear Equations</h3></div>
+        <div class="lesson-content">
+
+            <div class="note-box">
+                <div class="box-title">Strategy: Isolate the Variable</div>
+                <div class="box-content">
+                    <p>To solve a linear equation, use <strong>inverse operations</strong> to isolate the variable on one side. Whatever you do to one side, you must do to the other to maintain balance.</p>
+                    <p>General steps: (1) Distribute and simplify each side. (2) Collect variable terms on one side, constants on the other. (3) Divide by the coefficient.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Multi-Step Equation</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $3(2x - 4) + 5 = 2x + 9$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Distribute:</strong> $6x - 12 + 5 = 2x + 9$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Simplify the left side:</strong> $6x - 7 = 2x + 9$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Subtract $2x$ from both sides:</strong> $4x - 7 = 9$.</div></div>
+                        <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Add 7 to both sides:</strong> $4x = 16$.</div></div>
+                        <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Divide by 4:</strong> $x = 4$.</div></div>
+                    </div>
+                    <p><strong>Check:</strong> $3(2(4)-4)+5 = 3(4)+5 = 17$ and $2(4)+9 = 17$. ✓</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Equation with Fractions</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $\dfrac{x}{3} + \dfrac{x-2}{4} = 5$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Multiply every term by the LCD (12):</strong> $12 \cdot \dfrac{x}{3} + 12 \cdot \dfrac{x-2}{4} = 12 \cdot 5$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Simplify:</strong> $4x + 3(x-2) = 60$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Distribute:</strong> $4x + 3x - 6 = 60 \Rightarrow 7x - 6 = 60$.</div></div>
+                        <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Solve:</strong> $7x = 66 \Rightarrow x = \dfrac{66}{7}$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x = \dfrac{66}{7}$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.2.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Solve: $5x - 3 = 22$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$5x = 25$</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$x = 5$</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 5$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.2.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Solve: $2(x + 4) = 3x - 1$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$2x + 8 = 3x - 1$</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$8 + 1 = 3x - 2x$, so $x = 9$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 9$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">B.2.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Solve: $\dfrac{2x + 1}{5} = \dfrac{x - 3}{2}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Cross-multiply: $2(2x+1) = 5(x-3)$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$4x + 2 = 5x - 15$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$2 + 15 = 5x - 4x$, so $x = 17$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 17$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="hard">
+                    <div class="problem-header"><span class="problem-number">B.2.4</span><span class="difficulty-badge difficulty-hard">Hard</span></div>
+                    <div class="problem-question"><p>Solve: $\dfrac{3}{x-2} + \dfrac{1}{x+1} = \dfrac{5}{(x-2)(x+1)}$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Multiply every term by the LCD $(x-2)(x+1)$ to clear the fractions, then solve the resulting linear equation. Don't forget to check for extraneous solutions.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Multiply both sides by $(x-2)(x+1)$: $3(x+1) + 1(x-2) = 5$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$3x + 3 + x - 2 = 5 \Rightarrow 4x + 1 = 5$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$4x = 4 \Rightarrow x = 1$.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">Check: $x = 1 \neq 2$ and $x = 1 \neq -1$, so no denominator is zero. Valid.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 1$</p>
+                        <div class="sol-takeaway"><strong>Key takeaway:</strong> Always check that your solution doesn't make any original denominator zero — such values are extraneous.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson B.3: Inequalities -->
+    <div class="lesson" id="inequalities" data-lesson="B.3">
+        <div class="lesson-header"><h3>B.3 Inequalities</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Inequality Symbols &amp; the Flip Rule</div>
+                <div class="box-content">
+                    <p>$a < b$: $a$ is less than $b$. &nbsp; $a > b$: $a$ is greater than $b$.</p>
+                    <p>$a \leq b$: $a$ is less than or equal to $b$. &nbsp; $a \geq b$: $a$ is greater than or equal to $b$.</p>
+                    <p><strong>Critical Rule:</strong> When you <strong>multiply or divide</strong> both sides of an inequality by a <strong>negative number</strong>, you must <strong>flip the inequality sign</strong>.</p>
+                    <p>Example: $-2x > 6 \Rightarrow x < -3$ (sign flips because we divided by $-2$).</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve and Graph</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $-2x + 5 > 11$ and express the solution in interval notation.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Subtract 5: $-2x > 6$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Divide by $-2$ (flip the sign!): $x < -3$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x < -3$, or $(-\infty, -3)$. On a number line, use an open circle at $-3$ and shade to the left.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.3.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Solve and write in interval notation: $3x + 7 \leq 1$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$3x \leq -6$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$x \leq -2$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(-\infty, -2]$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">B.3.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Solve: $-5 < 2x + 3 \leq 11$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Subtract 3 from all three parts: $-8 < 2x \leq 8$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Divide by 2: $-4 < x \leq 4$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(-4, 4]$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson B.4: Polynomials & Basic Factoring -->
+    <div class="lesson" id="polynomials-factoring" data-lesson="B.4">
+        <div class="lesson-header"><h3>B.4 Polynomials &amp; Basic Factoring</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Polynomial Vocabulary</div>
+                <div class="box-content">
+                    <p>A <strong>polynomial</strong> is a sum of terms where each term is a constant times a variable raised to a non-negative integer power.</p>
+                    <p><strong>Monomial:</strong> one term ($5x^3$). <strong>Binomial:</strong> two terms ($x^2 - 4$). <strong>Trinomial:</strong> three terms ($x^2 + 5x + 6$).</p>
+                    <p>The <strong>degree</strong> of a polynomial is the highest exponent. The degree of $3x^4 - x^2 + 7$ is 4.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Expanding: FOIL Method</div>
+                <div class="box-content">
+                    <p>To expand $(a + b)(c + d)$, multiply each term in the first bracket by each term in the second:</p>
+                    <p>$$(a + b)(c + d) = ac + ad + bc + bd$$</p>
+                    <p>FOIL stands for: <strong>F</strong>irst, <strong>O</strong>uter, <strong>I</strong>nner, <strong>L</strong>ast.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Common Factoring Patterns</div>
+                <div class="box-content">
+                    <p><strong>Greatest Common Factor (GCF):</strong> Always check for a GCF first. $6x^2 + 9x = 3x(2x + 3)$.</p>
+                    <p><strong>Difference of Squares:</strong> $a^2 - b^2 = (a - b)(a + b)$.</p>
+                    <p><strong>Simple Trinomial:</strong> $x^2 + bx + c = (x + p)(x + q)$ where $p + q = b$ and $pq = c$.</p>
+                    <p><strong>Decomposition (for $a \neq 1$):</strong> For $ax^2 + bx + c$, find two numbers that multiply to $ac$ and add to $b$, then factor by grouping.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Factor a Simple Trinomial</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor $x^2 + 5x + 6$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Find two numbers that multiply to $6$ and add to $5$: those are $2$ and $3$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$x^2 + 5x + 6 = (x + 2)(x + 3)$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $(x + 2)(x + 3)$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: GCF + Difference of Squares</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor $3x^2 - 12$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>GCF first:</strong> $3x^2 - 12 = 3(x^2 - 4)$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Difference of squares:</strong> $x^2 - 4 = (x - 2)(x + 2)$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $3(x - 2)(x + 2)$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.4.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Expand: $(2x - 3)(x + 5)$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">FOIL: $2x \cdot x + 2x \cdot 5 + (-3) \cdot x + (-3) \cdot 5 = 2x^2 + 10x - 3x - 15$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Combine like terms: $2x^2 + 7x - 15$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $2x^2 + 7x - 15$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">B.4.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Factor: $x^2 - 9x + 20$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Find two numbers that multiply to $20$ and add to $-9$: $-4$ and $-5$.</p>
+                        <p><strong>Answer:</strong> $(x - 4)(x - 5)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">B.4.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor completely: $2x^2 + 7x + 3$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Use decomposition. Multiply $a \cdot c = 2 \times 3 = 6$. Find two numbers that multiply to 6 and add to 7.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">The numbers are $1$ and $6$ (since $1 \times 6 = 6$ and $1 + 6 = 7$).</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Decompose: $2x^2 + x + 6x + 3$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Factor by grouping: $x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3)$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(2x + 1)(x + 3)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">B.4.4</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor completely: $5x^3 - 45x$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">GCF: $5x^3 - 45x = 5x(x^2 - 9)$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Difference of squares: $x^2 - 9 = (x-3)(x+3)$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $5x(x - 3)(x + 3)$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     LINEAR RELATIONS
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="chapter" id="linear-relations-ch" data-chapter="0">
+    <div class="chapter-header">
+        <span class="chapter-number">Foundations</span>
+        <h2>Linear Relations</h2>
+    </div>
+    <p class="chapter-intro">Linear relations are the simplest type of function — they model constant rates of change and appear everywhere from physics to economics. This chapter covers slopes, equations of lines, and how to solve systems of two equations simultaneously.</p>
+
+    <!-- Lesson C.1: Slope & Rate of Change -->
+    <div class="lesson" id="slope-rate" data-lesson="C.1">
+        <div class="lesson-header"><h3>C.1 Slope &amp; Rate of Change</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Slope</div>
+                <div class="box-content">
+                    <p>The <strong>slope</strong> of a line measures its steepness and direction. Given two points $(x_1, y_1)$ and $(x_2, y_2)$:</p>
+                    <p>$$m = \frac{\text{rise}}{\text{run}} = \frac{y_2 - y_1}{x_2 - x_1}$$</p>
+                    <p><strong>Positive slope:</strong> line rises left to right. <strong>Negative slope:</strong> line falls left to right.</p>
+                    <p><strong>Zero slope ($m = 0$):</strong> horizontal line. <strong>Undefined slope:</strong> vertical line (division by zero).</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Finding Slope</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Find the slope of the line through $(2, 3)$ and $(5, 9)$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$m = \dfrac{9 - 3}{5 - 2} = \dfrac{6}{3} = 2$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $m = 2$. The line rises 2 units for every 1 unit to the right.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">C.1.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Find the slope of the line through $(-1, 4)$ and $(3, -2)$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>$m = \dfrac{-2 - 4}{3 - (-1)} = \dfrac{-6}{4} = -\dfrac{3}{2}$.</p>
+                        <p><strong>Answer:</strong> $m = -\dfrac{3}{2}$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">C.1.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>A line passes through $(4, 7)$ and $(4, -3)$. What is its slope?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>$m = \dfrac{-3 - 7}{4 - 4} = \dfrac{-10}{0}$, which is <strong>undefined</strong>.</p>
+                        <p><strong>Answer:</strong> The slope is undefined — this is a vertical line ($x = 4$).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson C.2: Equations of Lines -->
+    <div class="lesson" id="line-equations" data-lesson="C.2">
+        <div class="lesson-header"><h3>C.2 Equations of Lines</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Three Forms of a Linear Equation</div>
+                <div class="box-content">
+                    <p><strong>Slope-Intercept Form:</strong> $y = mx + b$, where $m$ is the slope and $b$ is the $y$-intercept.</p>
+                    <p><strong>Point-Slope Form:</strong> $y - y_1 = m(x - x_1)$, useful when you know a point and the slope.</p>
+                    <p><strong>Standard Form:</strong> $Ax + By = C$, where $A$, $B$, $C$ are integers and $A \geq 0$.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Write an Equation Given Slope and Point</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Write the equation of a line with slope $m = -3$ passing through $(2, 5)$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Point-slope form:</strong> $y - 5 = -3(x - 2)$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Expand to slope-intercept:</strong> $y - 5 = -3x + 6$, so $y = -3x + 11$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $y = -3x + 11$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Convert Between Forms</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Convert $3x - 2y = 8$ to slope-intercept form.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Isolate $y$: $-2y = -3x + 8$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Divide by $-2$: $y = \dfrac{3}{2}x - 4$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $y = \dfrac{3}{2}x - 4$, slope $= \dfrac{3}{2}$, $y$-intercept $= -4$.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">C.2.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Write the equation of a line with slope $\frac{1}{2}$ and $y$-intercept $-3$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Using slope-intercept form directly: $y = \dfrac{1}{2}x - 3$.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">C.2.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Find the equation of the line through $(1, 4)$ and $(3, 10)$ in slope-intercept form.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Slope: $m = \dfrac{10 - 4}{3 - 1} = \dfrac{6}{2} = 3$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Point-slope: $y - 4 = 3(x - 1) \Rightarrow y = 3x + 1$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $y = 3x + 1$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">C.2.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Write the equation of the line through $(6, -1)$ that is perpendicular to $y = 2x + 5$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Perpendicular lines have slopes that are negative reciprocals: if one slope is $m$, the perpendicular slope is $-\frac{1}{m}$.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Given line has slope $m = 2$. Perpendicular slope: $m_\perp = -\dfrac{1}{2}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Point-slope: $y - (-1) = -\dfrac{1}{2}(x - 6)$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$y + 1 = -\dfrac{1}{2}x + 3 \Rightarrow y = -\dfrac{1}{2}x + 2$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $y = -\dfrac{1}{2}x + 2$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson C.3: Systems of Linear Equations -->
+    <div class="lesson" id="systems-linear" data-lesson="C.3">
+        <div class="lesson-header"><h3>C.3 Systems of Linear Equations</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Systems of Equations</div>
+                <div class="box-content">
+                    <p>A <strong>system of linear equations</strong> is two (or more) linear equations considered together. The <strong>solution</strong> is the point $(x, y)$ that satisfies both equations simultaneously — graphically, it is the intersection point of the two lines.</p>
+                    <p>A system can have <strong>one solution</strong> (lines intersect), <strong>no solution</strong> (parallel lines), or <strong>infinitely many solutions</strong> (same line).</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">Two Methods for Solving Systems</div>
+                <div class="box-content">
+                    <p><strong>Substitution:</strong> Solve one equation for one variable, then substitute into the other. Best when one equation is already solved for a variable (e.g. $y = \ldots$).</p>
+                    <p><strong>Elimination:</strong> Add or subtract the equations to cancel one variable. Best when coefficients line up or can be easily matched.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve by Substitution</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve the system: $y = 2x + 1$ and $3x + y = 16$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Substitute $y = 2x + 1$ into the second equation: $3x + (2x + 1) = 16$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$5x + 1 = 16 \Rightarrow 5x = 15 \Rightarrow x = 3$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">Back-substitute: $y = 2(3) + 1 = 7$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $(x, y) = (3, 7)$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve by Elimination</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve the system: $2x + 3y = 12$ and $4x - 3y = 6$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">The $y$-coefficients are $+3$ and $-3$ — they cancel when we add the equations.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Add: $(2x + 3y) + (4x - 3y) = 12 + 6 \Rightarrow 6x = 18 \Rightarrow x = 3$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">Substitute $x = 3$ into $2(3) + 3y = 12 \Rightarrow 6 + 3y = 12 \Rightarrow y = 2$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $(x, y) = (3, 2)$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">C.3.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Solve by substitution: $y = x + 4$ and $2x + y = 10$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Substitute: $2x + (x + 4) = 10 \Rightarrow 3x + 4 = 10$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$3x = 6 \Rightarrow x = 2$. Then $y = 2 + 4 = 6$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(2, 6)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">C.3.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Solve by elimination: $3x + 2y = 7$ and $5x - 2y = 9$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Add the equations: $8x = 16 \Rightarrow x = 2$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Substitute: $3(2) + 2y = 7 \Rightarrow 2y = 1 \Rightarrow y = \dfrac{1}{2}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\left(2, \dfrac{1}{2}\right)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">C.3.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A cinema sells adult tickets for $\$12$ and child tickets for $\$7$. A total of 200 tickets were sold for $\$1{,}950$. How many of each were sold?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Set up two equations — one for the number of tickets and one for the revenue.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Let $a =$ adult tickets, $c =$ child tickets. System: $a + c = 200$ and $12a + 7c = 1950$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">From the first equation: $c = 200 - a$. Substitute: $12a + 7(200 - a) = 1950$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$12a + 1400 - 7a = 1950 \Rightarrow 5a = 550 \Rightarrow a = 110$.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">$c = 200 - 110 = 90$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> 110 adult tickets and 90 child tickets.</p>
+                        <div class="sol-takeaway"><strong>Key takeaway:</strong> Word problems with two unknowns need two equations. Look for two distinct relationships in the problem.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     QUADRATICS & PARABOLAS
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="chapter" id="quadratics-ch" data-chapter="0">
+    <div class="chapter-header">
+        <span class="chapter-number">Foundations</span>
+        <h2>Quadratics &amp; Parabolas</h2>
+    </div>
+    <p class="chapter-intro">Quadratic functions produce the iconic U-shaped curve called a parabola. They appear in projectile motion, area optimization, and countless real-world models. This chapter teaches you to factor, solve, and graph quadratics with confidence.</p>
+
+    <!-- Lesson D.1: Introduction to Quadratics -->
+    <div class="lesson" id="intro-quadratics" data-lesson="D.1">
+        <div class="lesson-header"><h3>D.1 Introduction to Quadratics</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Quadratic Functions &amp; Parabolas</div>
+                <div class="box-content">
+                    <p>A <strong>quadratic function</strong> has the form $f(x) = ax^2 + bx + c$ where $a \neq 0$. Its graph is a <strong>parabola</strong>.</p>
+                    <p><strong>Vertex:</strong> the turning point (minimum if $a > 0$, maximum if $a < 0$).</p>
+                    <p><strong>Axis of symmetry:</strong> the vertical line through the vertex, $x = -\dfrac{b}{2a}$.</p>
+                    <p>If $a > 0$, the parabola <strong>opens upward</strong>. If $a < 0$, it <strong>opens downward</strong>.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Three Forms of a Quadratic</div>
+                <div class="box-content">
+                    <p><strong>Standard Form:</strong> $y = ax^2 + bx + c$ — shows the $y$-intercept $(0, c)$.</p>
+                    <p><strong>Vertex Form:</strong> $y = a(x - h)^2 + k$ — shows the vertex $(h, k)$ directly.</p>
+                    <p><strong>Factored Form:</strong> $y = a(x - r)(x - s)$ — shows the $x$-intercepts (roots) $r$ and $s$.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">D.1.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>For $f(x) = 2x^2 - 8x + 3$, find the axis of symmetry and determine whether the parabola opens up or down.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$a = 2 > 0$, so the parabola opens <strong>upward</strong>.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Axis of symmetry: $x = -\dfrac{b}{2a} = -\dfrac{-8}{2(2)} = \dfrac{8}{4} = 2$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> Opens up; axis of symmetry is $x = 2$.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">D.1.2</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Identify the vertex, axis of symmetry, and direction of opening for $y = -(x + 3)^2 + 7$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>This is already in vertex form $y = a(x - h)^2 + k$ with $a = -1$, $h = -3$, $k = 7$.</p>
+                        <p><strong>Answer:</strong> Vertex $(-3, 7)$; axis of symmetry $x = -3$; opens <strong>downward</strong> (since $a < 0$).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson D.2: Factoring Quadratics -->
+    <div class="lesson" id="factoring-quadratics" data-lesson="D.2">
+        <div class="lesson-header"><h3>D.2 Factoring Quadratics</h3></div>
+        <div class="lesson-content">
+
+            <div class="note-box">
+                <div class="box-title">Factoring Strategy Guide</div>
+                <div class="box-content">
+                    <p>When factoring a quadratic, follow this order:</p>
+                    <p><strong>Step 1:</strong> Always take out the <strong>GCF</strong> first.</p>
+                    <p><strong>Step 2:</strong> Is it a <strong>difference of squares</strong>? ($a^2 - b^2$)</p>
+                    <p><strong>Step 3:</strong> Is it a <strong>simple trinomial</strong>? ($x^2 + bx + c$ where leading coefficient is 1)</p>
+                    <p><strong>Step 4:</strong> Use <strong>decomposition</strong> (splitting the middle term) for $ax^2 + bx + c$ when $a \neq 1$.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Simple Trinomial</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor $x^2 - 7x + 12$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Find two numbers that multiply to $12$ and add to $-7$: those are $-3$ and $-4$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$x^2 - 7x + 12 = (x - 3)(x - 4)$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $(x - 3)(x - 4)$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Decomposition Method</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Factor $2x^2 + 5x - 3$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Multiply $a \cdot c = 2 \times (-3) = -6$. Find two numbers that multiply to $-6$ and add to $5$: those are $6$ and $-1$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Split the middle term: $2x^2 + 6x - x - 3$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">Factor by grouping: $2x(x + 3) - 1(x + 3) = (x + 3)(2x - 1)$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $(x + 3)(2x - 1)$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">D.2.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Factor: $x^2 + 2x - 15$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Two numbers that multiply to $-15$ and add to $2$: $5$ and $-3$.</p>
+                        <p><strong>Answer:</strong> $(x + 5)(x - 3)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.2.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor: $3x^2 - 10x + 8$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$a \cdot c = 3 \times 8 = 24$. Find two numbers multiplying to $24$ and adding to $-10$: $-6$ and $-4$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$3x^2 - 6x - 4x + 8$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$3x(x - 2) - 4(x - 2) = (x - 2)(3x - 4)$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $(x - 2)(3x - 4)$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.2.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Factor completely: $4x^2 - 25$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Difference of squares: $(2x)^2 - 5^2 = (2x - 5)(2x + 5)$.</p>
+                        <p><strong>Answer:</strong> $(2x - 5)(2x + 5)$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson D.3: Solving Quadratic Equations -->
+    <div class="lesson" id="solving-quadratics" data-lesson="D.3">
+        <div class="lesson-header"><h3>D.3 Solving Quadratic Equations</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Three Methods for Solving Quadratics</div>
+                <div class="box-content">
+                    <p><strong>1. Factoring:</strong> Write as $a(x - r)(x - s) = 0$, then set each factor to zero.</p>
+                    <p><strong>2. Completing the Square:</strong> Rewrite $ax^2 + bx + c = 0$ in the form $(x + p)^2 = q$, then take square roots.</p>
+                    <p><strong>3. Quadratic Formula:</strong> Works for every quadratic equation.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">The Quadratic Formula</div>
+                <div class="box-content">
+                    <p>For $ax^2 + bx + c = 0$:</p>
+                    <p>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</p>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="box-title">The Discriminant</div>
+                <div class="box-content">
+                    <p>The expression under the square root, $\Delta = b^2 - 4ac$, is called the <strong>discriminant</strong>. It tells you the nature of the roots:</p>
+                    <p>$\Delta > 0$: <strong>two distinct real roots</strong>.</p>
+                    <p>$\Delta = 0$: <strong>one repeated real root</strong> (the parabola touches the $x$-axis).</p>
+                    <p>$\Delta < 0$: <strong>no real roots</strong> (the parabola doesn't cross the $x$-axis).</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve by Factoring</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $x^2 - 5x + 6 = 0$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Factor: $(x - 2)(x - 3) = 0$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Set each factor to zero: $x - 2 = 0 \Rightarrow x = 2$ or $x - 3 = 0 \Rightarrow x = 3$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x = 2$ or $x = 3$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve by Completing the Square</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $x^2 + 6x + 2 = 0$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Move the constant: $x^2 + 6x = -2$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Take half of $6$, square it: $\left(\frac{6}{2}\right)^2 = 9$. Add to both sides: $x^2 + 6x + 9 = 7$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">Factor the left side: $(x + 3)^2 = 7$.</div></div>
+                        <div class="step"><span class="step-number">4</span><div class="step-content">Take square roots: $x + 3 = \pm\sqrt{7}$, so $x = -3 \pm \sqrt{7}$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x = -3 + \sqrt{7} \approx -0.35$ or $x = -3 - \sqrt{7} \approx -5.65$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve Using the Quadratic Formula</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Solve $2x^2 - 3x - 5 = 0$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">Identify $a = 2$, $b = -3$, $c = -5$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">Discriminant: $\Delta = (-3)^2 - 4(2)(-5) = 9 + 40 = 49$. Since $\Delta > 0$, there are two real roots.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">$$x = \frac{-(-3) \pm \sqrt{49}}{2(2)} = \frac{3 \pm 7}{4}$$</div></div>
+                        <div class="step"><span class="step-number">4</span><div class="step-content">$x = \dfrac{3 + 7}{4} = \dfrac{10}{4} = \dfrac{5}{2}$ or $x = \dfrac{3 - 7}{4} = \dfrac{-4}{4} = -1$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $x = \dfrac{5}{2}$ or $x = -1$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">D.3.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Solve by factoring: $x^2 + x - 12 = 0$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>$(x + 4)(x - 3) = 0$, so $x = -4$ or $x = 3$.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.3.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Use the quadratic formula to solve: $3x^2 + 2x - 1 = 0$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$a = 3, b = 2, c = -1$. $\Delta = 4 + 12 = 16$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$x = \dfrac{-2 \pm 4}{6}$. So $x = \dfrac{2}{6} = \dfrac{1}{3}$ or $x = \dfrac{-6}{6} = -1$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = \dfrac{1}{3}$ or $x = -1$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.3.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Solve by completing the square: $x^2 - 4x - 1 = 0$</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$x^2 - 4x = 1$. Half of $-4$ is $-2$; $(-2)^2 = 4$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$(x - 2)^2 = 5$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$x = 2 \pm \sqrt{5}$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 2 + \sqrt{5}$ or $x = 2 - \sqrt{5}$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="hard">
+                    <div class="problem-header"><span class="problem-number">D.3.4</span><span class="difficulty-badge difficulty-hard">Hard</span></div>
+                    <div class="problem-question"><p>For what values of $k$ does $kx^2 + 6x + k = 0$ have exactly one real solution?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> One repeated root means the discriminant equals zero.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$\Delta = 36 - 4(k)(k) = 36 - 4k^2$. Set $\Delta = 0$: $36 - 4k^2 = 0$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$k^2 = 9$, so $k = \pm 3$. Both are valid since $k \neq 0$ is required for a quadratic.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $k = 3$ or $k = -3$</p>
+                        <div class="sol-takeaway"><strong>Key takeaway:</strong> The discriminant $\Delta = b^2 - 4ac$ is a powerful tool for analyzing how many roots a quadratic has without actually solving it.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson D.4: Graphing & Transformations -->
+    <div class="lesson" id="graphing-quadratics" data-lesson="D.4">
+        <div class="lesson-header"><h3>D.4 Graphing &amp; Transformations</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Parent Function &amp; Vertex Form</div>
+                <div class="box-content">
+                    <p>The <strong>parent quadratic</strong> is $y = x^2$. Every other quadratic is a transformation of this basic parabola.</p>
+                    <p>In <strong>vertex form</strong> $y = a(x - h)^2 + k$, the vertex is at $(h, k)$.</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">Transformation Rules</div>
+                <div class="box-content">
+                    <p><strong>$a$:</strong> Controls stretch/compression and reflection. $|a| > 1$ stretches vertically (narrower), $0 < |a| < 1$ compresses (wider). If $a < 0$, the parabola flips upside down.</p>
+                    <p><strong>$h$:</strong> Horizontal shift. $h > 0$ shifts <em>right</em>, $h < 0$ shifts <em>left</em> (note the minus sign in the formula).</p>
+                    <p><strong>$k$:</strong> Vertical shift. $k > 0$ shifts <em>up</em>, $k < 0$ shifts <em>down</em>.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Describe the Transformations</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Describe the transformations applied to $y = x^2$ to obtain $y = -2(x - 3)^2 + 4$, and identify the vertex.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$a = -2$: vertical stretch by factor 2 <strong>and</strong> reflection in the $x$-axis (opens downward).</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$h = 3$: shift 3 units to the right.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">$k = 4$: shift 4 units up.</div></div>
+                    </div>
+                    <p><strong>Vertex:</strong> $(3, 4)$. Since $a < 0$, this is the <strong>maximum</strong> point.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">D.4.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Describe the transformations: $y = (x + 2)^2 - 5$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>$a = 1$ (no stretch or reflection), $h = -2$ (shift 2 left), $k = -5$ (shift 5 down).</p>
+                        <p><strong>Vertex:</strong> $(-2, -5)$. Opens upward.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">D.4.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Convert $y = x^2 - 6x + 11$ to vertex form by completing the square, then identify the vertex.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$y = (x^2 - 6x + 9) + 11 - 9 = (x - 3)^2 + 2$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $y = (x - 3)^2 + 2$. Vertex is $(3, 2)$.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     GEOMETRY & MEASUREMENT
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="chapter" id="geometry-measurement" data-chapter="0">
+    <div class="chapter-header">
+        <span class="chapter-number">Foundations</span>
+        <h2>Geometry &amp; Measurement</h2>
+    </div>
+    <p class="chapter-intro">Geometry connects algebra to the physical world — it deals with shapes, sizes, angles, and spatial reasoning. This chapter covers angle relationships, triangle properties, trigonometry, area and volume formulas, and coordinate geometry tools you will use constantly.</p>
+
+    <!-- Lesson E.1: Angles & Lines -->
+    <div class="lesson" id="angles-lines" data-lesson="E.1">
+        <div class="lesson-header"><h3>E.1 Angles &amp; Lines</h3></div>
+        <div class="lesson-content">
+
+            <div class="definition-box">
+                <div class="box-title">Angle Pair Relationships</div>
+                <div class="box-content">
+                    <p><strong>Complementary Angles:</strong> Two angles that add to $90°$.</p>
+                    <p><strong>Supplementary Angles:</strong> Two angles that add to $180°$.</p>
+                    <p><strong>Vertically Opposite Angles:</strong> Formed by two intersecting lines. They are always <strong>equal</strong>.</p>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="box-title">Parallel Lines &amp; Transversals</div>
+                <div class="box-content">
+                    <p>When a <strong>transversal</strong> crosses two parallel lines, several angle relationships arise:</p>
+                    <p><strong>Alternate Interior Angles:</strong> On opposite sides of the transversal, between the parallel lines — <strong>equal</strong>.</p>
+                    <p><strong>Corresponding Angles:</strong> In the same position at each intersection — <strong>equal</strong>.</p>
+                    <p><strong>Co-Interior (Same-Side Interior) Angles:</strong> On the same side of the transversal, between the parallel lines — <strong>supplementary</strong> (add to $180°$).</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.1.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Two angles are supplementary. One is $35°$ more than twice the other. Find both angles.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Let the smaller angle be $x$. Then the other is $2x + 35$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$x + (2x + 35) = 180 \Rightarrow 3x = 145 \Rightarrow x = 48.\overline{3}°$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Other angle $= 2(48.\overline{3}) + 35 = 131.\overline{6}°$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $48\frac{1}{3}°$ and $131\frac{2}{3}°$.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.1.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Two parallel lines are cut by a transversal. One of the alternate interior angles is $(3x + 10)°$ and the other is $(5x - 20)°$. Find $x$ and the angle measure.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Alternate interior angles are equal: $3x + 10 = 5x - 20$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$30 = 2x \Rightarrow x = 15$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Angle $= 3(15) + 10 = 55°$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $x = 15$; each angle measures $55°$.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson E.2: Triangles & Similarity -->
+    <div class="lesson" id="triangles-similarity" data-lesson="E.2">
+        <div class="lesson-header"><h3>E.2 Triangles &amp; Similarity</h3></div>
+        <div class="lesson-content">
+
+            <div class="theorem-box">
+                <div class="box-title">Angle Sum Property</div>
+                <div class="box-content">
+                    <p>The interior angles of any triangle sum to $180°$:</p>
+                    <p>$$\angle A + \angle B + \angle C = 180°$$</p>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <div class="box-title">Congruence vs. Similarity</div>
+                <div class="box-content">
+                    <p><strong>Congruent triangles</strong> have the same shape AND size. Tests: SSS, SAS, ASA, AAS.</p>
+                    <p><strong>Similar triangles</strong> have the same shape but possibly different sizes. Corresponding angles are equal, and corresponding sides are proportional. Tests: AA, SAS (with ratio), SSS (with ratio).</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Find a Missing Angle</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> In triangle $ABC$, $\angle A = 47°$ and $\angle B = 68°$. Find $\angle C$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$\angle C = 180° - 47° - 68° = 65°$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $\angle C = 65°$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.2.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>The angles of a triangle are in the ratio $2 : 3 : 5$. Find each angle.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$2x + 3x + 5x = 180° \Rightarrow 10x = 180° \Rightarrow x = 18°$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Angles: $36°$, $54°$, $90°$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $36°$, $54°$, $90°$ (this is a right triangle!).</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.2.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Two similar triangles have corresponding sides of 6 cm and 10 cm. If the perimeter of the smaller triangle is 18 cm, find the perimeter of the larger triangle.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Scale factor $= \dfrac{10}{6} = \dfrac{5}{3}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">Perimeters scale by the same factor: $18 \times \dfrac{5}{3} = 30$ cm.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> 30 cm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson E.3: Right Triangle Trigonometry -->
+    <div class="lesson" id="soh-cah-toa" data-lesson="E.3">
+        <div class="lesson-header"><h3>E.3 Right Triangle Trigonometry (SOH CAH TOA)</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Primary Trigonometric Ratios</div>
+                <div class="box-content">
+                    <p>For an acute angle $\theta$ in a right triangle:</p>
+                    <p>$$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}} \qquad \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}} \qquad \tan\theta = \frac{\text{opposite}}{\text{adjacent}}$$</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">SOH CAH TOA</div>
+                <div class="box-content">
+                    <p><strong>S</strong>ine = <strong>O</strong>pposite / <strong>H</strong>ypotenuse &nbsp; | &nbsp; <strong>C</strong>osine = <strong>A</strong>djacent / <strong>H</strong>ypotenuse &nbsp; | &nbsp; <strong>T</strong>angent = <strong>O</strong>pposite / <strong>A</strong>djacent</p>
+                    <p>This mnemonic is all you need to remember the three primary trig ratios.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Find a Missing Side</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> In a right triangle, the hypotenuse is 15 and one acute angle is $40°$. Find the side opposite to the $40°$ angle.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">We know the hypotenuse and want the opposite side. Use sine: $\sin 40° = \dfrac{\text{opp}}{15}$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$\text{opp} = 15 \sin 40° \approx 15 \times 0.6428 \approx 9.64$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $\approx 9.64$ units.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Find a Missing Angle</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> In a right triangle, the adjacent side is 8 and the hypotenuse is 10. Find angle $\theta$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$\cos\theta = \dfrac{8}{10} = 0.8$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$\theta = \cos^{-1}(0.8) \approx 36.87°$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $\theta \approx 36.87°$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.3.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>In a right triangle with legs 5 and 12, find $\sin\theta$, $\cos\theta$, and $\tan\theta$ where $\theta$ is the angle opposite the side of length 5.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Hypotenuse $= \sqrt{5^2 + 12^2} = \sqrt{169} = 13$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$\sin\theta = \dfrac{5}{13}$, $\cos\theta = \dfrac{12}{13}$, $\tan\theta = \dfrac{5}{12}$.</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.3.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A 20-metre ladder leans against a wall, making a $65°$ angle with the ground. How high up the wall does it reach?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">The wall height is opposite to the $65°$ angle, the ladder is the hypotenuse.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$\sin 65° = \dfrac{h}{20} \Rightarrow h = 20 \sin 65° \approx 20 \times 0.9063 \approx 18.13$ m.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\approx 18.13$ m up the wall.</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.3.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>From the top of a 50 m cliff, the angle of depression to a boat is $28°$. How far is the boat from the base of the cliff?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> The angle of depression from the cliff top equals the angle of elevation from the boat (alternate interior angles). The cliff is opposite to the angle, and the horizontal distance is adjacent.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$\tan 28° = \dfrac{50}{d}$, so $d = \dfrac{50}{\tan 28°}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$d \approx \dfrac{50}{0.5317} \approx 94.04$ m.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\approx 94$ m from the base of the cliff.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson E.4: Sine Law & Cosine Law -->
+    <div class="lesson" id="sine-cosine-law" data-lesson="E.4">
+        <div class="lesson-header"><h3>E.4 Sine Law &amp; Cosine Law</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Sine Law</div>
+                <div class="box-content">
+                    <p>For any triangle with sides $a, b, c$ opposite angles $A, B, C$:</p>
+                    <p>$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Cosine Law</div>
+                <div class="box-content">
+                    <p>For any triangle:</p>
+                    <p>$$c^2 = a^2 + b^2 - 2ab\cos C$$</p>
+                    <p>This generalizes the Pythagorean Theorem (when $C = 90°$, $\cos 90° = 0$ and it reduces to $c^2 = a^2 + b^2$).</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">When to Use Which</div>
+                <div class="box-content">
+                    <p><strong>Sine Law:</strong> Use when you know an angle and its opposite side plus one other piece. Works for AAS, ASA, and the ambiguous case (SSA).</p>
+                    <p><strong>Cosine Law:</strong> Use when you know two sides and the <em>included</em> angle (SAS), or all three sides (SSS) and need an angle.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve Using Sine Law</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> In triangle $ABC$, $\angle A = 42°$, $\angle B = 73°$, and $a = 12$. Find $b$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$\dfrac{a}{\sin A} = \dfrac{b}{\sin B} \Rightarrow \dfrac{12}{\sin 42°} = \dfrac{b}{\sin 73°}$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$b = \dfrac{12 \sin 73°}{\sin 42°} \approx \dfrac{12 \times 0.9563}{0.6691} \approx 17.15$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $b \approx 17.15$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Solve Using Cosine Law</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> In triangle $ABC$, $a = 8$, $b = 11$, and $\angle C = 55°$. Find $c$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$c^2 = a^2 + b^2 - 2ab\cos C = 64 + 121 - 2(8)(11)\cos 55°$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content">$c^2 = 185 - 176 \times 0.5736 \approx 185 - 100.95 = 84.05$.</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content">$c = \sqrt{84.05} \approx 9.17$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $c \approx 9.17$</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.4.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>In triangle $PQR$, $\angle P = 50°$, $\angle Q = 60°$, and $p = 10$. Find $q$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">Sine law: $\dfrac{10}{\sin 50°} = \dfrac{q}{\sin 60°}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$q = \dfrac{10 \sin 60°}{\sin 50°} \approx \dfrac{10 \times 0.8660}{0.7660} \approx 11.31$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $q \approx 11.31$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.4.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A triangle has sides $a = 7$, $b = 9$, $c = 12$. Find the largest angle.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> The largest angle is opposite the longest side ($c = 12$). Use the cosine law rearranged: $\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}$.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$\cos C = \dfrac{49 + 81 - 144}{2(7)(9)} = \dfrac{-14}{126} = -\dfrac{1}{9}$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$C = \cos^{-1}\!\left(-\dfrac{1}{9}\right) \approx 96.38°$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> The largest angle $\approx 96.4°$ (obtuse triangle).</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.4.3</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>Two ships leave port at the same time. Ship A sails on a bearing of $040°$ at 15 km/h, and Ship B sails on a bearing of $120°$ at 20 km/h. How far apart are they after 2 hours?</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> After 2 hours, Ship A has travelled 30 km and Ship B has travelled 40 km. The angle between their paths is $120° - 40° = 80°$. Use the cosine law.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$d^2 = 30^2 + 40^2 - 2(30)(40)\cos 80°$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$d^2 = 900 + 1600 - 2400 \times 0.1736 \approx 2500 - 416.6 = 2083.4$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$d \approx \sqrt{2083.4} \approx 45.64$ km.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $\approx 45.6$ km apart.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson E.5: Area, Perimeter & Volume -->
+    <div class="lesson" id="area-volume" data-lesson="E.5">
+        <div class="lesson-header"><h3>E.5 Area, Perimeter &amp; Volume</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Key Area, Perimeter &amp; Volume Formulas</div>
+                <div class="box-content">
+                    <p><strong>Rectangle:</strong> $A = lw$, $P = 2l + 2w$.</p>
+                    <p><strong>Triangle:</strong> $A = \frac{1}{2}bh$.</p>
+                    <p><strong>Circle:</strong> $A = \pi r^2$, $C = 2\pi r$.</p>
+                    <p><strong>Trapezoid:</strong> $A = \frac{1}{2}(a + b)h$ where $a, b$ are the parallel sides.</p>
+                    <p><strong>Cylinder:</strong> $V = \pi r^2 h$, $SA = 2\pi r^2 + 2\pi rh$.</p>
+                    <p><strong>Cone:</strong> $V = \frac{1}{3}\pi r^2 h$, $SA = \pi r^2 + \pi r l$ where $l$ is the slant height.</p>
+                    <p><strong>Sphere:</strong> $V = \frac{4}{3}\pi r^3$, $SA = 4\pi r^2$.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Volume of a Cone</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Find the volume of a cone with radius $r = 3$ cm and height $h = 7$ cm.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content">$V = \dfrac{1}{3}\pi r^2 h = \dfrac{1}{3}\pi (3)^2(7) = \dfrac{1}{3}\pi (9)(7) = \dfrac{63\pi}{3} = 21\pi$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> $V = 21\pi \approx 65.97$ cm³.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.5.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Find the area of a circle with diameter 10 cm.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>Radius $= 5$ cm. $A = \pi(5)^2 = 25\pi \approx 78.54$ cm².</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.5.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>A spherical balloon has a volume of $288\pi$ cm³. Find its radius and surface area.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$\dfrac{4}{3}\pi r^3 = 288\pi \Rightarrow r^3 = 216 \Rightarrow r = 6$ cm.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$SA = 4\pi(6)^2 = 144\pi \approx 452.39$ cm².</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $r = 6$ cm, $SA = 144\pi$ cm².</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Lesson E.6: Coordinate Geometry -->
+    <div class="lesson" id="coordinate-geometry" data-lesson="E.6">
+        <div class="lesson-header"><h3>E.6 Coordinate Geometry</h3></div>
+        <div class="lesson-content">
+
+            <div class="formula-box">
+                <div class="box-title">Distance &amp; Midpoint Formulas</div>
+                <div class="box-content">
+                    <p><strong>Distance</strong> between $(x_1, y_1)$ and $(x_2, y_2)$:</p>
+                    <p>$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</p>
+                    <p><strong>Midpoint</strong> of a segment:</p>
+                    <p>$$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="box-title">Example: Distance and Midpoint</div>
+                <div class="box-content">
+                    <p><strong>Problem:</strong> Find the distance and midpoint between $(1, 3)$ and $(7, 11)$.</p>
+                    <div class="steps">
+                        <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Distance:</strong> $d = \sqrt{(7-1)^2 + (11-3)^2} = \sqrt{36 + 64} = \sqrt{100} = 10$.</div></div>
+                        <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Midpoint:</strong> $M = \left(\dfrac{1+7}{2}, \dfrac{3+11}{2}\right) = (4, 7)$.</div></div>
+                    </div>
+                    <p><strong>Answer:</strong> Distance $= 10$, Midpoint $= (4, 7)$.</p>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-header"><h4>Practice Problems</h4></div>
+                <div class="problem" data-difficulty="easy">
+                    <div class="problem-header"><span class="problem-number">E.6.1</span><span class="difficulty-badge difficulty-easy">Easy</span></div>
+                    <div class="problem-question"><p>Find the distance between $(-2, 5)$ and $(4, -3)$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <p>$d = \sqrt{(4-(-2))^2 + (-3-5)^2} = \sqrt{36 + 64} = \sqrt{100} = 10$.</p>
+                        <p><strong>Answer:</strong> $d = 10$</p>
+                    </div>
+                </div>
+                <div class="problem" data-difficulty="medium">
+                    <div class="problem-header"><span class="problem-number">E.6.2</span><span class="difficulty-badge difficulty-medium">Medium</span></div>
+                    <div class="problem-question"><p>The midpoint of segment $AB$ is $M(3, 5)$. If $A = (-1, 2)$, find $B$.</p></div>
+                    <button class="show-solution-btn">Show Solution</button>
+                    <div class="problem-solution">
+                        <div class="sol-strategy"><strong>Strategy:</strong> Use the midpoint formula in reverse. If $M = \left(\frac{x_A + x_B}{2}, \frac{y_A + y_B}{2}\right)$, solve for the unknown endpoint.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content">$\dfrac{-1 + x_B}{2} = 3 \Rightarrow x_B = 7$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content">$\dfrac{2 + y_B}{2} = 5 \Rightarrow y_B = 8$.</div></div>
+                        </div>
+                        <p><strong>Answer:</strong> $B = (7, 8)$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
      CHAPTER 1: PRE-CALCULUS FOUNDATIONS
      ═══════════════════════════════════════════════════════════════════ -->
 <section class="chapter" id="precalculus" data-chapter="1">
@@ -390,7 +2118,7 @@
         <span class="chapter-number">Chapter 1</span>
         <h2>Pre-Calculus Foundations</h2>
     </div>
-    <p class="chapter-intro">Before diving into calculus, you need rock-solid foundations. This chapter covers everything from number systems to trigonometry — the building blocks for all advanced mathematics. Even if you think you know this material, working through it will reveal gaps that could trip you up later.</p>
+    <p class="chapter-intro">This chapter covers the advanced pre-calculus topics you need before starting calculus: number systems, logarithms, function theory, and trigonometric identities. If you need to review basics like arithmetic, algebra, linear equations, quadratics, or geometry, start with the Foundations chapters above.</p>
 
     <div class="chapter-mini-nav">
         <span class="mini-nav-label">Jump to:</span>
