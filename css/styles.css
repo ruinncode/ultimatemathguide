@@ -705,6 +705,13 @@ body.light-mode #dark-mode-toggle::after {
   margin-bottom: 0;
 }
 
+.qed {
+  color: var(--accent);
+  font-size: 0.7em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+}
+
 /* Definition Box */
 .definition-box {
   background: var(--color-blue-bg);

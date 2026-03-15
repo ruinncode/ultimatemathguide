@@ -469,7 +469,7 @@
                     <p>Assume $\sqrt{2} = \frac{p}{q}$ where $p, q \in \mathbb{Z}$, $q \neq 0$, and $\gcd(p,q) = 1$ (fully reduced).</p>
                     <p>Then $2 = \frac{p^2}{q^2}$, so $p^2 = 2q^2$. This means $p^2$ is even, so $p$ must be even. Write $p = 2k$.</p>
                     <p>Then $(2k)^2 = 2q^2 \Rightarrow 4k^2 = 2q^2 \Rightarrow q^2 = 2k^2$. So $q^2$ is even, meaning $q$ is even.</p>
-                    <p>But if both $p$ and $q$ are even, then $\gcd(p,q) \geq 2$, contradicting our assumption that the fraction was fully reduced. $\square$</p>
+                    <p>But if both $p$ and $q$ are even, then $\gcd(p,q) \geq 2$, contradicting our assumption that the fraction was fully reduced. <span class="qed" title="Q.E.D.">■</span></p>
                 </div>
             </div>
 
@@ -502,7 +502,7 @@
                             <div class="step"><span class="step-number">2</span><div class="step-content">Squaring: $3 = \frac{p^2}{q^2}$, so $p^2 = 3q^2$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Since $3 \mid p^2$ and 3 is prime, $3 \mid p$. Write $p = 3k$.</div></div>
                             <div class="step"><span class="step-number">4</span><div class="step-content">$(3k)^2 = 3q^2 \Rightarrow 9k^2 = 3q^2 \Rightarrow q^2 = 3k^2$.</div></div>
-                            <div class="step"><span class="step-number">5</span><div class="step-content">So $3 \mid q^2$, hence $3 \mid q$. But then $\gcd(p,q) \geq 3$, contradiction. $\square$</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content">So $3 \mid q^2$, hence $3 \mid q$. But then $\gcd(p,q) \geq 3$, contradiction. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -811,7 +811,7 @@
                             <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Inductive hypothesis:</strong> Assume $\sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">$\sum_{k=1}^{n+1}k^2 = \frac{n(n+1)(2n+1)}{6} + (n+1)^2 = \frac{n(n+1)(2n+1) + 6(n+1)^2}{6}$</div></div>
                             <div class="step"><span class="step-number">4</span><div class="step-content">$= \frac{(n+1)[n(2n+1) + 6(n+1)]}{6} = \frac{(n+1)(2n^2 + 7n + 6)}{6}$</div></div>
-                            <div class="step"><span class="step-number">5</span><div class="step-content">$= \frac{(n+1)(n+2)(2n+3)}{6} = \frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}$ ✓ $\square$</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content">$= \frac{(n+1)(n+2)(2n+3)}{6} = \frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}$ ✓ <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -1141,7 +1141,7 @@
                         <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Factor $\sin\theta$ from the numerator:</strong> $$= \frac{\sin\theta\!\left(\frac{1}{\cos\theta} - 1\right)}{\sin^3\theta} = \frac{\frac{1}{\cos\theta} - 1}{\sin^2\theta}$$</div></div>
                         <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Combine the fraction in the numerator:</strong> $$= \frac{\frac{1 - \cos\theta}{\cos\theta}}{\sin^2\theta} = \frac{1 - \cos\theta}{\cos\theta \cdot \sin^2\theta}$$</div></div>
                         <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Use $\sin^2\theta = 1 - \cos^2\theta = (1-\cos\theta)(1+\cos\theta)$:</strong> $$= \frac{1 - \cos\theta}{\cos\theta(1 - \cos\theta)(1 + \cos\theta)} = \frac{1}{\cos\theta(1 + \cos\theta)} = \frac{\sec\theta}{1 + \cos\theta}$$</div></div>
-                        <div class="step"><span class="step-number">6</span><div class="step-content"><strong>Conclusion:</strong> LHS $=$ RHS. The identity is proved. $\square$</div></div>
+                        <div class="step"><span class="step-number">6</span><div class="step-content"><strong>Conclusion:</strong> LHS $=$ RHS. The identity is proved. <span class="qed" title="Q.E.D.">■</span></div></div>
                     </div>
                 </div>
             </div>
@@ -1166,7 +1166,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content">Combine over common denominator: $\frac{\sin^2\theta + (1+\cos\theta)^2}{\sin\theta(1+\cos\theta)}$</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">Expand numerator: $\sin^2\theta + 1 + 2\cos\theta + \cos^2\theta$</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Use $\sin^2\theta + \cos^2\theta = 1$: $= 1 + 1 + 2\cos\theta = 2 + 2\cos\theta = 2(1+\cos\theta)$</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">$= \frac{2(1+\cos\theta)}{\sin\theta(1+\cos\theta)} = \frac{2}{\sin\theta} = 2\csc\theta$ $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">$= \frac{2(1+\cos\theta)}{\sin\theta(1+\cos\theta)} = \frac{2}{\sin\theta} = 2\csc\theta$ <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -1491,7 +1491,7 @@
                     <div class="steps">
                         <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Setup:</strong> We need $|f(x) - L| < \varepsilon$, i.e., $|(2x+1) - 7| < \varepsilon$, i.e., $|2x - 6| < \varepsilon$, i.e., $2|x - 3| < \varepsilon$.</div></div>
                         <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Find $\delta$:</strong> We need $2|x-3| < \varepsilon$, so $|x-3| < \varepsilon/2$. Choose $\delta = \varepsilon/2$.</div></div>
-                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Proof:</strong> Given $\varepsilon > 0$, let $\delta = \varepsilon/2$. If $0 < |x-3| < \delta$, then $|(2x+1)-7| = 2|x-3| < 2\delta = 2 \cdot \frac{\varepsilon}{2} = \varepsilon$. $\square$</div></div>
+                        <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Proof:</strong> Given $\varepsilon > 0$, let $\delta = \varepsilon/2$. If $0 < |x-3| < \delta$, then $|(2x+1)-7| = 2|x-3| < 2\delta = 2 \cdot \frac{\varepsilon}{2} = \varepsilon$. <span class="qed" title="Q.E.D.">■</span></div></div>
                     </div>
                 </div>
             </div>
@@ -1504,7 +1504,7 @@
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
                         <p>Given $\varepsilon > 0$, we need $|(3x-4) - 2| < \varepsilon$, i.e., $|3x - 6| = 3|x-2| < \varepsilon$, i.e., $|x-2| < \varepsilon/3$.</p>
-                        <p>Choose $\delta = \varepsilon/3$. Then $0 < |x-2| < \delta \Rightarrow |(3x-4)-2| = 3|x-2| < 3(\varepsilon/3) = \varepsilon$. $\square$</p>
+                        <p>Choose $\delta = \varepsilon/3$. Then $0 < |x-2| < \delta \Rightarrow |(3x-4)-2| = 3|x-2| < 3(\varepsilon/3) = \varepsilon$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="hard">
@@ -1520,7 +1520,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content">$|x^2 - 4| = |x-2||x+2|$. We need to bound $|x+2|$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">First restrict $\delta \leq 1$. Then $|x-2| < 1 \Rightarrow 1 < x < 3 \Rightarrow 3 < x+2 < 5$, so $|x+2| < 5$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Then $|x^2 - 4| < 5|x-2|$. We want $5|x-2| < \varepsilon$, so $|x-2| < \varepsilon/5$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">Choose $\delta = \min(1, \varepsilon/5)$. Verify: $|x^2-4| = |x-2||x+2| < (\varepsilon/5)(5) = \varepsilon$. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">Choose $\delta = \min(1, \varepsilon/5)$. Verify: $|x^2-4| = |x-2||x+2| < (\varepsilon/5)(5) = \varepsilon$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -1566,7 +1566,7 @@
                     <p>Let $f(x) = x^3 + x - 1$. This is a polynomial, so it's continuous everywhere.</p>
                     <p>$f(0) = 0 + 0 - 1 = -1 < 0$</p>
                     <p>$f(1) = 1 + 1 - 1 = 1 > 0$</p>
-                    <p>Since $f(0) < 0 < f(1)$ and $f$ is continuous, by IVT there exists $c \in (0,1)$ with $f(c) = 0$. $\square$</p>
+                    <p>Since $f(0) < 0 < f(1)$ and $f$ is continuous, by IVT there exists $c \in (0,1)$ with $f(c) = 0$. <span class="qed" title="Q.E.D.">■</span></p>
                 </div>
             </div>
 
@@ -1600,7 +1600,7 @@
                         <p>Let $g(x) = \cos x - x$. This is continuous on $\mathbb{R}$.</p>
                         <p>$g(0) = \cos 0 - 0 = 1 > 0$</p>
                         <p>$g(\pi/2) = \cos(\pi/2) - \pi/2 = 0 - \pi/2 < 0$</p>
-                        <p>By IVT, there exists $c \in (0, \pi/2)$ with $g(c) = 0$, i.e., $\cos c = c$. $\square$</p>
+                        <p>By IVT, there exists $c \in (0, \pi/2)$ with $g(c) = 0$, i.e., $\cos c = c$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="easy">
@@ -4370,7 +4370,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content">Let $\lambda$ be an eigenvalue of $A$ with eigenvector $\mathbf{v} \neq \mathbf{0}$, so $A\mathbf{v} = \lambda\mathbf{v}$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">Apply $A$ again: $A^2\mathbf{v} = A(\lambda\mathbf{v}) = \lambda A\mathbf{v} = \lambda^2\mathbf{v}$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">But $A^2 = A$, so $A^2\mathbf{v} = A\mathbf{v} = \lambda\mathbf{v}$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">Therefore $\lambda^2\mathbf{v} = \lambda\mathbf{v} \Rightarrow (\lambda^2 - \lambda)\mathbf{v} = \mathbf{0}$. Since $\mathbf{v} \neq \mathbf{0}$, we need $\lambda^2 - \lambda = 0$, i.e., $\lambda(\lambda - 1) = 0$. So $\lambda = 0$ or $\lambda = 1$. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">Therefore $\lambda^2\mathbf{v} = \lambda\mathbf{v} \Rightarrow (\lambda^2 - \lambda)\mathbf{v} = \mathbf{0}$. Since $\mathbf{v} \neq \mathbf{0}$, we need $\lambda^2 - \lambda = 0$, i.e., $\lambda(\lambda - 1) = 0$. So $\lambda = 0$ or $\lambda = 1$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -4729,7 +4729,7 @@
                     <div class="problem-solution">
                         <p>For each $n \in \mathbb{N}$, since $\alpha = \sup S$ and $\alpha - 1/n < \alpha$, there must exist $s_n \in S$ with $\alpha - 1/n < s_n \leq \alpha$.</p>
                         <p>Then $|s_n - \alpha| < 1/n$, so given any $\varepsilon > 0$, choose $N > 1/\varepsilon$ (Archimedean property). For $n \geq N$: $|s_n - \alpha| < 1/n \leq 1/N < \varepsilon$.</p>
-                        <p>Therefore $s_n \to \alpha$. $\square$</p>
+                        <p>Therefore $s_n \to \alpha$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="medium">
@@ -4740,7 +4740,7 @@
                         <div class="steps">
                             <div class="step"><span class="step-number">1</span><div class="step-content">Let $\beta = \sup B$. Then $b \leq \beta$ for all $b \in B$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">Since $A \subseteq B$, every $a \in A$ is also in $B$, so $a \leq \beta$ for all $a \in A$.</div></div>
-                            <div class="step"><span class="step-number">3</span><div class="step-content">Thus $\beta$ is an upper bound for $A$. Since $\sup A$ is the <em>least</em> upper bound of $A$, we have $\sup A \leq \beta = \sup B$. $\square$</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">Thus $\beta$ is an upper bound for $A$. Since $\sup A$ is the <em>least</em> upper bound of $A$, we have $\sup A \leq \beta = \sup B$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -4757,7 +4757,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Upper bound:</strong> For any $a \in A$ and $b \in B$: $a \leq \sup A$ and $b \leq \sup B$, so $a + b \leq \sup A + \sup B$. Thus $\sup A + \sup B$ is an upper bound for $A + B$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Least upper bound:</strong> Let $\varepsilon > 0$. There exist $a \in A$ with $a > \sup A - \varepsilon/2$ and $b \in B$ with $b > \sup B - \varepsilon/2$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Then $a + b > \sup A + \sup B - \varepsilon$, and $a + b \in A + B$. So no number smaller than $\sup A + \sup B$ can be an upper bound for $A + B$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">Therefore $\sup(A+B) = \sup A + \sup B$. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">Therefore $\sup(A+B) = \sup A + \sup B$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -4809,7 +4809,7 @@
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
                         <p>$\left|\frac{3n+1}{n+2} - 3\right| = \left|\frac{3n+1 - 3(n+2)}{n+2}\right| = \left|\frac{-5}{n+2}\right| = \frac{5}{n+2} < \frac{5}{n}$.</p>
-                        <p>Given $\varepsilon > 0$, choose $N > 5/\varepsilon$. Then $n \geq N \Rightarrow \frac{5}{n} \leq \frac{5}{N} < \varepsilon$. $\square$</p>
+                        <p>Given $\varepsilon > 0$, choose $N > 5/\varepsilon$. Then $n \geq N \Rightarrow \frac{5}{n} \leq \frac{5}{N} < \varepsilon$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="medium">
@@ -4821,7 +4821,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content">Let $\varepsilon > 0$. Since $a_n \to L$, there exists $N_1$ such that $n \geq N_1 \Rightarrow |a_n - L| < \varepsilon/2$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">Since $b_n \to M$, there exists $N_2$ such that $n \geq N_2 \Rightarrow |b_n - M| < \varepsilon/2$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Let $N = \max(N_1, N_2)$. For $n \geq N$:</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">$|(a_n + b_n) - (L + M)| = |(a_n - L) + (b_n - M)| \leq |a_n - L| + |b_n - M| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">$|(a_n + b_n) - (L + M)| = |(a_n - L) + (b_n - M)| \leq |a_n - L| + |b_n - M| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -4838,7 +4838,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Bounded below:</strong> By AM-GM, $a_{n+1} = \frac{1}{2}(a_n + 2/a_n) \geq \sqrt{a_n \cdot 2/a_n} = \sqrt{2}$ for all $n \geq 1$. So $a_n \geq \sqrt{2}$ for $n \geq 2$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Decreasing:</strong> $a_{n+1} - a_n = \frac{1}{2}(2/a_n - a_n) = \frac{2 - a_n^2}{2a_n}$. Since $a_n \geq \sqrt{2}$ for $n \geq 2$, we have $a_n^2 \geq 2$, so $a_{n+1} - a_n \leq 0$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Convergence:</strong> The sequence is eventually monotone decreasing and bounded below by $\sqrt{2}$, so by the Monotone Convergence Theorem it converges to some limit $L$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Find the limit:</strong> Taking limits: $L = \frac{1}{2}(L + 2/L) \Rightarrow 2L = L + 2/L \Rightarrow L = 2/L \Rightarrow L^2 = 2$. Since $L > 0$, $L = \sqrt{2}$. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Find the limit:</strong> Taking limits: $L = \frac{1}{2}(L + 2/L) \Rightarrow 2L = L + 2/L \Rightarrow L = 2/L \Rightarrow L^2 = 2$. Since $L > 0$, $L = \sqrt{2}$. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -4947,7 +4947,7 @@
                     <div class="problem-question"><p>Prove that in any group, the identity element is unique.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
-                        <p>Suppose $e$ and $e'$ are both identities. Then $e = e \cdot e' = e'$, where the first equality uses that $e'$ is an identity and the second uses that $e$ is an identity. So $e = e'$. $\square$</p>
+                        <p>Suppose $e$ and $e'$ are both identities. Then $e = e \cdot e' = e'$, where the first equality uses that $e'$ is an identity and the second uses that $e$ is an identity. So $e = e'$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="hard">
@@ -4963,7 +4963,7 @@
                     <div class="problem-solution">
                         <p>Let $|G| = 4$. By Lagrange, non-identity elements have order 2 or 4.</p>
                         <p><strong>Case 1:</strong> Some element $a$ has order 4. Then $G = \{e, a, a^2, a^3\} \cong \mathbb{Z}/4\mathbb{Z}$.</p>
-                        <p><strong>Case 2:</strong> All non-identity elements have order 2. Let $G = \{e, a, b, c\}$ with $a^2 = b^2 = c^2 = e$. Then $ab$ must be $c$ (it can't be $e$, $a$, or $b$). Similarly $ba = c$, so $G$ is abelian. The map $a \mapsto (1,0)$, $b \mapsto (0,1)$ extends to an isomorphism $G \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$. $\square$</p>
+                        <p><strong>Case 2:</strong> All non-identity elements have order 2. Let $G = \{e, a, b, c\}$ with $a^2 = b^2 = c^2 = e$. Then $ab$ must be $c$ (it can't be $e$, $a$, or $b$). Similarly $ba = c$, so $G$ is abelian. The map $a \mapsto (1,0)$, $b \mapsto (0,1)$ extends to an isomorphism $G \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$. <span class="qed" title="Q.E.D.">■</span></p>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="easy">
@@ -5001,7 +5001,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content">Let $|G| = p$ (prime) and pick any $g \in G$ with $g \neq e$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">By Lagrange's Theorem, the order of $g$ divides $|G| = p$. The divisors of $p$ are $1$ and $p$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content">Since $g \neq e$, the order of $g$ is not 1. So $|g| = p$, meaning $\langle g \rangle$ has $p$ elements.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">Since $\langle g \rangle \subseteq G$ and both have $p$ elements, $G = \langle g \rangle$. Thus $G$ is cyclic, generated by any non-identity element. $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">Since $\langle g \rangle \subseteq G$ and both have $p$ elements, $G = \langle g \rangle$. Thus $G$ is cyclic, generated by any non-identity element. <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -5014,7 +5014,7 @@
                             <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Non-empty:</strong> $\phi(e_G) = e_H$ (homomorphisms map identity to identity), so $e_G \in \ker(\phi)$.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Closure:</strong> If $a, b \in \ker(\phi)$, then $\phi(ab) = \phi(a)\phi(b) = e_H \cdot e_H = e_H$, so $ab \in \ker(\phi)$.</div></div>
                             <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Inverses:</strong> If $a \in \ker(\phi)$, then $\phi(a^{-1}) = [\phi(a)]^{-1} = e_H^{-1} = e_H$, so $a^{-1} \in \ker(\phi)$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">By the subgroup test, $\ker(\phi) \leq G$. (In fact, it is a <em>normal</em> subgroup, which is needed for the First Isomorphism Theorem.) $\square$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content">By the subgroup test, $\ker(\phi) \leq G$. (In fact, it is a <em>normal</em> subgroup, which is needed for the First Isomorphism Theorem.) <span class="qed" title="Q.E.D.">■</span></div></div>
                         </div>
                     </div>
                 </div>
@@ -5260,7 +5260,7 @@
                         <div class="steps">
                             <div class="step"><span class="step-number">1</span><div class="step-content">Recall $P(X > x) = e^{-\lambda x}$ for the exponential distribution.</div></div>
                             <div class="step"><span class="step-number">2</span><div class="step-content">$P(X > s+t \mid X > s) = \frac{P(X > s+t \text{ and } X > s)}{P(X > s)} = \frac{P(X > s+t)}{P(X > s)}$ (since $X > s+t$ implies $X > s$).</div></div>
-                            <div class="step"><span class="step-number">3</span><div class="step-content">$= \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t)$. $\square$</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content">$= \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t)$. <span class="qed" title="Q.E.D.">■</span></div></div>
                             <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Interpretation:</strong> If you've already waited $s$ minutes for a bus (exponentially distributed), the probability of waiting $t$ more minutes is the same as if you'd just arrived. The distribution "forgets" the past — hence "memoryless."</div></div>
                         </div>
                     </div>
