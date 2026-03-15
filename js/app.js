@@ -3413,78 +3413,97 @@
   // ============================================================
 
   const Search = {
+    dropdown: null,
+
     init() {
       const input = document.getElementById('search-input');
       if (!input) return;
-      input.addEventListener('input', debounce(() => this.perform(input.value.trim()), 200));
+
+      this.dropdown = document.createElement('div');
+      this.dropdown.className = 'search-dropdown';
+      input.parentNode.style.position = 'relative';
+      input.parentNode.appendChild(this.dropdown);
+
+      input.addEventListener('input', debounce(() => this.perform(input.value.trim()), 250));
+      input.addEventListener('focus', () => { if (input.value.trim()) this.perform(input.value.trim()); });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-wrap') && !e.target.closest('.search-dropdown')) {
+          this.dropdown.style.display = 'none';
+        }
+      });
+    },
+
+    buildIndex() {
+      if (this._index) return this._index;
+      const index = [];
+      document.querySelectorAll('.chapter').forEach((ch) => {
+        const chapterTitle = (ch.querySelector('.chapter-header h2') || {}).textContent || ch.id;
+        const chIdx = Array.from(document.querySelectorAll('.chapter')).indexOf(ch);
+        ch.querySelectorAll('.lesson').forEach((lesson) => {
+          const h3 = lesson.querySelector('h3');
+          const sectionTitle = h3 ? h3.textContent : '';
+          const boxes = lesson.querySelectorAll('.theorem-box, .definition-box, .formula-box, .example-box');
+          boxes.forEach((box) => {
+            const title = (box.querySelector('.box-title') || {}).textContent || '';
+            if (title) index.push({ text: title.toLowerCase(), display: title, section: sectionTitle, chIdx, el: box, type: 'concept' });
+          });
+          const problems = lesson.querySelectorAll('.problem');
+          problems.forEach((p) => {
+            const num = (p.querySelector('.problem-number') || {}).textContent || '';
+            const q = (p.querySelector('.problem-question') || {}).textContent || '';
+            if (num) index.push({ text: (num + ' ' + q).toLowerCase(), display: 'Problem ' + num, section: sectionTitle, chIdx, el: p, type: 'problem' });
+          });
+          if (sectionTitle) index.push({ text: sectionTitle.toLowerCase(), display: sectionTitle, section: chapterTitle, chIdx, el: lesson, type: 'section' });
+        });
+      });
+      this._index = index;
+      return index;
     },
 
     perform(term) {
-      this.clearHighlights();
-      const lessons = document.querySelectorAll('.lesson');
-      let noResultsEl = document.querySelector('.search-no-results');
+      if (!term) { this.dropdown.style.display = 'none'; return; }
+      const index = this.buildIndex();
+      const lower = term.toLowerCase();
+      const results = index.filter(item => item.text.includes(lower)).slice(0, 12);
 
-      if (!term) {
-        lessons.forEach((l) => { l.style.display = ''; });
-        if (noResultsEl) noResultsEl.style.display = 'none';
+      if (results.length === 0) {
+        this.dropdown.innerHTML = '<div class="search-empty">No results found</div>';
+        this.dropdown.style.display = 'block';
         return;
       }
 
-      let matchCount = 0;
-      const lower = term.toLowerCase();
-
-      lessons.forEach((lesson) => {
-        const text = lesson.textContent.toLowerCase();
-        if (text.includes(lower)) {
-          lesson.style.display = '';
-          this.highlight(lesson, term);
-          matchCount++;
-        } else {
-          lesson.style.display = 'none';
-        }
+      let html = '';
+      results.forEach((r) => {
+        const icon = r.type === 'section' ? '&#167;' : r.type === 'concept' ? '&#9670;' : '#';
+        html += '<button class="search-result" data-ch="' + r.chIdx + '">'
+          + '<span class="search-result-icon">' + icon + '</span>'
+          + '<span class="search-result-body">'
+          + '<span class="search-result-title">' + this.highlightTerm(r.display, term) + '</span>'
+          + '<span class="search-result-section">' + r.section + '</span>'
+          + '</span></button>';
       });
+      this.dropdown.innerHTML = html;
+      this.dropdown.style.display = 'block';
 
-      if (!noResultsEl) {
-        noResultsEl = document.createElement('div');
-        noResultsEl.className = 'search-no-results';
-        noResultsEl.style.cssText = 'text-align:center;padding:2em;opacity:0.6;';
-        noResultsEl.textContent = 'No results found.';
-        const main = document.querySelector('.main-content') || document.querySelector('main') || document.body;
-        main.appendChild(noResultsEl);
-      }
-      noResultsEl.style.display = matchCount === 0 ? '' : 'none';
-    },
-
-    clearHighlights() {
-      document.querySelectorAll('mark.search-hl').forEach((mark) => {
-        const parent = mark.parentNode;
-        parent.replaceChild(document.createTextNode(mark.textContent), mark);
-        parent.normalize();
-      });
-    },
-
-    highlight(el, term) {
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      const nodes = [];
-      while (walker.nextNode()) nodes.push(walker.currentNode);
-      const regex = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
-      nodes.forEach((node) => {
-        if (node.parentNode.closest('.demo-controls, .demo-canvas-wrap, canvas, script, style')) return;
-        const parts = node.textContent.split(regex);
-        if (parts.length <= 1) return;
-        const frag = document.createDocumentFragment();
-        parts.forEach((part, i) => {
-          if (i % 2 === 1) {
-            const m = document.createElement('mark');
-            m.className = 'search-hl';
-            m.textContent = part;
-            frag.appendChild(m);
-          } else if (part) {
-            frag.appendChild(document.createTextNode(part));
-          }
+      this.dropdown.querySelectorAll('.search-result').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          const r = results[i];
+          Navigation.goToChapter(r.chIdx);
+          setTimeout(() => {
+            r.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            r.el.style.outline = '2px solid var(--accent)';
+            r.el.style.outlineOffset = '4px';
+            setTimeout(() => { r.el.style.outline = ''; r.el.style.outlineOffset = ''; }, 2500);
+          }, 200);
+          this.dropdown.style.display = 'none';
+          document.getElementById('search-input').value = '';
         });
-        node.parentNode.replaceChild(frag, node);
       });
+    },
+
+    highlightTerm(text, term) {
+      const re = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
+      return text.replace(re, '<mark class="search-hl">$1</mark>');
     },
   };
 
