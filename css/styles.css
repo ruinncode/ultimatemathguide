@@ -2373,3 +2373,142 @@ body.light-mode .ref-sheet-panel {
     opacity: 1;
   }
 }
+
+/* ============================================================
+   Enrichment Panels — Explore / History
+   ============================================================ */
+
+.enrich-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.enrich-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.enrich-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.enrich-btn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.enrich-btn-hist:hover,
+.enrich-btn-hist.active {
+  color: var(--color-gold);
+  border-color: var(--color-gold-border);
+  background: var(--color-gold-bg);
+}
+
+.enrich-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.enrich-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              margin 0.3s ease;
+  margin-top: 0;
+}
+
+.enrich-panel.open {
+  max-height: 800px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.enrich-panel-viz.open {
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.75rem;
+}
+
+.enrich-panel-hist.open {
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: 0.75rem;
+}
+
+.enrich-section {
+  margin-bottom: 0.75rem;
+}
+
+.enrich-section:last-child {
+  margin-bottom: 0;
+}
+
+.enrich-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.enrich-panel-viz .enrich-label {
+  color: var(--accent);
+}
+
+.enrich-panel-hist .enrich-label {
+  color: var(--color-gold);
+}
+
+.enrich-section p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.enrich-visual {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.enrich-visual canvas {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-subtle);
+}
+
+body.light-mode .enrich-visual canvas {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 768px) {
+  .enrich-toolbar {
+    flex-wrap: wrap;
+  }
+  .enrich-btn {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .enrich-visual canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
