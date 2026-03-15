@@ -2842,3 +2842,513 @@ body.light-mode .sol-vis-canvas {
 .mc-question .skill-tag {
   margin-top: 0.6rem;
 }
+
+/* ============================================================
+   Inline MC Options (for existing A/B/C/D problems)
+   ============================================================ */
+
+.inline-mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.inline-mc-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1.5;
+}
+
+.inline-mc-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.inline-mc-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-input);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.inline-mc-correct {
+  border-color: var(--color-green-border) !important;
+  background: var(--color-green-bg) !important;
+}
+.inline-mc-correct .inline-mc-letter {
+  background: var(--color-green) !important;
+  color: #fff !important;
+}
+.inline-mc-wrong {
+  border-color: var(--color-red-border) !important;
+  background: var(--color-red-bg) !important;
+}
+.inline-mc-wrong .inline-mc-letter {
+  background: var(--color-red) !important;
+  color: #fff !important;
+}
+.inline-mc-answered .inline-mc-btn {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Progress Panel + Dashboard
+   ============================================================ */
+
+.progress-toggle {
+  position: fixed;
+  bottom: 140px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg-card);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-toggle:hover {
+  background: var(--accent-glow);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.05);
+}
+
+.progress-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.progress-panel {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  z-index: 10000;
+  overflow-y: auto;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.progress-panel.open {
+  right: 0;
+}
+
+.progress-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.progress-panel-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-heading);
+}
+
+.progress-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.progress-auth {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.auth-google-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.auth-google-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+.auth-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.auth-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.auth-signout {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.progress-stats,
+.progress-weak,
+.progress-recommend {
+  padding: 1rem 1.5rem;
+}
+
+.progress-empty {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 0.6rem 0.3rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+
+.progress-weak h4,
+.progress-recommend h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.6rem;
+}
+
+.topic-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.topic-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.topic-bar-name {
+  min-width: 120px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.topic-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.topic-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.topic-bar-pct {
+  min-width: 60px;
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.topic-bar-count {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.recommend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.recommend-item {
+  padding: 0.5rem 0.7rem;
+  background: var(--color-red-bg);
+  border-left: 3px solid var(--color-red-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.recommend-topic {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.recommend-reason {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.1rem;
+}
+
+.recommend-good {
+  padding: 0.6rem;
+  background: var(--color-green-bg);
+  border-radius: var(--radius-sm);
+  color: var(--color-green);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.progress-actions {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.progress-btn-practice {
+  background: var(--accent);
+  color: #fff;
+}
+
+.progress-btn-practice:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.progress-btn-reset {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.progress-btn-reset:hover {
+  border-color: var(--color-red-border);
+  color: var(--color-red);
+}
+
+/* ============================================================
+   Practice Overlay
+   ============================================================ */
+
+.practice-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.practice-overlay-inner {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  width: 550px;
+  max-width: 92vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.practice-overlay-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.practice-overlay-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-heading);
+}
+
+.practice-overlay-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.practice-overlay-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.practice-overlay-body {
+  padding: 1rem 1.5rem;
+}
+
+.practice-overlay-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.practice-overlay-item:last-child { border-bottom: none; }
+
+.practice-overlay-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.practice-overlay-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.practice-overlay-pid {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.practice-overlay-topic {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.practice-overlay-go {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.practice-overlay-go:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .progress-panel { width: 100%; right: -100%; }
+  .progress-toggle { bottom: 80px; right: 12px; width: 42px; height: 42px; font-size: 1rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .topic-bar-name { min-width: 80px; font-size: 0.72rem; }
+}
