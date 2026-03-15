@@ -1428,6 +1428,24 @@ body.light-mode #dark-mode-toggle::after {
 }
 
 /* ---------- Hero Section ---------- */
+.logo-integral { fill: url(#logo-g1); }
+.logo-sigma { fill: #ffffff; }
+.logo-sym-a { fill: #6c63ff; }
+.logo-sym-b { fill: #00d2ff; }
+.logo-sym-c { fill: #a78bfa; }
+.logo-sym-d { fill: #34d399; }
+.logo-sym-e { fill: #f0b832; }
+.logo-sym-f { fill: #f87171; }
+
+body.light-mode .logo-integral { fill: url(#logo-g1-light); }
+body.light-mode .logo-sigma { fill: #1a1a2e; }
+body.light-mode .logo-sym-a { fill: #4a40d4; }
+body.light-mode .logo-sym-b { fill: #0090b0; }
+body.light-mode .logo-sym-c { fill: #7c5cbf; }
+body.light-mode .logo-sym-d { fill: #1a8a60; }
+body.light-mode .logo-sym-e { fill: #c89000; }
+body.light-mode .logo-sym-f { fill: #d04040; }
+
 .hero-svg {
   display: block;
   margin: 0 auto;
