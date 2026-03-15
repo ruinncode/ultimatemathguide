@@ -2859,6 +2859,66 @@ body.light-mode .enrich-visual canvas {
   animation: fadeIn 0.3s ease;
 }
 
+.mc-instruction {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: -0.5rem 0 1rem;
+  font-style: italic;
+}
+
+.mc-feedback {
+  margin-top: 0.65rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.mc-fb-correct {
+  padding: 0.65rem 0.9rem;
+  background: var(--color-green-bg);
+  border-left: 3px solid var(--color-green-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.mc-fb-correct strong {
+  color: var(--color-green);
+}
+
+.mc-fb-wrong {
+  padding: 0.65rem 0.9rem;
+  background: var(--color-red-bg);
+  border-left: 3px solid var(--color-red-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.mc-fb-wrong strong {
+  color: var(--color-red);
+}
+
+.mc-fb-right {
+  padding: 0.65rem 0.9rem;
+  background: var(--color-green-bg);
+  border-left: 3px solid var(--color-green-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.mc-fb-right strong {
+  color: var(--color-green);
+}
+
+.mc-option-text {
+  flex: 1;
+}
+
 .mc-quiz-footer {
   display: flex;
   gap: 0.75rem;
