@@ -587,13 +587,15 @@ mark.search-hl {
   left: 3px;
   background: rgba(255, 255, 255, 0.15);
   font-family: 'Playfair Display', serif;
-  font-size: 14px;
+  font-size: 13px;
   font-style: italic;
   color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  padding-left: 1px;
+  padding-bottom: 1px;
   transition: transform 0.4s cubic-bezier(0.68, -0.2, 0.27, 1.2),
               background 0.3s ease, color 0.3s ease;
 }
