@@ -1432,7 +1432,9 @@ body.light-mode #dark-mode-toggle::after {
   display: block;
   margin: 0 auto;
   width: 180px;
-  height: 108px;
+  height: auto;
+  max-width: 60%;
+  overflow: visible;
 }
 
 .hero-title {
@@ -1462,8 +1464,8 @@ body.light-mode #dark-mode-toggle::after {
   h3 { font-size: 1.3rem; }
 
   .hero-svg {
-    width: 130px;
-    height: 78px;
+    width: 140px;
+    max-width: 45%;
   }
 
   .hero-title {
@@ -1570,8 +1572,8 @@ body.light-mode #dark-mode-toggle::after {
   h3 { font-size: 1.15rem; }
 
   .hero-svg {
-    width: 100px;
-    height: 60px;
+    width: 120px;
+    max-width: 40%;
   }
 
   .hero-title {
