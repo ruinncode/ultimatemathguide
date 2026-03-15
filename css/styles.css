@@ -593,7 +593,7 @@ mark.search-hl {
   box-shadow: none;
 }
 #dark-mode-toggle::before {
-  content: '∫';
+  content: 'Σ';
   position: absolute;
   width: 20px;
   height: 20px;
@@ -601,9 +601,10 @@ mark.search-hl {
   top: 2px;
   left: 3px;
   background: rgba(255, 255, 255, 0.15);
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
@@ -622,14 +623,16 @@ body.light-mode #dark-mode-toggle {
   background: transparent;
 }
 body.light-mode #dark-mode-toggle::before {
-  content: 'Σ';
+  content: '∫';
   transform: translateX(22px);
   background: rgba(0, 0, 0, 0.08);
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 11px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
+  padding-left: 1px;
+  padding-bottom: 1px;
 }
 #dark-mode-toggle:hover {
   border-color: rgba(255, 255, 255, 0.5);
