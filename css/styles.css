@@ -629,10 +629,9 @@ body.light-mode #dark-mode-toggle::before {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
-  padding-left: 1px;
-  padding-bottom: 1px;
+  padding: 0 0 2px 2px;
 }
 #dark-mode-toggle:hover {
   border-color: rgba(255, 255, 255, 0.5);
