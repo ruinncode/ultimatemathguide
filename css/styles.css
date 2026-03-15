@@ -2346,20 +2346,32 @@ body.light-mode .video-section {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
-  background: var(--bg-secondary);
-  color: var(--accent);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md), 0 0 16px var(--accent-glow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
+  transition: all 0.2s ease;
 }
 .ref-sheet-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-lg), 0 0 24px var(--accent-glow);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+body.light-mode .ref-sheet-toggle {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+body.light-mode .ref-sheet-toggle:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.04);
 }
 .ref-sheet-panel {
   position: fixed;
@@ -3188,22 +3200,35 @@ body.light-mode .sol-vis-canvas {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
-  background: var(--bg-card);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.2rem;
   cursor: pointer;
   z-index: 999;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-fast);
+  box-shadow: none;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .progress-toggle:hover {
-  background: var(--accent-glow);
-  box-shadow: var(--shadow-glow);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
   transform: scale(1.05);
+}
+
+body.light-mode .progress-toggle {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+body.light-mode .progress-toggle:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .progress-badge {
