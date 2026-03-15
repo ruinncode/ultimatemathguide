@@ -2791,3 +2791,54 @@ body.light-mode .sol-vis-canvas {
     padding: 0.5rem;
   }
 }
+
+/* ============================================================
+   Skill Tags — "What you practiced"
+   ============================================================ */
+
+.skill-tag {
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(0, 210, 255, 0.06));
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  animation: fadeIn 0.4s ease;
+}
+
+.skill-tag-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.skill-tag-icon {
+  font-size: 0.85rem;
+}
+
+.skill-tag-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.skill-tag-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.2rem;
+}
+
+.skill-tag-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.mc-question .skill-tag {
+  margin-top: 0.6rem;
+}
