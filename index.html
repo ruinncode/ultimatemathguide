@@ -1677,19 +1677,65 @@
         <div class="lesson-content">
 
             <div class="definition-box">
-                <div class="box-title">Parent Function &amp; Vertex Form</div>
+                <div class="box-title">The Parent Function: $y = x^2$</div>
                 <div class="box-content">
-                    <p>The <strong>parent quadratic</strong> is $y = x^2$. Every other quadratic is a transformation of this basic parabola.</p>
-                    <p>In <strong>vertex form</strong> $y = a(x - h)^2 + k$, the vertex is at $(h, k)$.</p>
+                    <p>Before learning transformations, you must understand the <strong>parent function</strong> — the simplest version of the parabola:</p>
+                    <p>$$y = x^2$$</p>
+                    <p><strong>Key features of $y = x^2$:</strong></p>
+                    <p>$\bullet$ <strong>Vertex</strong> at the origin $(0, 0)$ — the lowest point</p>
+                    <p>$\bullet$ <strong>Axis of symmetry:</strong> the $y$-axis ($x = 0$)</p>
+                    <p>$\bullet$ <strong>Opens upward</strong> (U-shape)</p>
+                    <p>$\bullet$ <strong>Passes through</strong> $(1, 1)$, $(-1, 1)$, $(2, 4)$, $(-2, 4)$</p>
+                    <p>$\bullet$ <strong>Symmetric:</strong> $f(-x) = f(x)$ — it's an even function</p>
+                    <p>Every other parabola is just this parent function that has been <em>shifted</em>, <em>stretched</em>, or <em>flipped</em>.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="box-title">Vertex Form: $y = a(x - h)^2 + k$</div>
+                <div class="box-content">
+                    <p>Every quadratic can be written in vertex form, where each letter controls one transformation:</p>
+                    <p>$$y = a(x - h)^2 + k$$</p>
+                    <p>The vertex (turning point) is at $(h, k)$. The axis of symmetry is $x = h$.</p>
                 </div>
             </div>
 
             <div class="note-box">
-                <div class="box-title">Transformation Rules</div>
+                <div class="box-title">What Each Parameter Does (Learn This Deeply)</div>
                 <div class="box-content">
-                    <p><strong>$a$:</strong> Controls stretch/compression and reflection. $|a| > 1$ stretches vertically (narrower), $0 < |a| < 1$ compresses (wider). If $a < 0$, the parabola flips upside down.</p>
-                    <p><strong>$h$:</strong> Horizontal shift. $h > 0$ shifts <em>right</em>, $h < 0$ shifts <em>left</em> (note the minus sign in the formula).</p>
-                    <p><strong>$k$:</strong> Vertical shift. $k > 0$ shifts <em>up</em>, $k < 0$ shifts <em>down</em>.</p>
+                    <p style="margin-bottom:0.75rem;"><strong>The "$a$" — Stretch, Compression, and Flip</strong></p>
+                    <p>$a$ controls the <em>shape</em> and <em>direction</em> of the parabola:</p>
+                    <p>$\bullet$ $a = 1$: the parent shape (no change)</p>
+                    <p>$\bullet$ $a > 1$ (e.g. $a = 3$): <strong>vertically stretched</strong> — the parabola is <em>narrower</em> because it rises faster. Every $y$-value is multiplied by 3.</p>
+                    <p>$\bullet$ $0 < a < 1$ (e.g. $a = 0.5$): <strong>vertically compressed</strong> — the parabola is <em>wider</em> because it rises slower. Every $y$-value is halved.</p>
+                    <p>$\bullet$ $a < 0$ (e.g. $a = -1$): <strong>reflected over the $x$-axis</strong> — the parabola opens <em>downward</em> (∩ shape instead of ∪).</p>
+                    <p>$\bullet$ $a = -2$: both reflected AND stretched (narrow, opening down).</p>
+                    <p>$\bullet$ $a = -0.5$: both reflected AND compressed (wide, opening down).</p>
+                    <p style="color:var(--text-muted);font-size:0.88rem;">Think of it this way: $|a|$ controls the "steepness" and the sign of $a$ controls "which way it opens."</p>
+
+                    <p style="margin-top:1rem;margin-bottom:0.75rem;"><strong>The "$h$" — Horizontal Shift (Watch the Sign!)</strong></p>
+                    <p>$h$ moves the parabola left or right:</p>
+                    <p>$\bullet$ $h > 0$: shifts <strong>right</strong> — e.g. $(x - 3)^2$ moves right 3 units</p>
+                    <p>$\bullet$ $h < 0$: shifts <strong>left</strong> — e.g. $(x + 2)^2 = (x - (-2))^2$ moves left 2 units</p>
+                    <p style="border:1px solid var(--color-red-border);background:var(--color-red-bg);padding:0.5rem 0.75rem;border-radius:6px;margin-top:0.5rem;"><strong>Common mistake:</strong> The sign is OPPOSITE to what you expect. In $(x - 3)^2$, the vertex is at $x = +3$, not $-3$. The formula has a minus sign built in: $(x - h)$. So if you see $(x + 2)$, that means $h = -2$ (shift left).</p>
+
+                    <p style="margin-top:1rem;margin-bottom:0.75rem;"><strong>The "$k$" — Vertical Shift (Sign is Normal)</strong></p>
+                    <p>$k$ moves the parabola up or down:</p>
+                    <p>$\bullet$ $k > 0$: shifts <strong>up</strong> — e.g. $x^2 + 4$ moves up 4 units</p>
+                    <p>$\bullet$ $k < 0$: shifts <strong>down</strong> — e.g. $x^2 - 3$ moves down 3 units</p>
+                    <p style="color:var(--text-muted);font-size:0.88rem;">Unlike $h$, the sign of $k$ is exactly what you expect: positive = up, negative = down. No tricks here.</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <div class="box-title">Order of Transformations (Apply in This Order)</div>
+                <div class="box-content">
+                    <p>When multiple transformations are combined in $y = a(x - h)^2 + k$:</p>
+                    <p><strong>1.</strong> Start with the parent $y = x^2$</p>
+                    <p><strong>2.</strong> Apply the <strong>horizontal shift</strong> ($h$) — move the vertex left/right</p>
+                    <p><strong>3.</strong> Apply the <strong>stretch/compression/reflection</strong> ($a$) — change shape and direction</p>
+                    <p><strong>4.</strong> Apply the <strong>vertical shift</strong> ($k$) — move the vertex up/down</p>
+                    <p>The vertex ends up at $(h, k)$. From there, plot a few points using the $a$ value to get the shape right.</p>
                 </div>
             </div>
 
