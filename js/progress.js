@@ -536,43 +536,202 @@
     overlay.className = 'practice-overlay';
     overlay.id = 'practice-overlay';
 
-    let html = `<div class="practice-overlay-inner">
-      <div class="practice-overlay-header">
-        <h3>Your Practice Session</h3>
-        <span class="practice-overlay-count">${problems.length} questions · Easy → Hard</span>
-        <button class="practice-overlay-close">&times;</button>
-      </div>
-      <div class="practice-overlay-body">`;
+    let currentIdx = 0;
+    let score = 0;
 
-    problems.forEach((p, i) => {
+    function renderQuestion() {
+      const p = problems[currentIdx];
+      const problemEl = p.el;
+      const qText = (problemEl.querySelector('.problem-question') || {}).innerHTML || '';
+      const mcBtns = problemEl.querySelectorAll('.inline-mc-btn');
+      const mcData = window._mcConvertData && window._mcConvertData[p.pid];
+
+      let optionsHTML = '';
+      if (mcBtns.length >= 2 && !problemEl.dataset.mcInjected) {
+        // Problem already has inline MC from progress.js conversion
+        const opts = problemEl.querySelectorAll('.inline-mc-btn');
+        opts.forEach((btn, j) => {
+          optionsHTML += `<button class="inline-mc-btn prac-opt" data-choice="${j}"><span class="inline-mc-letter">${'ABCD'[j]}</span><span class="inline-mc-text">${btn.querySelector('.inline-mc-text')?.innerHTML || btn.innerHTML}</span></button>`;
+        });
+      } else if (mcData) {
+        mcData.o.forEach((opt, j) => {
+          optionsHTML += `<button class="inline-mc-btn prac-opt" data-choice="${j}"><span class="inline-mc-letter">${'ABCD'[j]}</span><span class="inline-mc-text">${opt}</span></button>`;
+        });
+      } else {
+        // Extract MC options from mc-convert data
+        const mcScript = document.querySelector('script[src*="mc-convert"]');
+        const convertedBtns = problemEl.querySelectorAll('[data-choice]');
+        if (convertedBtns.length >= 2) {
+          convertedBtns.forEach((btn, j) => {
+            optionsHTML += `<button class="inline-mc-btn prac-opt" data-choice="${j}"><span class="inline-mc-letter">${'ABCD'[j]}</span><span class="inline-mc-text">${btn.querySelector('.inline-mc-text')?.innerHTML || btn.textContent}</span></button>`;
+          });
+        }
+      }
+
+      // Get correct answer
+      let correctIdx = -1;
+      if (problemEl.dataset.correctAnswer) {
+        correctIdx = 'ABCD'.indexOf(problemEl.dataset.correctAnswer);
+      } else if (problemEl.dataset.mcInjected) {
+        const cBtn = problemEl.querySelector('[data-choice]');
+        // find from mc-convert
+      }
+      // Try to get from mc-convert data on the element
+      const allBtns = problemEl.querySelectorAll('[data-choice]');
+      if (correctIdx < 0 && allBtns.length > 0) {
+        // look for the one that would be correct
+        const solText = (problemEl.querySelector('.problem-solution') || {}).textContent || '';
+        const ansMatch = solText.match(/Answer:\s*\(?([A-D])\)?/i);
+        if (ansMatch) correctIdx = 'ABCD'.indexOf(ansMatch[1]);
+      }
+
       const diffClass = p.diff.replace(' ', '-').toLowerCase();
-      html += `<div class="practice-overlay-item" data-pid="${p.pid}">
-        <div class="practice-overlay-num">${i + 1}</div>
-        <div class="practice-overlay-info">
-          <span class="practice-overlay-pid">${p.pid}</span>
-          <span class="difficulty-badge difficulty-${diffClass}" style="font-size:0.7rem;padding:2px 6px;">${p.diff}</span>
-          <span class="practice-overlay-topic">${p.topic}</span>
+
+      let html = `<div class="practice-overlay-inner">
+        <div class="practice-overlay-header">
+          <h3>Practice Session</h3>
+          <span class="practice-overlay-count">${currentIdx + 1} / ${problems.length} · Score: ${score}</span>
+          <button class="practice-overlay-close">&times;</button>
         </div>
-        <button class="practice-overlay-go" data-chapter="${p.pid.split('.')[0]}">Go →</button>
+        <div class="practice-overlay-body" style="padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+            <span class="practice-overlay-pid" style="font-size:0.85rem;">${p.pid}</span>
+            <span class="difficulty-badge difficulty-${diffClass}" style="font-size:0.68rem;padding:2px 6px;">${p.diff}</span>
+            <span style="font-size:0.75rem;color:var(--text-muted);">${p.topic}</span>
+          </div>
+          <div class="prac-question" style="font-size:0.95rem;line-height:1.7;margin-bottom:1rem;">${qText}</div>`;
+
+      if (optionsHTML) {
+        html += `<div class="prac-options inline-mc-options" data-correct="${correctIdx}">${optionsHTML}</div>`;
+        html += `<div class="prac-feedback" style="display:none;margin-top:0.75rem;"></div>`;
+      } else {
+        html += `<div class="prac-no-mc" style="padding:0.75rem;background:var(--bg-card);border-radius:8px;border:1px solid var(--border-subtle);margin-bottom:0.75rem;">
+          <p style="color:var(--text-secondary);font-size:0.88rem;">This is a free-response problem. Work it out, then reveal the answer.</p>
+          <button class="prac-reveal-btn" style="margin-top:0.5rem;padding:0.4rem 1rem;border:1px solid var(--border-color);border-radius:20px;background:transparent;color:var(--text-secondary);font-size:0.82rem;cursor:pointer;">Show Answer</button>
+          <div class="prac-answer" style="display:none;margin-top:0.75rem;font-size:0.9rem;line-height:1.7;"></div>
+        </div>`;
+      }
+
+      html += `<div class="prac-actions" style="display:flex;gap:0.5rem;margin-top:1rem;justify-content:space-between;align-items:center;">
+        <button class="prac-review-btn" style="padding:0.4rem 0.85rem;border:1px solid var(--border-color);border-radius:20px;background:transparent;color:var(--text-muted);font-size:0.78rem;cursor:pointer;">Review Concept</button>
+        <button class="prac-next-btn" style="padding:0.5rem 1.5rem;border:none;border-radius:20px;background:var(--accent);color:#fff;font-size:0.85rem;font-weight:600;cursor:pointer;display:none;">Next</button>
       </div>`;
-    });
 
-    html += '</div></div>';
-    overlay.innerHTML = html;
-    document.body.appendChild(overlay);
+      html += '</div></div>';
+      overlay.innerHTML = html;
 
-    overlay.querySelector('.practice-overlay-close').addEventListener('click', () => overlay.remove());
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) overlay.remove();
-    });
+      // Render KaTeX
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(overlay, {
+          delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }],
+          throwOnError: false
+        });
+      }
 
-    overlay.querySelectorAll('.practice-overlay-go').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const pid = btn.closest('.practice-overlay-item').dataset.pid;
-        overlay.remove();
-        navigateToProblem(pid);
+      // Close
+      overlay.querySelector('.practice-overlay-close').addEventListener('click', () => overlay.remove());
+
+      // Review concept button
+      overlay.querySelector('.prac-review-btn').addEventListener('click', () => {
+        overlay.style.display = 'none';
+        navigateToProblem(p.pid);
+        // Add a floating "Back to Practice" button
+        const backBtn = document.createElement('button');
+        backBtn.className = 'prac-back-float';
+        backBtn.textContent = 'Back to Practice';
+        backBtn.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:0.6rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:20px;font-size:0.88rem;font-weight:600;cursor:pointer;z-index:10002;box-shadow:0 4px 16px rgba(0,0,0,0.3);';
+        document.body.appendChild(backBtn);
+        backBtn.addEventListener('click', () => {
+          backBtn.remove();
+          overlay.style.display = '';
+        });
       });
-    });
+
+      // MC click handler
+      const optsContainer = overlay.querySelector('.prac-options');
+      const feedback = overlay.querySelector('.prac-feedback');
+      const nextBtn = overlay.querySelector('.prac-next-btn');
+
+      if (optsContainer) {
+        const correct = parseInt(optsContainer.dataset.correct);
+        optsContainer.querySelectorAll('.prac-opt').forEach(btn => {
+          btn.addEventListener('click', function () {
+            if (optsContainer.classList.contains('inline-mc-answered')) return;
+            optsContainer.classList.add('inline-mc-answered');
+            const chosen = parseInt(this.dataset.choice);
+            const isCorrect = chosen === correct;
+
+            if (isCorrect) {
+              this.classList.add('inline-mc-correct');
+              score++;
+              feedback.innerHTML = '<div class="mc-fb-correct"><strong>Correct!</strong></div>';
+            } else {
+              this.classList.add('inline-mc-wrong');
+              const correctBtn = optsContainer.querySelector(`[data-choice="${correct}"]`);
+              if (correctBtn) correctBtn.classList.add('inline-mc-correct');
+              feedback.innerHTML = '<div class="mc-fb-wrong"><strong>Incorrect.</strong></div>';
+            }
+            feedback.style.display = 'block';
+            nextBtn.style.display = '';
+            overlay.querySelector('.practice-overlay-count').textContent = `${currentIdx + 1} / ${problems.length} · Score: ${score}`;
+
+            const topic = getTopicForProblem(p.pid);
+            recordAnswer(p.pid, isCorrect, topic);
+          });
+        });
+      }
+
+      // Free-response reveal
+      const revealBtn = overlay.querySelector('.prac-reveal-btn');
+      if (revealBtn) {
+        revealBtn.addEventListener('click', () => {
+          const solEl = problemEl.querySelector('.problem-solution');
+          const answerDiv = overlay.querySelector('.prac-answer');
+          if (solEl && answerDiv) {
+            answerDiv.innerHTML = solEl.innerHTML;
+            answerDiv.style.display = 'block';
+            if (typeof renderMathInElement === 'function') {
+              renderMathInElement(answerDiv, {
+                delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }],
+                throwOnError: false
+              });
+            }
+          }
+          revealBtn.textContent = 'Answer shown';
+          revealBtn.disabled = true;
+          nextBtn.style.display = '';
+        });
+      }
+
+      // Next button
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentIdx++;
+          if (currentIdx < problems.length) {
+            renderQuestion();
+          } else {
+            // Session complete
+            const pct = Math.round((score / problems.length) * 100);
+            overlay.innerHTML = `<div class="practice-overlay-inner">
+              <div class="practice-overlay-header">
+                <h3>Session Complete</h3>
+                <button class="practice-overlay-close">&times;</button>
+              </div>
+              <div style="padding:2rem;text-align:center;">
+                <div style="font-size:2.5rem;font-weight:700;color:${pct >= 80 ? 'var(--color-green)' : pct >= 50 ? 'var(--color-gold)' : 'var(--color-red)'};">${score} / ${problems.length}</div>
+                <div style="font-size:1rem;color:var(--text-secondary);margin:0.5rem 0 1.5rem;">${pct}% correct</div>
+                <button onclick="this.closest('.practice-overlay').remove()" style="padding:0.5rem 2rem;background:var(--accent);color:#fff;border:none;border-radius:20px;font-size:0.9rem;font-weight:600;cursor:pointer;">Done</button>
+              </div>
+            </div>`;
+            overlay.querySelector('.practice-overlay-close').addEventListener('click', () => overlay.remove());
+            updateDashboardBadge();
+          }
+        });
+      }
+    }
+
+    document.body.appendChild(overlay);
+    renderQuestion();
   }
 
   function navigateToProblem(pid) {
