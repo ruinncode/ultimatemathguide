@@ -3485,6 +3485,7 @@
           + '<span class="search-result-section">' + r.section + '</span>'
           + '</span></button>';
       });
+      html += '<div class="search-legend"><span>&#167; Section</span><span>&#9670; Concept</span><span># Problem</span></div>';
       this.dropdown.innerHTML = html;
       this.dropdown.style.display = 'block';
 
