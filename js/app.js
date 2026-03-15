@@ -3225,9 +3225,11 @@
         botNav.appendChild(makePrev());
         botNav.appendChild(makeNext());
 
-        const intro = chapter.querySelector('.chapter-intro');
-        if (intro) intro.parentNode.insertBefore(topNav, intro);
-        else chapter.insertBefore(topNav, chapter.children[1] || null);
+        if (ci > 0) {
+          const intro = chapter.querySelector('.chapter-intro');
+          if (intro) intro.parentNode.insertBefore(topNav, intro);
+          else chapter.insertBefore(topNav, chapter.children[1] || null);
+        }
         chapter.appendChild(botNav);
       });
     },
