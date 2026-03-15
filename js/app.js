@@ -3125,15 +3125,7 @@
         link.href = '#' + chapter.id;
         link.className = 'nav-chapter-link';
         link.textContent = titleEl.textContent;
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          this.goToChapter(ci);
-          const sb = document.querySelector('.sidebar');
-          const ov = document.querySelector('.overlay');
-          if (sb) sb.classList.remove('open');
-          if (ov) ov.classList.remove('active');
-          if (this._syncMobileBtn) this._syncMobileBtn();
-        });
+        link.dataset.ci = ci;
         li.appendChild(link);
 
         const lessons = chapter.querySelectorAll('.lesson');
@@ -3174,22 +3166,39 @@
       nav.innerHTML = '';
       nav.appendChild(ul);
 
+      const self = this;
       ul.querySelectorAll('.nav-chapter').forEach(li => {
-        let timer;
+        const link = li.querySelector('.nav-chapter-link');
         const lessons = li.querySelector('.nav-lessons');
-        if (!lessons) return;
-        li.addEventListener('mouseenter', () => {
-          clearTimeout(timer);
-          lessons.style.maxHeight = lessons.scrollHeight + 'px';
-          lessons.style.padding = '0 0 0.4rem';
-        });
-        li.addEventListener('mouseleave', () => {
-          timer = setTimeout(() => {
-            if (!li.classList.contains('expanded')) {
+        if (!link) return;
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const ci = parseInt(link.dataset.ci);
+
+          if (lessons) {
+            const isOpen = li.classList.contains('expanded');
+            // Close all others
+            ul.querySelectorAll('.nav-chapter').forEach(other => {
+              if (other !== li) {
+                other.classList.remove('expanded');
+                const ol = other.querySelector('.nav-lessons');
+                if (ol) { ol.style.maxHeight = ''; ol.style.padding = ''; }
+              }
+            });
+            // Toggle this one
+            if (isOpen) {
+              li.classList.remove('expanded');
               lessons.style.maxHeight = '';
               lessons.style.padding = '';
+            } else {
+              li.classList.add('expanded');
+              lessons.style.maxHeight = lessons.scrollHeight + 'px';
+              lessons.style.padding = '0 0 0.4rem';
             }
-          }, 200);
+          }
+
+          // Navigate to the chapter
+          if (!isNaN(ci)) self.goToChapter(ci);
         });
       });
     },
