@@ -1577,9 +1577,13 @@
                     <div class="problem-question"><p>Determine where $f(x) = \frac{x+1}{x^2 - 4}$ is continuous.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
-                        <p>$f$ is a rational function, continuous everywhere on its domain.</p>
-                        <p>Domain: all $x$ where $x^2 - 4 \neq 0$, i.e., $x \neq \pm 2$.</p>
-                        <p>$f$ is continuous on $(-\infty, -2) \cup (-2, 2) \cup (2, \infty)$.</p>
+                        <div class="sol-strategy">💡 <strong>What's our approach?</strong> A rational function (a fraction of polynomials) is continuous everywhere <em>except</em> where the denominator equals zero. So we just need to find where the bottom blows up.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Find the trouble spots.</strong> The denominator is $x^2 - 4$. Set it equal to zero: $x^2 - 4 = 0$, which factors as $(x-2)(x+2) = 0$. So $x = 2$ or $x = -2$. These are the only places where the function is undefined.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>What happens at those points?</strong> At $x = 2$ and $x = -2$, the denominator is zero, so $f(x)$ shoots off to $\pm\infty$. These are <strong>vertical asymptotes</strong> — the function is discontinuous here.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Everywhere else?</strong> Since $f$ is a rational function, it's continuous at every point where it's defined. That means $f$ is continuous on $(-\infty, -2) \cup (-2, 2) \cup (2, \infty)$ — everything except those two asymptotes.</div></div>
+                        </div>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> For rational functions, just find where the denominator = 0. Those are your only discontinuities.</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="medium">
@@ -1587,9 +1591,15 @@
                     <div class="problem-question"><p>Find $k$ so that $f(x) = \begin{cases} x^2 + 1 & x \leq 2 \\ kx + 3 & x > 2 \end{cases}$ is continuous at $x = 2$.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
-                        <p>Need: $\lim_{x \to 2^-}f(x) = \lim_{x \to 2^+}f(x) = f(2)$.</p>
-                        <p>$f(2) = 4 + 1 = 5$. $\lim_{x \to 2^+}(kx + 3) = 2k + 3$.</p>
-                        <p>Set $2k + 3 = 5 \Rightarrow k = 1$.</p>
+                        <div class="sol-strategy">💡 <strong>What's our approach?</strong> We have two "pieces" of a function that meet at $x = 2$. For continuity, they need to connect — no gap, no jump. That means both pieces must give the <em>same value</em> at $x = 2$.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>What does the left piece give at $x = 2$?</strong> The left piece is $x^2 + 1$. Plugging in: $f(2) = 2^2 + 1 = 4 + 1 = 5$. So the left piece arrives at the value <strong>5</strong> when $x$ reaches 2.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>What does the right piece approach at $x = 2$?</strong> The right piece is $kx + 3$. As $x$ approaches 2 from the right: $k(2) + 3 = 2k + 3$. We don't know this yet because it depends on $k$.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Make them match!</strong> For continuity, the right piece must arrive at the same value as the left piece. So we set $2k + 3 = 5$.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Solve for $k$:</strong> $2k + 3 = 5 \Rightarrow 2k = 2 \Rightarrow k = 1$.</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Verify:</strong> With $k = 1$, the right piece is $x + 3$. At $x = 2$: $2 + 3 = 5$. ✓ Both pieces give 5 at $x = 2$, so they connect smoothly.</div></div>
+                        </div>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> For piecewise continuity, evaluate both pieces at the boundary point and set them equal. That gives you an equation to solve for the unknown parameter.</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="medium">
@@ -1597,10 +1607,15 @@
                     <div class="problem-question"><p>Use the IVT to show that $\cos x = x$ has at least one solution.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
-                        <p>Let $g(x) = \cos x - x$. This is continuous on $\mathbb{R}$.</p>
-                        <p>$g(0) = \cos 0 - 0 = 1 > 0$</p>
-                        <p>$g(\pi/2) = \cos(\pi/2) - \pi/2 = 0 - \pi/2 < 0$</p>
-                        <p>By IVT, there exists $c \in (0, \pi/2)$ with $g(c) = 0$, i.e., $\cos c = c$. <span class="qed" title="Q.E.D.">■</span></p>
+                        <div class="sol-strategy">💡 <strong>What's our approach?</strong> We can't solve $\cos x = x$ algebraically (there's no formula!). But we can <em>prove</em> a solution exists using the Intermediate Value Theorem. The idea: if a continuous function goes from positive to negative, it must cross zero somewhere in between.</div>
+                        <div class="steps">
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Rewrite as a root-finding problem.</strong> Instead of solving $\cos x = x$, define $g(x) = \cos x - x$. Now we're looking for where $g(x) = 0$. If we can find this, then $\cos x - x = 0$, which means $\cos x = x$.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Is $g$ continuous?</strong> Yes! $\cos x$ is continuous and $x$ is continuous, so their difference $g(x) = \cos x - x$ is continuous everywhere. This is important because IVT requires continuity.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Find a point where $g$ is positive.</strong> Try $x = 0$: $g(0) = \cos(0) - 0 = 1 - 0 = 1$. Since $1 > 0$, we have $g(0) > 0$. Good — the function starts above zero.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Find a point where $g$ is negative.</strong> Try $x = \pi/2 \approx 1.57$: $g(\pi/2) = \cos(\pi/2) - \pi/2 = 0 - 1.57 = -1.57$. Since $-1.57 < 0$, we have $g(\pi/2) < 0$. Good — the function has gone below zero.</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Apply IVT!</strong> Since $g$ is continuous on $[0, \pi/2]$, and $g(0) = 1 > 0$ while $g(\pi/2) \approx -1.57 < 0$, the function must cross zero somewhere between 0 and $\pi/2$. So there exists some $c$ in $(0, \pi/2)$ with $g(c) = 0$, meaning $\cos c = c$. <span class="qed" title="Q.E.D.">■</span></div></div>
+                        </div>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> IVT is a powerful existence proof. You can't find the exact answer (it's $c \approx 0.739$), but you can <em>prove</em> it exists. The recipe: (1) rewrite as $g(x) = 0$, (2) check $g$ is continuous, (3) find one positive and one negative value, (4) IVT guarantees a root between them.</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="easy">
@@ -1815,13 +1830,15 @@
                     <div class="problem-question"><p>Use the limit definition of the derivative to find $f'(x)$ for $f(x) = 3x + 5$.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
+                        <div class="sol-strategy">💡 <strong>What are we doing?</strong> We're finding the derivative "from scratch" — no shortcuts yet. The limit definition tells us the slope of the tangent line at any point by seeing what happens when two points get infinitely close.</div>
                         <div class="steps">
-                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Set up the definition:</strong> $f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}$</div></div>
-                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Compute $f(x+h)$:</strong> $f(x+h) = 3(x+h) + 5 = 3x + 3h + 5$</div></div>
-                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Form the difference quotient:</strong> $\frac{(3x + 3h + 5) - (3x + 5)}{h} = \frac{3h}{h} = 3$</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">$\lim_{h \to 0} 3 = 3$. So $f'(x) = 3$.</div></div>
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Write down the definition.</strong> The derivative is: $f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}$. Think of this as: "how much does $f$ change when I nudge $x$ by a tiny amount $h$?"</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Compute $f(x+h)$.</strong> Replace every $x$ in $f(x) = 3x + 5$ with $(x+h)$: $$f(x+h) = 3(x+h) + 5 = 3x + 3h + 5$$</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Subtract $f(x)$ from $f(x+h)$.</strong> This gives us the change in the function: $$f(x+h) - f(x) = (3x + 3h + 5) - (3x + 5) = 3h$$ Notice how $3x$ and $5$ cancel out — only the $3h$ survives. This makes sense: the change in a linear function only depends on how far you move ($h$), not where you start ($x$).</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Divide by $h$.</strong> $$\frac{f(x+h) - f(x)}{h} = \frac{3h}{h} = 3$$ The $h$ cancels, leaving just $3$. This is the slope of the line — it's the same everywhere!</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Take the limit.</strong> $\lim_{h \to 0} 3 = 3$. Since the expression doesn't even depend on $h$, the limit is trivially $3$. So $f'(x) = 3$.</div></div>
                         </div>
-                        <p>This confirms what we expect: the derivative of a linear function $mx + b$ is the slope $m$.</p>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> The derivative of a line $y = mx + b$ is just its slope $m$. This makes intuitive sense — a straight line has the same steepness everywhere, so its "instantaneous rate of change" is the same as its overall slope.</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="medium">
@@ -2400,12 +2417,18 @@
                     <div class="problem-question"><p>Find the absolute maximum and minimum of $f(x) = x^3 - 3x + 2$ on $[-2, 3]$.</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
+                        <div class="sol-strategy">💡 <strong>What's our approach?</strong> To find absolute max/min on a closed interval, we use the <em>Candidates Test</em>: the absolute extrema can ONLY occur at critical points or endpoints. So we evaluate $f$ at all candidates and pick the biggest and smallest values.</div>
                         <div class="steps">
-                            <div class="step"><span class="step-number">1</span><div class="step-content">$f'(x) = 3x^2 - 3 = 3(x-1)(x+1) = 0 \Rightarrow x = \pm 1$.</div></div>
-                            <div class="step"><span class="step-number">2</span><div class="step-content">Evaluate at critical points and endpoints:
-                                $f(-2) = -8+6+2 = 0$, $f(-1) = -1+3+2 = 4$, $f(1) = 1-3+2 = 0$, $f(3) = 27-9+2 = 20$.</div></div>
-                            <div class="step"><span class="step-number">3</span><div class="step-content">Absolute max: $f(3) = 20$. Absolute min: $f(-2) = f(1) = 0$.</div></div>
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Find the critical points.</strong> Take the derivative: $f'(x) = 3x^2 - 3$. Set it equal to zero: $3x^2 - 3 = 0 \Rightarrow 3(x^2 - 1) = 0 \Rightarrow 3(x-1)(x+1) = 0$. So $x = 1$ and $x = -1$ are our critical points. Both are inside $[-2, 3]$, so both are candidates.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>List ALL candidates.</strong> Our candidates are: the two critical points ($x = -1$ and $x = 1$) plus the two endpoints ($x = -2$ and $x = 3$). That's 4 values to check.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Evaluate $f$ at each candidate.</strong>
+                                <br>• $f(-2) = (-2)^3 - 3(-2) + 2 = -8 + 6 + 2 = \mathbf{0}$
+                                <br>• $f(-1) = (-1)^3 - 3(-1) + 2 = -1 + 3 + 2 = \mathbf{4}$
+                                <br>• $f(1) = (1)^3 - 3(1) + 2 = 1 - 3 + 2 = \mathbf{0}$
+                                <br>• $f(3) = (3)^3 - 3(3) + 2 = 27 - 9 + 2 = \mathbf{20}$</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Compare all values.</strong> The largest is $f(3) = 20$ → <strong>absolute maximum</strong>. The smallest is $f(-2) = f(1) = 0$ → <strong>absolute minimum</strong> (occurring at two different points).</div></div>
                         </div>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> The Candidates Test is foolproof: find critical points, evaluate at ALL critical points AND endpoints, then compare. You don't need the second derivative test here — just pick the biggest and smallest from your list. Don't forget the endpoints!</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="hard">
@@ -2413,13 +2436,16 @@
                     <div class="problem-question"><p>A 10-foot ladder leans against a wall. The bottom slides away at 2 ft/s. How fast is the top sliding down when the bottom is 6 ft from the wall? (Related rates)</p></div>
                     <button class="show-solution-btn">Show Solution</button>
                     <div class="problem-solution">
+                        <div class="sol-strategy">💡 <strong>What's our approach?</strong> This is a <em>related rates</em> problem. We know how fast one thing is changing (the bottom sliding out), and we want to find how fast another thing is changing (the top sliding down). The key: find an equation that connects the two quantities, then differentiate with respect to time.</div>
                         <div class="steps">
-                            <div class="step"><span class="step-number">1</span><div class="step-content">Let $x$ = distance of bottom from wall, $y$ = height on wall. Relation: $x^2 + y^2 = 100$.</div></div>
-                            <div class="step"><span class="step-number">2</span><div class="step-content">Differentiate with respect to time: $2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0$.</div></div>
-                            <div class="step"><span class="step-number">3</span><div class="step-content">When $x = 6$: $y = \sqrt{100 - 36} = 8$. Given: $\frac{dx}{dt} = 2$.</div></div>
-                            <div class="step"><span class="step-number">4</span><div class="step-content">$2(6)(2) + 2(8)\frac{dy}{dt} = 0 \Rightarrow \frac{dy}{dt} = -\frac{24}{16} = -\frac{3}{2}$ ft/s.</div></div>
-                            <div class="step"><span class="step-number">5</span><div class="step-content">The top slides down at $\frac{3}{2}$ ft/s.</div></div>
+                            <div class="step"><span class="step-number">1</span><div class="step-content"><strong>Draw a picture and label variables.</strong> The wall, floor, and ladder form a right triangle. Let $x$ = distance from the bottom of the ladder to the wall, and $y$ = height of the top of the ladder on the wall. Both $x$ and $y$ change with time as the ladder slides.</div></div>
+                            <div class="step"><span class="step-number">2</span><div class="step-content"><strong>Write an equation connecting $x$ and $y$.</strong> By the Pythagorean theorem: $x^2 + y^2 = 10^2 = 100$. This is always true, no matter the position of the ladder. The ladder length (10 ft) never changes — it's constant.</div></div>
+                            <div class="step"><span class="step-number">3</span><div class="step-content"><strong>Differentiate both sides with respect to time $t$.</strong> Using the chain rule (both $x$ and $y$ are functions of $t$): $$2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0$$ The right side is 0 because 100 is a constant. This equation relates the <em>rates</em> of change.</div></div>
+                            <div class="step"><span class="step-number">4</span><div class="step-content"><strong>Plug in everything we know.</strong> At the moment in question: $x = 6$ ft, $\frac{dx}{dt} = 2$ ft/s (bottom moving away from wall). We need $y$: from $6^2 + y^2 = 100$, we get $y = \sqrt{64} = 8$ ft.</div></div>
+                            <div class="step"><span class="step-number">5</span><div class="step-content"><strong>Solve for $\frac{dy}{dt}$.</strong> Plug into our rate equation: $2(6)(2) + 2(8)\frac{dy}{dt} = 0$, so $24 + 16\frac{dy}{dt} = 0$, giving $\frac{dy}{dt} = -\frac{24}{16} = -\frac{3}{2}$ ft/s.</div></div>
+                            <div class="step"><span class="step-number">6</span><div class="step-content"><strong>Interpret the answer.</strong> $\frac{dy}{dt} = -\frac{3}{2}$ ft/s. The negative sign means $y$ is <em>decreasing</em> — the top of the ladder is sliding <strong>down</strong> at $\frac{3}{2}$ ft/s. ✓</div></div>
                         </div>
+                        <div class="sol-takeaway">📌 <strong>Key takeaway:</strong> Related rates recipe: (1) draw a picture, (2) label changing quantities with variables, (3) find an equation connecting them, (4) differentiate with respect to $t$, (5) plug in known values, (6) solve for the unknown rate. Always check the sign — negative means decreasing!</div>
                     </div>
                 </div>
                 <div class="problem" data-difficulty="hard">
@@ -5837,6 +5863,7 @@
     <script src="js/quizzes.js"></script>
     <script src="js/solution-visuals.js"></script>
     <script src="js/skill-tags.js"></script>
+    <script src="js/solution-enhance.js"></script>
     <script src="js/progress.js"></script>
 </body>
 </html>
