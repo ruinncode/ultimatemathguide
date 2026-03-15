@@ -54,6 +54,30 @@
     return TOPIC_MAP[prefix] || 'General';
   }
 
+  // ── Mastery levels (Khan Academy-style) ──
+  const MASTERY = [
+    { id: 'not-started', label: 'Not Started', minPct: -1, minTotal: 0, color: '#555', icon: '○' },
+    { id: 'attempted',   label: 'Attempted',   minPct: 0,  minTotal: 1, color: '#f87171', icon: '◔' },
+    { id: 'familiar',    label: 'Familiar',     minPct: 40, minTotal: 2, color: '#f0b832', icon: '◑' },
+    { id: 'proficient',  label: 'Proficient',   minPct: 70, minTotal: 3, color: '#4a9eff', icon: '◕' },
+    { id: 'mastered',    label: 'Mastered',      minPct: 85, minTotal: 5, color: '#34d399', icon: '●' },
+  ];
+
+  function getMasteryLevel(correct, total) {
+    if (total === 0) return MASTERY[0];
+    const pct = (correct / total) * 100;
+    const recent = getRecentStreak(correct, total);
+    for (let i = MASTERY.length - 1; i >= 0; i--) {
+      const m = MASTERY[i];
+      if (pct >= m.minPct && total >= m.minTotal) return m;
+    }
+    return MASTERY[0];
+  }
+
+  function getRecentStreak(correct, total) {
+    return { correct, total };
+  }
+
   function getStats() {
     const data = loadProgress();
     const topics = data.topics || {};
@@ -61,11 +85,26 @@
     const totalWrong = Object.values(topics).reduce((s, t) => s + t.wrong, 0);
     const total = totalCorrect + totalWrong;
     const weakTopics = Object.entries(topics)
-      .map(([name, t]) => ({ name, correct: t.correct, wrong: t.wrong, total: t.correct + t.wrong, pct: t.correct / (t.correct + t.wrong) }))
+      .map(([name, t]) => {
+        const tot = t.correct + t.wrong;
+        const pct = tot > 0 ? t.correct / tot : 0;
+        const mastery = getMasteryLevel(t.correct, tot);
+        return { name, correct: t.correct, wrong: t.wrong, total: tot, pct, mastery };
+      })
       .filter(t => t.total >= 1)
       .sort((a, b) => a.pct - b.pct);
     const strongTopics = [...weakTopics].sort((a, b) => b.pct - a.pct);
-    return { totalCorrect, totalWrong, total, weakTopics, strongTopics, topics };
+
+    const allTopicNames = Object.values(TOPIC_MAP).filter((v, i, a) => a.indexOf(v) === i);
+    const masteryCount = { 'not-started': 0, attempted: 0, familiar: 0, proficient: 0, mastered: 0 };
+    allTopicNames.forEach(name => {
+      const t = topics[name];
+      const tot = t ? t.correct + t.wrong : 0;
+      const m = getMasteryLevel(t ? t.correct : 0, tot);
+      masteryCount[m.id]++;
+    });
+
+    return { totalCorrect, totalWrong, total, weakTopics, strongTopics, topics, masteryCount, allTopicNames };
   }
 
   // ── Google Sign-In (Firebase) ──
@@ -365,36 +404,39 @@
     const pct = Math.round((stats.totalCorrect / stats.total) * 100);
     const color = pct >= 80 ? '#34d399' : pct >= 60 ? '#f0b832' : '#f87171';
 
-    statsDiv.innerHTML = `
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value" style="color:${color}">${pct}%</div>
-          <div class="stat-label">Accuracy</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">${stats.total}</div>
-          <div class="stat-label">Answered</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color:#34d399">${stats.totalCorrect}</div>
-          <div class="stat-label">Correct</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color:#f87171">${stats.totalWrong}</div>
-          <div class="stat-label">Wrong</div>
-        </div>
-      </div>
-    `;
+    let statsHTML = `<div class="stats-grid">
+        <div class="stat-card"><div class="stat-value" style="color:${color}">${pct}%</div><div class="stat-label">Accuracy</div></div>
+        <div class="stat-card"><div class="stat-value">${stats.total}</div><div class="stat-label">Answered</div></div>
+        <div class="stat-card"><div class="stat-value" style="color:#34d399">${stats.totalCorrect}</div><div class="stat-label">Correct</div></div>
+        <div class="stat-card"><div class="stat-value" style="color:#f87171">${stats.totalWrong}</div><div class="stat-label">Wrong</div></div>
+      </div>`;
+
+    statsHTML += '<div class="mastery-summary"><h4>Mastery Overview</h4><div class="mastery-row">';
+    MASTERY.slice(1).forEach(m => {
+      const count = stats.masteryCount[m.id] || 0;
+      statsHTML += `<div class="mastery-chip" style="border-color:${m.color}"><span class="mastery-dot" style="background:${m.color}">${m.icon}</span><span class="mastery-chip-count">${count}</span><span class="mastery-chip-label">${m.label}</span></div>`;
+    });
+    statsHTML += '</div></div>';
+    statsDiv.innerHTML = statsHTML;
 
     if (stats.weakTopics.length > 0) {
-      let html = '<h4>Topics by Performance</h4><div class="topic-bars">';
-      stats.weakTopics.forEach(t => {
+      let html = '<h4>Topic Mastery</h4><div class="topic-bars">';
+      const sorted = [...stats.weakTopics].sort((a, b) => {
+        const ai = MASTERY.findIndex(m => m.id === a.mastery.id);
+        const bi = MASTERY.findIndex(m => m.id === b.mastery.id);
+        return ai - bi;
+      });
+      sorted.forEach(t => {
         const p = Math.round(t.pct * 100);
-        const barColor = p >= 80 ? '#34d399' : p >= 60 ? '#f0b832' : '#f87171';
-        html += `<div class="topic-bar-row">
+        const m = t.mastery;
+        const nextM = MASTERY[Math.min(MASTERY.findIndex(x => x.id === m.id) + 1, MASTERY.length - 1)];
+        const needsMore = m.id !== 'mastered';
+        const nextHint = needsMore ? `Next: ${nextM.label} (need ${nextM.minPct}%+ on ${nextM.minTotal}+ questions)` : 'Topic mastered!';
+        html += `<div class="topic-bar-row" title="${nextHint}">
+          <span class="mastery-indicator" style="color:${m.color}">${m.icon}</span>
           <span class="topic-bar-name">${t.name}</span>
-          <div class="topic-bar-track"><div class="topic-bar-fill" style="width:${p}%;background:${barColor}"></div></div>
-          <span class="topic-bar-pct" style="color:${barColor}">${p}% <span class="topic-bar-count">(${t.correct}/${t.total})</span></span>
+          <div class="topic-bar-track"><div class="topic-bar-fill" style="width:${p}%;background:${m.color}"></div></div>
+          <span class="topic-bar-pct" style="color:${m.color}">${m.label} <span class="topic-bar-count">(${t.correct}/${t.total})</span></span>
         </div>`;
       });
       html += '</div>';
@@ -403,19 +445,24 @@
       weakDiv.innerHTML = '';
     }
 
-    const needsPractice = stats.weakTopics.filter(t => t.pct < 0.7).slice(0, 3);
+    const needsPractice = stats.weakTopics.filter(t => t.mastery.id === 'attempted' || t.mastery.id === 'familiar').slice(0, 3);
+    const notMastered = stats.weakTopics.filter(t => t.mastery.id !== 'mastered');
     if (needsPractice.length > 0) {
       let html = '<h4>Recommended Practice</h4><div class="recommend-list">';
       needsPractice.forEach(t => {
-        html += `<div class="recommend-item">
-          <span class="recommend-topic">${t.name}</span>
-          <span class="recommend-reason">${t.correct}/${t.total} correct — needs more practice</span>
+        const m = t.mastery;
+        const nextM = MASTERY[Math.min(MASTERY.findIndex(x => x.id === m.id) + 1, MASTERY.length - 1)];
+        html += `<div class="recommend-item" style="border-left-color:${m.color}">
+          <span class="recommend-topic">${t.name} — <em>${m.label}</em></span>
+          <span class="recommend-reason">${t.correct}/${t.total} correct. Get ${nextM.minPct}%+ on ${nextM.minTotal}+ to reach ${nextM.label}.</span>
         </div>`;
       });
       html += '</div>';
       recDiv.innerHTML = html;
+    } else if (notMastered.length === 0 && stats.total >= 5) {
+      recDiv.innerHTML = '<div class="recommend-good">All attempted topics mastered! Try new topics to keep growing.</div>';
     } else if (stats.total >= 5) {
-      recDiv.innerHTML = '<div class="recommend-good">Great job! Keep practicing to reinforce your skills.</div>';
+      recDiv.innerHTML = '<div class="recommend-good">Good progress! Keep practicing to level up your mastery.</div>';
     } else {
       recDiv.innerHTML = '';
     }

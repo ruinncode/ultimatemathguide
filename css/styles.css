@@ -3379,9 +3379,59 @@ body.light-mode .sol-vis-canvas {
 }
 
 .topic-bar-name {
-  min-width: 120px;
+  min-width: 100px;
   color: var(--text-secondary);
   flex-shrink: 0;
+}
+
+.mastery-summary {
+  margin-top: 0.85rem;
+}
+
+.mastery-summary h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 0.5rem;
+}
+
+.mastery-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.mastery-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  background: transparent;
+}
+
+.mastery-dot {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.mastery-chip-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mastery-chip-label {
+  color: var(--text-muted);
+}
+
+.mastery-indicator {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
 }
 
 .topic-bar-track {
