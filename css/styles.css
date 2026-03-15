@@ -2743,3 +2743,51 @@ body.light-mode .enrich-visual canvas {
     align-items: flex-start;
   }
 }
+
+/* ============================================================
+   Solution Visualizations
+   ============================================================ */
+
+.sol-vis-wrapper {
+  margin-bottom: 0.85rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+body.light-mode .sol-vis-wrapper {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.sol-vis-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.sol-vis-canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid var(--border-subtle);
+}
+
+body.light-mode .sol-vis-canvas {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .sol-vis-canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+  .sol-vis-wrapper {
+    padding: 0.5rem;
+  }
+}
